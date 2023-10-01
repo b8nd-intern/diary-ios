@@ -71,12 +71,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D3409FE2ABD502700B465FF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4D3409FF2ABD502D00B465FF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		4DF4F3D92ABC5A1B00D66126 = {
 			isa = PBXGroup;
 			children = (
 				4DF4F3E42ABC5A1B00D66126 /* b8ndDiary */,
 				4DF4F3F52ABC5A1D00D66126 /* b8ndDiaryTests */,
 				4DF4F3FF2ABC5A1D00D66126 /* b8ndDiaryUITests */,
+				4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */,
 				4DF4F3E32ABC5A1B00D66126 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
-				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
-				4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */,
+				4D3409FF2ABD502D00B465FF /* Source */,
+				4D3409FE2ABD502700B465FF /* Resource */,
 				4DF4F3EB2ABC5A1C00D66126 /* Preview Content */,
 			);
 			path = b8ndDiary;
