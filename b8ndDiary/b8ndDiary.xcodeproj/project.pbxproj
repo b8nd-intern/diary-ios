@@ -14,6 +14,12 @@
 		4DF4F3F72ABC5A1D00D66126 /* b8ndDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3F62ABC5A1D00D66126 /* b8ndDiaryTests.swift */; };
 		4DF4F4012ABC5A1D00D66126 /* b8ndDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */; };
 		4DF4F4032ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */; };
+		4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1762ACD952300343927 /* ProfileView.swift */; };
+		4DFEB1792ACD952900343927 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1782ACD952900343927 /* LoginView.swift */; };
+		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
+		4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17C2ACD954500343927 /* SettingView.swift */; };
+		4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17E2ACD954E00343927 /* HomeView.swift */; };
+		4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1802ACD955800343927 /* thisisdata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		4DF4F3FC2ABC5A1D00D66126 /* b8ndDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = b8ndDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITests.swift; sourceTree = "<group>"; };
 		4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DFEB1762ACD952300343927 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4DFEB1782ACD952900343927 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		4DFEB17C2ACD954500343927 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4DFEB17E2ACD954E00343927 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4DFEB1802ACD955800343927 /* thisisdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thisisdata.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +83,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D3409FE2ABD502700B465FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB1732ACD93AF00343927 /* Profile */,
+				4DFEB1712ACD92BF00343927 /* Login */,
+				4DDF8ACF2ACD8721003516A2 /* Post */,
+				4DDF8ACE2ACD8719003516A2 /* Setting */,
+				4DDF8ACD2ACD8711003516A2 /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D3409FF2ABD502D00B465FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB1802ACD955800343927 /* thisisdata.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4DDF8ACD2ACD8711003516A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB17E2ACD954E00343927 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4DDF8ACE2ACD8719003516A2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB17C2ACD954500343927 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		4DDF8ACF2ACD8721003516A2 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB17A2ACD954100343927 /* PostView.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		4DF4F3D92ABC5A1B00D66126 = {
 			isa = PBXGroup;
 			children = (
 				4DF4F3E42ABC5A1B00D66126 /* b8ndDiary */,
 				4DF4F3F52ABC5A1D00D66126 /* b8ndDiaryTests */,
 				4DF4F3FF2ABC5A1D00D66126 /* b8ndDiaryUITests */,
+				4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */,
 				4DF4F3E32ABC5A1B00D66126 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +153,8 @@
 			children = (
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
-				4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */,
+				4D3409FF2ABD502D00B465FF /* Data */,
+				4D3409FE2ABD502700B465FF /* View */,
 				4DF4F3EB2ABC5A1C00D66126 /* Preview Content */,
 			);
 			path = b8ndDiary;
@@ -125,6 +183,22 @@
 				4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */,
 			);
 			path = b8ndDiaryUITests;
+			sourceTree = "<group>";
+		};
+		4DFEB1712ACD92BF00343927 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB1782ACD952900343927 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4DFEB1732ACD93AF00343927 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEB1762ACD952300343927 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */,
+				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
+				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
+				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
+				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
+				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
+				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
