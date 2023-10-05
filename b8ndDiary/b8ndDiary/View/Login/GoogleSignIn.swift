@@ -86,8 +86,8 @@ struct GoogleSignIn: View {
 
 
 
-//struct GoogleSignIn_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView(userData: UserData(url: nil, name: "", email: ""))
-//    }
-//}
+struct GoogleSignIn_Previews: PreviewProvider {
+    static var previews: some View {
+        GoogleSignIn(userData: UserData(url: nil, name: "", email: ""))
+    }
+}

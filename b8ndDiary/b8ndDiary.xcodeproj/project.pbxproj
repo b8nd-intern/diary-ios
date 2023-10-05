@@ -15,7 +15,6 @@
 		4DF4F4012ABC5A1D00D66126 /* b8ndDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */; };
 		4DF4F4032ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */; };
 		4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1762ACD952300343927 /* ProfileView.swift */; };
-		4DFEB1792ACD952900343927 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1782ACD952900343927 /* LoginView.swift */; };
 		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
 		4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17C2ACD954500343927 /* SettingView.swift */; };
 		4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17E2ACD954E00343927 /* HomeView.swift */; };
@@ -27,6 +26,7 @@
 		750C3ABB2ACD995C0010B0AD /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 750C3ABA2ACD995C0010B0AD /* GoogleSignIn */; };
 		750C3ABD2ACD995C0010B0AD /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 750C3ABC2ACD995C0010B0AD /* GoogleSignInSwift */; };
 		750C3ABF2ACD99DB0010B0AD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */; };
+		750C3AF32ACEA4370010B0AD /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITests.swift; sourceTree = "<group>"; };
 		4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DFEB1762ACD952300343927 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		4DFEB1782ACD952900343927 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		4DFEB17C2ACD954500343927 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4DFEB17E2ACD954E00343927 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -67,6 +66,8 @@
 		750C3AB22ACD97E10010B0AD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		750C3AB42ACD98540010B0AD /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		750C3AEF2ACEA3D10010B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +166,8 @@
 		4DF4F3E42ABC5A1B00D66126 /* b8ndDiary */ = {
 			isa = PBXGroup;
 			children = (
+				750C3AEF2ACEA3D10010B0AD /* Info.plist */,
+				750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
 				4D3409FF2ABD502D00B465FF /* Data */,
@@ -202,7 +205,6 @@
 		4DFEB1712ACD92BF00343927 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4DFEB1782ACD952900343927 /* LoginView.swift */,
 				750C3AB42ACD98540010B0AD /* GoogleSignIn.swift */,
 				750C3AB02ACD976E0010B0AD /* UserData.swift */,
 				750C3AB22ACD97E10010B0AD /* Login.swift */,
@@ -333,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF4F3ED2ABC5A1C00D66126 /* Preview Assets.xcassets in Resources */,
+				750C3AF32ACEA4370010B0AD /* GoogleService-Info (1).plist in Resources */,
 				4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +369,6 @@
 				750C3ABF2ACD99DB0010B0AD /* MyPageView.swift in Sources */,
 				750C3AB12ACD976E0010B0AD /* UserData.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
-				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
@@ -528,8 +530,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
+				DEVELOPMENT_TEAM = NW88BSVGJV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = b8ndDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -556,8 +560,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
+				DEVELOPMENT_TEAM = NW88BSVGJV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = b8ndDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
