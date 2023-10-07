@@ -27,6 +27,9 @@
 		750C3ABD2ACD995C0010B0AD /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 750C3ABC2ACD995C0010B0AD /* GoogleSignInSwift */; };
 		750C3ABF2ACD99DB0010B0AD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */; };
 		750C3AF32ACEA4370010B0AD /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */; };
+		750C3AF92ACFA0000010B0AD /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AF82ACFA0000010B0AD /* Setting.swift */; };
+		750C3AFD2AD0232A0010B0AD /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AFC2AD0232A0010B0AD /* UserPage.swift */; };
+		750C3AFF2AD163010010B0AD /* MonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AFE2AD163010010B0AD /* MonthPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		750C3AEF2ACEA3D10010B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		750C3AF82ACFA0000010B0AD /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		750C3AFC2AD0232A0010B0AD /* UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
+		750C3AFE2AD163010010B0AD /* MonthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFEB17C2ACD954500343927 /* SettingView.swift */,
+				750C3AF82ACFA0000010B0AD /* Setting.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -208,7 +215,6 @@
 				750C3AB42ACD98540010B0AD /* GoogleSignIn.swift */,
 				750C3AB02ACD976E0010B0AD /* UserData.swift */,
 				750C3AB22ACD97E10010B0AD /* Login.swift */,
-				750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -217,6 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				4DFEB1762ACD952300343927 /* ProfileView.swift */,
+				750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */,
+				750C3AFC2AD0232A0010B0AD /* UserPage.swift */,
+				750C3AFE2AD163010010B0AD /* MonthPage.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -362,12 +371,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				750C3AB52ACD98540010B0AD /* GoogleSignIn.swift in Sources */,
+				750C3AFD2AD0232A0010B0AD /* UserPage.swift in Sources */,
 				4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */,
+				750C3AF92ACFA0000010B0AD /* Setting.swift in Sources */,
 				750C3AB32ACD97E10010B0AD /* Login.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
 				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
 				750C3ABF2ACD99DB0010B0AD /* MyPageView.swift in Sources */,
 				750C3AB12ACD976E0010B0AD /* UserData.swift in Sources */,
+				750C3AFF2AD163010010B0AD /* MonthPage.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,

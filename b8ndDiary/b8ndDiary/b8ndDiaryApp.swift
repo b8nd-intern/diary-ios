@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 @main
 struct b8ndDiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GoogleSignIn(userData: UserData(url: nil, name: "", email: ""))
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance.handle(url)
+                }
         }
     }
 }
