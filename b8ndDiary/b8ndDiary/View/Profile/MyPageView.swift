@@ -10,6 +10,8 @@ import GoogleSignIn
 
 struct MyPageView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var date = Date()
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "9월", "10월", "11월", "12월"]
@@ -26,9 +28,6 @@ struct MyPageView: View {
             
             
             VStack{
-                
-                
-                // 프로필
                 HStack(alignment: .top){
                     AsyncImage(url: userData.url)
                     
@@ -59,26 +58,13 @@ struct MyPageView: View {
                             }
                                 .offset(x: 35, y: 65) // 위치 조정
                         )
-                    
-                    
-                    
-                    // 이름
                     Text(userData.name)
                         .font(.system(size: 23 ))
                         .bold()
                         .padding(EdgeInsets(top: 95, leading: 20, bottom: 0, trailing: 0))
-                    
-                    // 이메일
-                    //                Text(userData.email)
-                    
-                    
                 }
                 .padding(.trailing, 170)
-                
-                
                 Spacer()
-                
-                
                 VStack{//작성글 시작
                     HStack{
                         Text("작성글")
@@ -90,19 +76,12 @@ struct MyPageView: View {
                             selection: $date,
                             displayedComponents: [.date]
                         )
-                        //                            .padding(9)
-                        //                            .background(Color.blue.opacity(0.3))
                         .cornerRadius(15)
                         .frame(width: 5, height: 5)
                         .padding(.trailing, 40)
-                        
-                        
-                        
-                        
+
                     }
                     .padding()
-                    
-                    
                     NavigationView {
                         List(months, id: \.self) { month in
                             NavigationLink(
@@ -118,6 +97,37 @@ struct MyPageView: View {
                     }
                         }
                     }
+            .navigationBarBackButtonHidden()
+            .navigationBarTitle(
+                "",
+                displayMode: .inline
+            )
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("프로필")
+                        .bold()
+                        .foregroundColor(.black)
+                        .font(.system(size: 15))
+                }
+            }
+            .navigationBarItems(
+                leading:
+                    HStack(spacing: 16) {
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image(systemName: "multiply")
+                                .foregroundColor(.black)
+                        })
+                        
+                        Spacer()
+                        
+
+                        
+                    
+                    
+                    }
+            )
                     
                     
                 }

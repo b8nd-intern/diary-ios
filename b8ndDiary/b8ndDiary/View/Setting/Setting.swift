@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import Firebase
 
 struct Setting: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var lighton : Bool = false
     @State var LogOut : Bool = false
     
@@ -34,6 +38,9 @@ struct Setting: View {
             .padding(.vertical, 20)
             
             Button {
+                GIDSignIn.sharedInstance.signOut()
+                ContentView(userData: UserData(url: nil, name: "", email: ""))
+                
                 
             } label: {
                 Label("로그아웃", systemImage: "rectangle.portrait.and.arrow.right")
@@ -67,8 +74,40 @@ struct Setting: View {
             
 
         }
+        .navigationBarBackButtonHidden()
+        .navigationBarTitle(
+            "",
+            displayMode: .inline
+        )
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("프로필")
+                    .bold()
+                    .foregroundColor(.black)
+                    .font(.system(size: 15))
+            }
+        }
+            .navigationBarItems(
+            leading:
+                HStack(spacing: 16) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(systemName: "multiply")
+                            .foregroundColor(.black)
+                    })
+                    
+                    Spacer()
+                    
+
+                    
+                
+                
+                }
+        )
         
-        
+       
+
     }
 }
 
