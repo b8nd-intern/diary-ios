@@ -12,6 +12,7 @@ struct b8ndDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(DiaryContent())
         }
     }
 }

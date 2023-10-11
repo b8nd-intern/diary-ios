@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77982AD615EC00A7DAA4 /* Color+ext.swift */; };
+		45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */; };
+		45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */; };
+		45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */; };
+		45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A42AD6B49300A7DAA4 /* DayView.swift */; };
+		45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */; };
+		45DC77AA2AD6B4C200A7DAA4 /* DiaryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A92AD6B4C200A7DAA4 /* DiaryContent.swift */; };
+		45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */; };
+		45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */; };
+		45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */; };
 		4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */; };
 		4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */; };
 		4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */; };
@@ -42,6 +51,15 @@
 
 /* Begin PBXFileReference section */
 		45DC77982AD615EC00A7DAA4 /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
+		45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButtonView.swift; sourceTree = "<group>"; };
+		45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollView.swift; sourceTree = "<group>"; };
+		45DC77A42AD6B49300A7DAA4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryView.swift; sourceTree = "<group>"; };
+		45DC77A92AD6B4C200A7DAA4 /* DiaryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContent.swift; sourceTree = "<group>"; };
+		45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
+		45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickCell.swift; sourceTree = "<group>"; };
+		45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickDiaryView.swift; sourceTree = "<group>"; };
 		4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b8ndDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryApp.swift; sourceTree = "<group>"; };
 		4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +103,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45DC779C2AD6B42A00A7DAA4 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
+		45DC77A02AD6B45000A7DAA4 /* HScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */,
+			);
+			path = HScrollView;
+			sourceTree = "<group>";
+		};
+		45DC77A32AD6B48500A7DAA4 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77A42AD6B49300A7DAA4 /* DayView.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		45DC77A62AD6B4A000A7DAA4 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */,
+				45DC77A92AD6B4C200A7DAA4 /* DiaryContent.swift */,
+				45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		45DC77AD2AD6B4FB00A7DAA4 /* Click */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */,
+				45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */,
+			);
+			path = Click;
+			sourceTree = "<group>";
+		};
 		4D3409FE2ABD502700B465FF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				4DFEB17E2ACD954E00343927 /* HomeView.swift */,
+				45DC779C2AD6B42A00A7DAA4 /* Toolbar */,
+				45DC77A02AD6B45000A7DAA4 /* HScrollView */,
+				45DC77A32AD6B48500A7DAA4 /* Day */,
+				45DC77A62AD6B4A000A7DAA4 /* Diary */,
+				45DC77AD2AD6B4FB00A7DAA4 /* Click */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -125,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFEB17A2ACD954100343927 /* PostView.swift */,
+				45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -334,14 +401,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */,
+				45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */,
 				4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */,
+				45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */,
+				45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
 				45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */,
+				45DC77AA2AD6B4C200A7DAA4 /* DiaryContent.swift in Sources */,
 				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
+				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
+				45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
+				45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
+				45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
