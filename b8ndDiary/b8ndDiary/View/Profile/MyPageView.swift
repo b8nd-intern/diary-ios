@@ -15,7 +15,7 @@ struct MyPageView: View {
     @State var date = Date()
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "9월", "10월", "11월", "12월"]
-        @State private var selectedMonth = ""
+    @State private var selectedMonth = ""
     // 화면 종료
     @Environment(\.dismiss) private var dismiss
     // 유저 데이터 바인딩
@@ -79,7 +79,7 @@ struct MyPageView: View {
                         .cornerRadius(15)
                         .frame(width: 5, height: 5)
                         .padding(.trailing, 40)
-
+                        
                     }
                     .padding()
                     NavigationView {
@@ -93,10 +93,10 @@ struct MyPageView: View {
                             )
                             
                         }
-                      
+                        
                     }
-                        }
-                    }
+                }
+            }
             .navigationBarBackButtonHidden()
             .navigationBarTitle(
                 "",
@@ -122,21 +122,21 @@ struct MyPageView: View {
                         
                         Spacer()
                         
-
                         
-                    
-                    
+                        
+                        
+                        
                     }
             )
-                    
-                    
-                }
-            }
+            
             
         }
-        
-        
-        
+    }
+    
+}
+
+
+
 
 
 

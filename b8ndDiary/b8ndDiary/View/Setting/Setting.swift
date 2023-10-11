@@ -41,7 +41,6 @@ struct Setting: View {
                 GIDSignIn.sharedInstance.signOut()
                 ContentView(userData: UserData(url: nil, name: "", email: ""))
                 
-                
             } label: {
                 Label("로그아웃", systemImage: "rectangle.portrait.and.arrow.right")
                     .foregroundColor(.black)
