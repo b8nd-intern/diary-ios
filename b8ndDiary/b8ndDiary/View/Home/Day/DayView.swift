@@ -20,10 +20,10 @@ struct DayView: View {
             } label: {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 31.54, height: 33)
-                    .foregroundColor(Colors.Gray2.color)
+                    .foregroundColor(Colors.Gray1.color)
                     .overlay {
                         Text("\(dayList[i])")
-                            .foregroundColor(Colors.Gray3.color)
+                            .foregroundColor(Colors.Black1.color)
                     }
             }
         }

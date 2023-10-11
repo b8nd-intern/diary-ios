@@ -16,9 +16,8 @@ struct PostButtonView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 28)
                         .stroke(Colors.Black1.color, lineWidth: 0.1)
-                    Image(systemName: "pencil")
+                    Image("Pencil")
                         .font(.system(size: 36))
-                        .foregroundColor(Colors.Black1.color)
                 }
             )
     }

@@ -15,7 +15,7 @@ struct PostView: View {
     @State var publicState: Bool = true
     @State var backgroundColor: Color = Colors.Blue1.color
     
-    var backgroundColorList: [Color] = [Colors.Black1.color, Colors.Blue1.color, Colors.Blue2.color, Colors.Blue3.color]
+    var backgroundColorList: [Color] = [Colors.Blue1.color, Colors.Blue2.color, Colors.Blue3.color, Colors.Yellow1.color]
     var placeholder: String = "오늘 즐거웠던 활동은 무엇인가요?"
     
     var body: some View {
@@ -31,12 +31,12 @@ struct PostView: View {
                     } label: {
                         if publicState {
                             Text("공개")
-                                .foregroundColor(Colors.Gray2.color)
+                                .foregroundColor(Colors.Blue5.color)
                                 .font(.system(size: 16))
                                 .bold()
                         } else {
                             Text("공개")
-                                .foregroundColor(Colors.Gray3.color)
+                                .foregroundColor(Colors.Gray2.color)
                                 .font(.system(size: 16))
                         }
                     }
@@ -48,11 +48,11 @@ struct PostView: View {
                     } label: {
                         if publicState {
                             Text("비공개")
-                                .foregroundColor(Colors.Gray3.color)
+                                .foregroundColor(Colors.Gray2.color)
                                 .font(.system(size: 16))
                         } else {
                             Text("비공개")
-                                .foregroundColor(Colors.Gray2.color)
+                                .foregroundColor(Colors.Blue5.color)
                                 .font(.system(size: 16))
                                 .bold()
                         }
@@ -82,7 +82,7 @@ struct PostView: View {
                     
                     VStack {
                         HStack { // 미리보기 포스트잇 색 설정
-                            let colorList: [Color] = [Colors.Black1.color, Colors.Blue1.color, Colors.Blue2.color, Colors.Blue3.color]
+                            let colorList: [Color] = [Colors.Blue1.color, Colors.Blue2.color, Colors.Blue3.color, Colors.Yellow1.color]
                             ForEach(colorList, id: \.self) { color in
                                 Button {
                                     backgroundColor = color
@@ -99,9 +99,9 @@ struct PostView: View {
                                 ZStack { // 일기 올리기
                                     RoundedRectangle(cornerRadius: 20)
                                         .frame(width: 65, height: 33)
-                                        .foregroundColor(Colors.Blue2.color)
+                                        .foregroundColor(Colors.Blue1.color)
                                     Text("올리기")
-                                        .foregroundColor(Colors.Black1.color)
+                                        .foregroundColor(Colors.Blue4.color)
                                 }
                             }
                         }
@@ -123,11 +123,10 @@ struct PostView: View {
                     }
                     .padding(.top, 15)
                 }
-                .padding(.horizontal, 10)
                 .edgesIgnoringSafeArea(.all)
                 
             }
-            .background(Colors.Gray2.color)
+            .background(Colors.Gray1.color)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
