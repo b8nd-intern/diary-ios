@@ -15,6 +15,10 @@ struct PostView: View {
     @State var publicState: Bool = true
     @State var backgroundColor: Color = Colors.Blue1.color
     
+    @State var emojiState: Bool = false
+    @State var selectedEmoji: String = "DefaultEmoji"
+    
+    var emojiList: [String] = ["SmileEmoji", "CrazyEmoji", "SwagEmoji", "TiredEmoji", "MadEmoji"]
     var backgroundColorList: [Color] = [Colors.Blue1.color, Colors.Blue2.color, Colors.Blue3.color, Colors.Yellow1.color]
     var placeholder: String = "오늘 즐거웠던 활동은 무엇인가요?"
     
@@ -26,7 +30,6 @@ struct PostView: View {
                     // 공개
                     Button {
                         // 공개로 설정되는 코드
-                        
                         publicState = true
                     } label: {
                         if publicState {
@@ -43,7 +46,6 @@ struct PostView: View {
                     // 비공개
                     Button {
                         // 비공개로 설정되는 코드
-                        
                         publicState = false
                     } label: {
                         if publicState {
@@ -57,7 +59,6 @@ struct PostView: View {
                                 .bold()
                         }
                     }
-                    
                     Spacer()
                 }
                 .padding(.leading, 40)
@@ -66,13 +67,53 @@ struct PostView: View {
                 Rectangle()
                     .foregroundColor(backgroundColor)
                     .frame(width: 300, height: 300)
-                    .padding(.bottom, 24)
+                    .padding(.bottom, 20)
                     .overlay {
                         VStack {
-                            Text("\(text)")
+                            ZStack {
+                                HStack {
+                                    Button {
+                                        emojiState = true
+                                    } label: {
+                                        Image(selectedEmoji)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    Spacer()
+                                }
+                                if emojiState {
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .foregroundColor(.white)
+                                        .frame(width: 260, height: 52)
+                                        .overlay {
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 16)
+                                                    .stroke(Colors.Blue4.color, lineWidth: 1)
+                                                    .frame(width: 260, height: 52)
+                                                HStack {
+                                                    ForEach(emojiList, id: \.self) { emojiName in
+                                                        Button {
+                                                            selectedEmoji = emojiName
+                                                            emojiState = false
+                                                        } label: {
+                                                            Image(emojiName)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .offset(x: 20, y: -20)
+                                }
+                            }
+                            HStack {
+                                Text("\(text)")
+                                Spacer()
+                            }
                             Spacer()
                         }
                         .frame(width: 250, height: 250)
+                        .padding(.bottom, 20)
                     }
                 
                 // 일기 작성
@@ -124,7 +165,6 @@ struct PostView: View {
                     .padding(.top, 15)
                 }
                 .edgesIgnoringSafeArea(.all)
-                
             }
             .background(Colors.Gray1.color)
             .toolbar {

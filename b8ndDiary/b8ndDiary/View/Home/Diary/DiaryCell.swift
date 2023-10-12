@@ -22,13 +22,13 @@ struct DiaryCell: View {
                             Spacer()
                         }
                         .padding(.top, 8)
-                        
                         Text("\(data)")
                             .lineLimit(4)
                             .foregroundColor(Colors.Black1.color)
-                        
                         Spacer()
                     }
+                    .frame(width: 140, height: 140)
+                    .multilineTextAlignment(.leading)
                     .padding(.leading, 7)
                 }
         }

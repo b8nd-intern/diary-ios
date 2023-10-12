@@ -13,7 +13,6 @@
 		45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */; };
 		45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A42AD6B49300A7DAA4 /* DayView.swift */; };
 		45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */; };
-		45DC77AA2AD6B4C200A7DAA4 /* DiaryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A92AD6B4C200A7DAA4 /* DiaryContent.swift */; };
 		45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */; };
 		45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */; };
 		45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */; };
@@ -56,7 +55,6 @@
 		45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollView.swift; sourceTree = "<group>"; };
 		45DC77A42AD6B49300A7DAA4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryView.swift; sourceTree = "<group>"; };
-		45DC77A92AD6B4C200A7DAA4 /* DiaryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContent.swift; sourceTree = "<group>"; };
 		45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickCell.swift; sourceTree = "<group>"; };
 		45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickDiaryView.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */,
-				45DC77A92AD6B4C200A7DAA4 /* DiaryContent.swift */,
 				45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */,
 			);
 			path = Diary;
@@ -140,8 +137,8 @@
 		45DC77AD2AD6B4FB00A7DAA4 /* Click */ = {
 			isa = PBXGroup;
 			children = (
-				45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */,
 				45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */,
+				45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */,
 			);
 			path = Click;
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 				45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
 				45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */,
-				45DC77AA2AD6B4C200A7DAA4 /* DiaryContent.swift in Sources */,
 				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,

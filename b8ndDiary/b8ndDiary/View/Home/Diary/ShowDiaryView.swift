@@ -14,21 +14,7 @@ struct ShowDiaryView: View {
     
     @Binding var day: Int
     
-    @EnvironmentObject var content: DiaryContent
-    
-    // 날짜 선택 후 내용 가져오는 함수
-    func SelectDay(_ day: Int) -> [String] {
-        switch day {
-        case 0: return content.monContent
-        case 1: return content.tueContent
-        case 2: return content.wedContent
-        case 3: return content.thuContent
-        case 4: return content.friContent
-        case 5: return content.satContent
-        case 6: return content.sunContent
-        default: return []
-        }
-    }
+    var diaryContent: [String] = ["오늘도 바인드를 회의를 했는데 이번 아이디어가 매우 좋은 것 같아서 행복했다. 그리고 나중에", "개발을 했다1", "개발을 했다2", "개발을 했다3", "개발을 했다4"]
     
     var columns: [GridItem] = [
         GridItem(.flexible()),
@@ -37,7 +23,7 @@ struct ShowDiaryView: View {
     
     var body: some View {
         LazyVGrid(columns: columns) {
-            ForEach(SelectDay(day), id: \.self) { content in
+            ForEach(diaryContent, id: \.self) { content in
                 Button {
                     isClicked = true
                     clickedContent = content
