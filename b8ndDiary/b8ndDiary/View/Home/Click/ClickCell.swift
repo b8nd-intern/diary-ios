@@ -18,12 +18,17 @@ struct ClickCell: View {
                 VStack {
                     HStack {
                         Image("SmileEmoji")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .padding(.leading, 16)
                         Spacer()
                     }
                     .padding(.top, 20)
                     .padding(.leading, 20)
                     
                     Text("\(data)")
+                        .font(.custom("Pretendard-Medium", size: 16))
                         .foregroundColor(Colors.Black1.color)
                         .frame(width: 250)
                     

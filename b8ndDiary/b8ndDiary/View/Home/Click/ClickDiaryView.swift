@@ -30,7 +30,6 @@ struct ClickDiaryView: View {
             
             VStack {
                 Spacer()
-                
                 ClickCell(data: clickedContent)
                     .frame(width: 327, height: 319)
                     .overlay {
