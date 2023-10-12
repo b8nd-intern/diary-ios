@@ -30,6 +30,8 @@
 		750C3AF92ACFA0000010B0AD /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AF82ACFA0000010B0AD /* Setting.swift */; };
 		750C3AFD2AD0232A0010B0AD /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AFC2AD0232A0010B0AD /* UserPage.swift */; };
 		750C3AFF2AD163010010B0AD /* MonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AFE2AD163010010B0AD /* MonthPage.swift */; };
+		750C3BF62AD6B1CB0010B0AD /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3BF52AD6B1CB0010B0AD /* Color+ext.swift */; };
+		750C3BFC2AD7FBD00010B0AD /* YearCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3BFB2AD7FBD00010B0AD /* YearCalendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		750C3AF82ACFA0000010B0AD /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		750C3AFC2AD0232A0010B0AD /* UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
 		750C3AFE2AD163010010B0AD /* MonthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPage.swift; sourceTree = "<group>"; };
+		750C3BF52AD6B1CB0010B0AD /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
+		750C3BFB2AD7FBD00010B0AD /* YearCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCalendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 			children = (
 				750C3AEF2ACEA3D10010B0AD /* Info.plist */,
 				750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */,
+				750C3BF52AD6B1CB0010B0AD /* Color+ext.swift */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
 				4D3409FF2ABD502D00B465FF /* Data */,
@@ -226,6 +231,7 @@
 				750C3ABE2ACD99DB0010B0AD /* MyPageView.swift */,
 				750C3AFC2AD0232A0010B0AD /* UserPage.swift */,
 				750C3AFE2AD163010010B0AD /* MonthPage.swift */,
+				750C3BFB2AD7FBD00010B0AD /* YearCalendar.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -378,12 +384,14 @@
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
 				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
 				750C3ABF2ACD99DB0010B0AD /* MyPageView.swift in Sources */,
+				750C3BFC2AD7FBD00010B0AD /* YearCalendar.swift in Sources */,
 				750C3AB12ACD976E0010B0AD /* UserData.swift in Sources */,
 				750C3AFF2AD163010010B0AD /* MonthPage.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
+				750C3BF62AD6B1CB0010B0AD /* Color+ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
