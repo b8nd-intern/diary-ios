@@ -4,14 +4,11 @@
 //
 //  Created by dgsw8th61 on 2023/10/06.
 //
-
 import SwiftUI
 
 struct MonthPage: View {
     var selectedMonth: String
     @Environment(\.presentationMode) var presentationMode
-
-        
         var body: some View {
             VStack{
                 Text( "\(selectedMonth)")
@@ -20,7 +17,6 @@ struct MonthPage: View {
                     .bold()
                     .padding(.top,20)
                     .padding(.trailing, 240)
-                
                 Spacer()
             }
             .navigationBarBackButtonHidden()
@@ -32,12 +28,10 @@ struct MonthPage: View {
                         }, label: {
                             Image(systemName: "arrow.left")
                                 .foregroundColor(.black)
+                                .cornerRadius(10)
                         })
-                        
                         Spacer()
-                        
-
-                        
+  
                     },
                 trailing:
                     HStack(spacing: 16) {

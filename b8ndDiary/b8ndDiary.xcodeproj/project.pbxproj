@@ -30,7 +30,6 @@
 		750C3AF92ACFA0000010B0AD /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AF82ACFA0000010B0AD /* Setting.swift */; };
 		750C3AFD2AD0232A0010B0AD /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AFC2AD0232A0010B0AD /* UserPage.swift */; };
 		750C3AFF2AD163010010B0AD /* MonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3AFE2AD163010010B0AD /* MonthPage.swift */; };
-		750C3BF62AD6B1CB0010B0AD /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3BF52AD6B1CB0010B0AD /* Color+ext.swift */; };
 		750C3BFC2AD7FBD00010B0AD /* YearCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C3BFB2AD7FBD00010B0AD /* YearCalendar.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		750C3AF82ACFA0000010B0AD /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		750C3AFC2AD0232A0010B0AD /* UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
 		750C3AFE2AD163010010B0AD /* MonthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPage.swift; sourceTree = "<group>"; };
-		750C3BF52AD6B1CB0010B0AD /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
 		750C3BFB2AD7FBD00010B0AD /* YearCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCalendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,7 +177,6 @@
 			children = (
 				750C3AEF2ACEA3D10010B0AD /* Info.plist */,
 				750C3AF22ACEA4370010B0AD /* GoogleService-Info (1).plist */,
-				750C3BF52AD6B1CB0010B0AD /* Color+ext.swift */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
 				4D3409FF2ABD502D00B465FF /* Data */,
@@ -391,7 +388,6 @@
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
-				750C3BF62AD6B1CB0010B0AD /* Color+ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +560,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestswlkh0310.b8ndDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.b8ndd.b8ndDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -594,7 +590,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestswlkh0310.b8ndDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.b8ndd.b8ndDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

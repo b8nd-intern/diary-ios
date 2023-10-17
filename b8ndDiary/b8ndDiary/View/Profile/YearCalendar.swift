@@ -15,7 +15,7 @@ func createSquareGrid(rows: Int, columns: Int, totalSquares: Int) -> some View {
                 ForEach(0..<columns, id:\.self){ column in
                     if (row * columns + column < totalSquares){
                         Rectangle()
-                            .foregroundColor(Colors.Gray1.color)
+                            .foregroundColor(.gray)
                             .frame(width :15 , height :15 )
                             .cornerRadius(3)
                     } else{
@@ -53,7 +53,7 @@ struct YearCalendar: View {
                                 .padding(.trailing ,60 )
                                 .foregroundColor(.black)
                             
-                            createSquareGrid(rows :totalRows , columns:squaresPerRow , totalSquares :totalSquares )
+                            createSquareGrid(rows :totalRows , columns:squaresPerRow , totalSquares :totalSquares)
                         }
                         
                     }
