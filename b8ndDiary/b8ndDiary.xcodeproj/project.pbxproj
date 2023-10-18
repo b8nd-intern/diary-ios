@@ -19,10 +19,15 @@
 		4DFEB1792ACD952900343927 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1782ACD952900343927 /* LoginView.swift */; };
 		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
 		4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17C2ACD954500343927 /* SettingView.swift */; };
-		4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17E2ACD954E00343927 /* HomeView.swift */; };
 		4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1802ACD955800343927 /* thisisdata.swift */; };
+		D736C7E62AD80B0F00C0A6BD /* PagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7E52AD80B0F00C0A6BD /* PagingScrollView.swift */; };
+		D736C7EB2AD80B7400C0A6BD /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */; };
+		D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7ED2AD80B9200C0A6BD /* PageControl.swift */; };
+		D736C7F02AD80BA500C0A6BD /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7EF2AD80BA500C0A6BD /* DiaryView.swift */; };
+		D736C7F22AD80BDA00C0A6BD /* PrettyHScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7F12AD80BDA00C0A6BD /* PrettyHScrollView.swift */; };
 		D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7F82AD80D3F00C0A6BD /* FrameModifier.swift */; };
 		D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */; };
+		D736C8032AD81E0F00C0A6BD /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +63,15 @@
 		4DFEB1782ACD952900343927 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		4DFEB17C2ACD954500343927 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		4DFEB17E2ACD954E00343927 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DFEB1802ACD955800343927 /* thisisdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thisisdata.swift; sourceTree = "<group>"; };
+		D736C7E52AD80B0F00C0A6BD /* PagingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollView.swift; sourceTree = "<group>"; };
+		D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		D736C7ED2AD80B9200C0A6BD /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		D736C7EF2AD80BA500C0A6BD /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		D736C7F12AD80BDA00C0A6BD /* PrettyHScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyHScrollView.swift; sourceTree = "<group>"; };
 		D736C7F82AD80D3F00C0A6BD /* FrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModifier.swift; sourceTree = "<group>"; };
 		D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,7 @@
 		4D3409FF2ABD502D00B465FF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D736C7E92AD80B6C00C0A6BD /* Model */,
 				4DFEB1802ACD955800343927 /* thisisdata.swift */,
 			);
 			path = Data;
@@ -112,7 +123,8 @@
 		4DDF8ACD2ACD8711003516A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4DFEB17E2ACD954E00343927 /* HomeView.swift */,
+				D736C7EC2AD80B7D00C0A6BD /* Elements */,
+				D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -209,6 +221,25 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		D736C7E92AD80B6C00C0A6BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D736C7EC2AD80B7D00C0A6BD /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				D736C7ED2AD80B9200C0A6BD /* PageControl.swift */,
+				D736C7EF2AD80BA500C0A6BD /* DiaryView.swift */,
+				D736C7F12AD80BDA00C0A6BD /* PrettyHScrollView.swift */,
+				D736C7E52AD80B0F00C0A6BD /* PagingScrollView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		D736C7F72AD80D3100C0A6BD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +321,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					4DF4F3E12ABC5A1B00D66126 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -357,16 +388,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */,
+				D736C7EB2AD80B7400C0A6BD /* DiaryModel.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
+				D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */,
 				45DC77992AD615EC00A7DAA4 /* Color+Ext.swift in Sources */,
-				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
+				D736C8032AD81E0F00C0A6BD /* HomeViewTest.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
 				D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
+				D736C7F22AD80BDA00C0A6BD /* PrettyHScrollView.swift in Sources */,
+				D736C7F02AD80BA500C0A6BD /* DiaryView.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
+				D736C7E62AD80B0F00C0A6BD /* PagingScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +475,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -499,6 +536,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
