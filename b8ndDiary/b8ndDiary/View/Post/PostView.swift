@@ -106,10 +106,9 @@ struct PostView: View {
                                         .offset(x: 20, y: -20)
                                 }
                             }
-                            HStack {
-                                Text("\(text)")
-                                Spacer()
-                            }
+                            Text("\(text)")
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             Spacer()
                         }
                         .frame(width: 250, height: 250)
@@ -152,14 +151,13 @@ struct PostView: View {
                         
                         // 텍스트 에디터
                         ZStack(alignment: .topLeading) {
+                            Text("\(text.isEmpty ? placeholder : "")")
+                                .foregroundColor(.gray)
+                                .padding(.top, 8)
+                                .padding(.leading, 5)
                             TextEditor(text: $text)
                                 .cornerRadius(20)
-                            if text.isEmpty {
-                                Text("\(placeholder)")
-                                    .foregroundColor(.gray)
-                                    .padding(.top, 8)
-                                    .padding(.leading, 5)
-                            }
+                                .background(.clear)
                         }
                     }
                     .padding(.top, 15)

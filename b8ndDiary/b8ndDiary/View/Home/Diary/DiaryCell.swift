@@ -28,9 +28,13 @@ struct DiaryCell: View {
                             .lineLimit(4)
                             .foregroundColor(Colors.Black1.color)
                         Spacer()
-//                        Text("\(userName)")
-//                            .font(.system(size: 8))
-//                            .frame(width: 20, height: 10)
+                        HStack {
+                            Spacer()
+                            Text("\(userName)")
+                                .font(.system(size: 8))
+                                .frame(width: 42, height: 10)
+                                .foregroundColor(Colors.Blue5.color)
+                        }
                     }
                     .frame(width: 140, height: 140)
                     .multilineTextAlignment(.leading)

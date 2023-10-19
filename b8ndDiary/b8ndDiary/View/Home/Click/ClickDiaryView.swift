@@ -11,8 +11,11 @@ struct ClickDiaryView: View {
     
     @Binding var isClicked: Bool
     @Binding var clickedContent: String
+    @State var test: Bool = false
+    @State var userName: String = "오스트랄로피테쿠스아파렌시스"
     
     var body: some View {
+        
         ZStack {
             
             Button {
@@ -34,30 +37,23 @@ struct ClickDiaryView: View {
                     .frame(width: 327, height: 319)
                     .overlay {
                         VStack {
-                            HStack {
-                                Button {
-                                    
-                                } label: {
-                                    Text("수정")
-                                        .foregroundColor(Colors.Gray3.color)
-                                }
-                                
-                                Button {
-                                    
-                                } label: {
-                                    Text("삭제")
-                                        .foregroundColor(Colors.Gray3.color)
-                                }
+                            NavigationLink {
+                                ProfileView()
+                            } label: {
+                                Text("\(userName)")
+                                    .font(.system(size: 12))
+                                    .frame(width: 100, height: 26)
+                                    .foregroundColor(Colors.Blue5.color)
+                                    .padding(.leading, 220)
+                                    .padding(.top, 20)
                             }
-                            .padding(.leading, 220)
-                            .padding(.top, 30)
+                            
                             Spacer()
                         }
                     }
                 Spacer()
                 Spacer()
             }
-            
         }
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.all)
