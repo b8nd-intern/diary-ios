@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45DC77992AD615EC00A7DAA4 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77982AD615EC00A7DAA4 /* Color+Ext.swift */; };
-		45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77982AD615EC00A7DAA4 /* Color+ext.swift */; };
 		45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */; };
 		45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */; };
 		45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */; };
@@ -46,6 +44,8 @@
 		D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7F82AD80D3F00C0A6BD /* FrameModifier.swift */; };
 		D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */; };
 		D736C8032AD81E0F00C0A6BD /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */; };
+		D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771E9F72AE142DB007E3EB6 /* Color+Ext.swift */; };
+		D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771E9F92AE1444A007E3EB6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +66,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		45DC77982AD615EC00A7DAA4 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		45DC77982AD615EC00A7DAA4 /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
 		45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButtonView.swift; sourceTree = "<group>"; };
 		45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollView.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 		45DC77C52AD8124A00A7DAA4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		45DC77C62AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
-		45DC77D12AD812F600A7DAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b8ndDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryApp.swift; sourceTree = "<group>"; };
 		4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +106,8 @@
 		D736C7F82AD80D3F00C0A6BD /* FrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModifier.swift; sourceTree = "<group>"; };
 		D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
+		D771E9F72AE142DB007E3EB6 /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		D771E9F92AE1444A007E3EB6 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,9 +217,9 @@
 		4DDF8ACD2ACD8711003516A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D771E9F92AE1444A007E3EB6 /* HomeView.swift */,
 				D736C7EC2AD80B7D00C0A6BD /* Elements */,
 				D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */,
-				4DFEB17E2ACD954E00343927 /* HomeView.swift */,
 				45DC779C2AD6B42A00A7DAA4 /* Toolbar */,
 				45DC77A02AD6B45000A7DAA4 /* HScrollView */,
 				45DC77A32AD6B48500A7DAA4 /* Day */,
@@ -274,8 +273,6 @@
 			children = (
 				D736C7FA2AD80D4700C0A6BD /* Common */,
 				D736C7F72AD80D3100C0A6BD /* Extensions */,
-				45DC77D12AD812F600A7DAA4 /* Info.plist */,
-				45DC77982AD615EC00A7DAA4 /* Color+ext.swift */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
 				4D3409FF2ABD502D00B465FF /* Data */,
@@ -348,7 +345,7 @@
 		D736C7F72AD80D3100C0A6BD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				45DC77982AD615EC00A7DAA4 /* Color+Ext.swift */,
+				D771E9F72AE142DB007E3EB6 /* Color+Ext.swift */,
 				D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */,
 			);
 			path = Extensions;
@@ -507,17 +504,16 @@
 				D736C7EB2AD80B7400C0A6BD /* DiaryModel.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
 				D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */,
-				45DC77992AD615EC00A7DAA4 /* Color+Ext.swift in Sources */,
 				D736C8032AD81E0F00C0A6BD /* HomeViewTest.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
 				45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */,
 				45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */,
+				D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
-				45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */,
-				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
 				45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */,
+				D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
 				D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
@@ -690,7 +686,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = b8ndDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -719,7 +714,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = b8ndDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
