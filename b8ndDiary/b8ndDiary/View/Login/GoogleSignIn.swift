@@ -76,7 +76,10 @@ struct GoogleSignIn: View {
                 isAlert = true
                 return
             }
-            print(result.user)
+            guard let idToken = signInResult?.user.idToken?.tokenString else {
+                return
+            }
+            print(idToken)
             guard let profile = result.user.profile else { return }
             let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
             userData = data
