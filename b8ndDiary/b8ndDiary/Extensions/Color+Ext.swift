@@ -18,6 +18,7 @@ extension Color {
 }
 
 enum Colors {
+    case red1
     case Black1
     case Blue1
     case Blue2
@@ -31,6 +32,8 @@ enum Colors {
     
     var color: Color {
         switch self {
+        case .red1:
+            return Color(0xCE0000)
         case .Black1:
             return Color(0x000000)
         case .Blue1:

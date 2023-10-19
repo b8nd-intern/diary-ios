@@ -8,6 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		45DC77992AD615EC00A7DAA4 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77982AD615EC00A7DAA4 /* Color+Ext.swift */; };
+		45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77982AD615EC00A7DAA4 /* Color+ext.swift */; };
+		45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */; };
+		45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */; };
+		45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */; };
+		45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A42AD6B49300A7DAA4 /* DayView.swift */; };
+		45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */; };
+		45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */; };
+		45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */; };
+		45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */; };
+		45DC77C82AD8124B00A7DAA4 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77BF2AD8124900A7DAA4 /* Pretendard-Bold.otf */; };
+		45DC77C92AD8124B00A7DAA4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C02AD8124900A7DAA4 /* Pretendard-SemiBold.otf */; };
+		45DC77CA2AD8124B00A7DAA4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C12AD8124A00A7DAA4 /* Pretendard-Thin.otf */; };
+		45DC77CB2AD8124B00A7DAA4 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C22AD8124A00A7DAA4 /* Pretendard-Light.otf */; };
+		45DC77CC2AD8124B00A7DAA4 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C32AD8124A00A7DAA4 /* Pretendard-ExtraLight.otf */; };
+		45DC77CD2AD8124B00A7DAA4 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C42AD8124A00A7DAA4 /* Pretendard-Black.otf */; };
+		45DC77CE2AD8124B00A7DAA4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C52AD8124A00A7DAA4 /* Pretendard-Regular.otf */; };
+		45DC77CF2AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C62AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf */; };
+		45DC77D02AD8124B00A7DAA4 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */; };
 		4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */; };
 		4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */; };
 		4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */; };
@@ -49,6 +67,25 @@
 
 /* Begin PBXFileReference section */
 		45DC77982AD615EC00A7DAA4 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		45DC77982AD615EC00A7DAA4 /* Color+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ext.swift"; sourceTree = "<group>"; };
+		45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButtonView.swift; sourceTree = "<group>"; };
+		45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollView.swift; sourceTree = "<group>"; };
+		45DC77A42AD6B49300A7DAA4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryView.swift; sourceTree = "<group>"; };
+		45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
+		45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickCell.swift; sourceTree = "<group>"; };
+		45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickDiaryView.swift; sourceTree = "<group>"; };
+		45DC77BF2AD8124900A7DAA4 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		45DC77C02AD8124900A7DAA4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		45DC77C12AD8124A00A7DAA4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		45DC77C22AD8124A00A7DAA4 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		45DC77C32AD8124A00A7DAA4 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		45DC77C42AD8124A00A7DAA4 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		45DC77C52AD8124A00A7DAA4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		45DC77C62AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		45DC77D12AD812F600A7DAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b8ndDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryApp.swift; sourceTree = "<group>"; };
 		4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +136,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45DC779C2AD6B42A00A7DAA4 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
+		45DC77A02AD6B45000A7DAA4 /* HScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */,
+			);
+			path = HScrollView;
+			sourceTree = "<group>";
+		};
+		45DC77A32AD6B48500A7DAA4 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77A42AD6B49300A7DAA4 /* DayView.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		45DC77A62AD6B4A000A7DAA4 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */,
+				45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		45DC77AD2AD6B4FB00A7DAA4 /* Click */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77B02AD6B51900A7DAA4 /* ClickDiaryView.swift */,
+				45DC77AE2AD6B50700A7DAA4 /* ClickCell.swift */,
+			);
+			path = Click;
+			sourceTree = "<group>";
+		};
+		45DC77BE2AD8122C00A7DAA4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				45DC77C42AD8124A00A7DAA4 /* Pretendard-Black.otf */,
+				45DC77BF2AD8124900A7DAA4 /* Pretendard-Bold.otf */,
+				45DC77C62AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf */,
+				45DC77C32AD8124A00A7DAA4 /* Pretendard-ExtraLight.otf */,
+				45DC77C22AD8124A00A7DAA4 /* Pretendard-Light.otf */,
+				45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */,
+				45DC77C52AD8124A00A7DAA4 /* Pretendard-Regular.otf */,
+				45DC77C02AD8124900A7DAA4 /* Pretendard-SemiBold.otf */,
+				45DC77C12AD8124A00A7DAA4 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4D3409FE2ABD502700B465FF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +220,12 @@
 			children = (
 				D736C7EC2AD80B7D00C0A6BD /* Elements */,
 				D736C8022AD81E0F00C0A6BD /* HomeViewTest.swift */,
+				4DFEB17E2ACD954E00343927 /* HomeView.swift */,
+				45DC779C2AD6B42A00A7DAA4 /* Toolbar */,
+				45DC77A02AD6B45000A7DAA4 /* HScrollView */,
+				45DC77A32AD6B48500A7DAA4 /* Day */,
+				45DC77A62AD6B4A000A7DAA4 /* Diary */,
+				45DC77AD2AD6B4FB00A7DAA4 /* Click */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -141,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFEB17A2ACD954100343927 /* PostView.swift */,
+				45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -148,6 +250,7 @@
 		4DF4F3D92ABC5A1B00D66126 = {
 			isa = PBXGroup;
 			children = (
+				45DC77BE2AD8122C00A7DAA4 /* Fonts */,
 				4DF4F3E42ABC5A1B00D66126 /* b8ndDiary */,
 				4DF4F3F52ABC5A1D00D66126 /* b8ndDiaryTests */,
 				4DF4F3FF2ABC5A1D00D66126 /* b8ndDiaryUITests */,
@@ -171,6 +274,8 @@
 			children = (
 				D736C7FA2AD80D4700C0A6BD /* Common */,
 				D736C7F72AD80D3100C0A6BD /* Extensions */,
+				45DC77D12AD812F600A7DAA4 /* Info.plist */,
+				45DC77982AD615EC00A7DAA4 /* Color+ext.swift */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */,
 				4D3409FF2ABD502D00B465FF /* Data */,
@@ -361,8 +466,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DC77CC2AD8124B00A7DAA4 /* Pretendard-ExtraLight.otf in Resources */,
 				4DF4F3ED2ABC5A1C00D66126 /* Preview Assets.xcassets in Resources */,
+				45DC77CF2AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf in Resources */,
+				45DC77CA2AD8124B00A7DAA4 /* Pretendard-Thin.otf in Resources */,
+				45DC77C82AD8124B00A7DAA4 /* Pretendard-Bold.otf in Resources */,
+				45DC77CE2AD8124B00A7DAA4 /* Pretendard-Regular.otf in Resources */,
 				4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */,
+				45DC77C92AD8124B00A7DAA4 /* Pretendard-SemiBold.otf in Resources */,
+				45DC77CD2AD8124B00A7DAA4 /* Pretendard-Black.otf in Resources */,
+				45DC77CB2AD8124B00A7DAA4 /* Pretendard-Light.otf in Resources */,
+				45DC77D02AD8124B00A7DAA4 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +501,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */,
+				45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */,
 				4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */,
 				D736C7EB2AD80B7400C0A6BD /* DiaryModel.swift in Sources */,
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
@@ -394,13 +510,22 @@
 				45DC77992AD615EC00A7DAA4 /* Color+Ext.swift in Sources */,
 				D736C8032AD81E0F00C0A6BD /* HomeViewTest.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
+				45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */,
+				45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */,
+				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
+				45DC77992AD615EC00A7DAA4 /* Color+ext.swift in Sources */,
+				4DFEB17F2ACD954E00343927 /* HomeView.swift in Sources */,
+				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
+				45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
 				D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
 				D736C7F22AD80BDA00C0A6BD /* PrettyHScrollView.swift in Sources */,
 				D736C7F02AD80BA500C0A6BD /* DiaryView.swift in Sources */,
+				45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
+				45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
 				D736C7E62AD80B0F00C0A6BD /* PagingScrollView.swift in Sources */,
 			);
@@ -565,6 +690,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = b8ndDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,6 +719,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = b8ndDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
