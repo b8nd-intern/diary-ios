@@ -85,12 +85,12 @@ struct PostView: View {
                                 if emojiState {
                                     RoundedRectangle(cornerRadius: 16)
                                         .foregroundColor(.white)
-                                        .frame(width: 260, height: 52)
+                                        .frame(width: 240, height: 52)
                                         .overlay {
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 16)
                                                     .stroke(Colors.Blue4.color, lineWidth: 1)
-                                                    .frame(width: 260, height: 52)
+                                                    .frame(width: 240, height: 52)
                                                 HStack {
                                                     ForEach(emojiList, id: \.self) { emojiName in
                                                         Button {
