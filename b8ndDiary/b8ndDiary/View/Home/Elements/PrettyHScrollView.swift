@@ -127,6 +127,7 @@ struct PrettyHScrollView: View {
             }
         }
         .onAppear {
+            stopTimer()
             startTimer()
         }
         //    }
