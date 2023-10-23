@@ -73,7 +73,7 @@ struct PostView: View {
                             ZStack {
                                 HStack {
                                     Button {
-                                        emojiState = true
+                                        emojiState.toggle()
                                     } label: {
                                         Image(selectedEmoji)
                                             .resizable()
@@ -171,7 +171,8 @@ struct PostView: View {
                         // 일기 내용 저장?
                         dismiss()
                     } label: {
-                        Image(systemName: "xmark")
+//                        Image(systemName: "xmark")
+                        Image(systemName: "chevron.left")
                             .frame(width: 22, height: 22)
                             .foregroundColor(Colors.Black1.color)
                     }

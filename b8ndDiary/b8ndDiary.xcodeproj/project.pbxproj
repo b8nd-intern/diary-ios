@@ -24,6 +24,7 @@
 		45DC77CE2AD8124B00A7DAA4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C52AD8124A00A7DAA4 /* Pretendard-Regular.otf */; };
 		45DC77CF2AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C62AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf */; };
 		45DC77D02AD8124B00A7DAA4 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */; };
+		45E996A82AE689E000F3CDFF /* UINavigationController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E996A72AE689E000F3CDFF /* UINavigationController + Ext.swift */; };
 		4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */; };
 		4DF4F3E82ABC5A1B00D66126 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */; };
 		4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		45DC77C52AD8124A00A7DAA4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		45DC77C62AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		45E996A72AE689E000F3CDFF /* UINavigationController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Ext.swift"; sourceTree = "<group>"; };
 		4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b8ndDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryApp.swift; sourceTree = "<group>"; };
 		4DF4F3E72ABC5A1B00D66126 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			children = (
 				D771E9F72AE142DB007E3EB6 /* Color+Ext.swift */,
 				D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */,
+				45E996A72AE689E000F3CDFF /* UINavigationController + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
 				D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */,
+				45E996A82AE689E000F3CDFF /* UINavigationController + Ext.swift in Sources */,
 				4DFEB17D2ACD954500343927 /* SettingView.swift in Sources */,
 				D736C7F22AD80BDA00C0A6BD /* PrettyHScrollView.swift in Sources */,
 				D736C7F02AD80BA500C0A6BD /* DiaryView.swift in Sources */,
@@ -684,6 +688,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
+				DEVELOPMENT_TEAM = 88BPYM8C62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -712,6 +717,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
+				DEVELOPMENT_TEAM = 88BPYM8C62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -739,6 +745,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88BPYM8C62;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -758,6 +765,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88BPYM8C62;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -776,6 +784,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88BPYM8C62;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestswlkh0310.b8ndDiaryUITests;
@@ -793,6 +802,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88BPYM8C62;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestswlkh0310.b8ndDiaryUITests;
