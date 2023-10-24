@@ -18,6 +18,7 @@ struct ClickDiaryView: View {
         
         ZStack {
             
+            
             Button {
                 isClicked = false
             } label: {
