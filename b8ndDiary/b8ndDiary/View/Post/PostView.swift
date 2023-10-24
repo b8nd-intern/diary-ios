@@ -31,7 +31,7 @@ struct PostView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(spacing: 0) {
+                VStack {
                     // 공개 비공개
                     HStack {
                         // 공개
@@ -127,46 +127,43 @@ struct PostView: View {
                     Spacer()
                     
                     // 일기 작성
-                    ZStack {
-                        
-                        HStack {
-                            // 미리보기 포스트잇 색 설정
-                            ForEach(backgroundColorList, id: \.self) { color in
+                    VStack {
+                        ZStack {
+                            HStack {
+                                // 미리보기 포스트잇 색 설정
+                                ForEach(backgroundColorList, id: \.self) { color in
+                                    Button {
+                                        backgroundColor = color
+                                    } label: {
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(color)
+                                    }
+                                }
+                                
+                                Spacer()
+                                
                                 Button {
-                                    backgroundColor = color
+                                    dismiss()
                                 } label: {
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .frame(width: 20, height: 20)
-                                        .foregroundColor(color)
+                                    Text("올리기")
+                                        .foregroundColor(Colors.Blue4.color)
+                                        .frame(width: 65, height: 33)
+                                        .background(Colors.Blue1.color)
+                                        .cornerRadius(20)
                                 }
                             }
-                            
-                            Spacer()
-                            
-                            Button {
-                                dismiss()
-                            } label: {
-                                Text("올리기")
-                                    .foregroundColor(Colors.Blue4.color)
-                                    .frame(width: 65, height: 33)
-                                    .background(Colors.Blue1.color)
-                                    .cornerRadius(20)
-                            }
+                            .padding(.horizontal, 15)
+                            .padding(.bottom, 30)
                         }
-                        .padding(.horizontal, 15)
+                        .frame(height: 100)
+                        .background(Color.white)
+                        .cornerRadius(30, corners: [.topRight, .topLeft])
+                        .ignoresSafeArea(.all)
+                        .padding(.bottom, -30)
                         
                     }
-                    .frame(height: 70)
-                    .background(Color.white)
-                    .cornerRadius(30, corners: .topRight)
-                    .cornerRadius(30, corners: .topLeft)
-                    
-//                    Rectangle()
-//                        .foregroundStyle(.white)
-//                        .ignoresSafeArea(.all)
-                                        
                 }
-                
             }
             .background(Colors.Gray1.color)
             .toolbar {
