@@ -53,7 +53,6 @@ struct PrettyHScrollView: View {
                 if !isScrolling {
                     self.activePageIndex.wrappedValue += 1
                 }
-                print(isScrolling)
             }
         }
     }
