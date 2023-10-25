@@ -22,7 +22,7 @@ struct ShowDiaryView: View {
     ]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
+        LazyVGrid(columns: columns, spacing: 15) {
             ForEach(diaryContent, id: \.self) { content in
                 Button {
                     isClicked = true
