@@ -35,7 +35,7 @@ struct MyPageView: View {
     // 화면 종료
     @Environment(\.dismiss) private var dismiss
     // 유저 데이터 바인딩
-    @Binding var userData:UserData
+    var userData:UserData
     
     var body: some View {
         
@@ -201,6 +201,6 @@ struct MyPageView: View {
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView(userData: .constant(UserData(url: nil, name: "이름", email: "이메일")))
+        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
     }
 }

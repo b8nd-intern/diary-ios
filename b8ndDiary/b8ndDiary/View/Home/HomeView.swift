@@ -15,6 +15,8 @@ struct HomeView: View {
     // 일기 내용 가져올 때 사용되는 변수
     @State var day: Int = 0
     
+    let userData: UserData
+    
     @State var diaryContent: String = "오늘은 개발을 했다." // 가로 스크롤 뷰 일기 내용
     @State var name: String = "이예진" // 사용자 이름
     
@@ -24,7 +26,7 @@ struct HomeView: View {
                 ZStack {
                     VStack {
                         HStack { // 툴바
-                            ToolbarView()
+                            ToolbarView(userData: userData)
                         }
                         .padding(.horizontal, 20)
                         
@@ -37,9 +39,6 @@ struct HomeView: View {
                                     Spacer()
                                 }
                                 .padding(.top, 5)
-                                
-                                // 가로 스크롤뷰
-                                //                            HScrollView(diaryContent: $diaryContent)
                                 
                                 PrettyHScrollView(cards: [
                                     DiaryModel(id: UUID(), text: "오늘도 바인드를 회의를 했는데오늘도 바인드를 회의를 했는데오늘도 바인드를 회의를 했는데오늘도 바인드를 회의를 했는데 이번 아이디어가 매우 좋은 것 같아서 기쁘다. 항상 열심히 아이디어 내주는 모습이 멋지고 더 노력 하게 만들어주어 고맙다! ...", color: Colors.Blue1.color, image: "Image"),
@@ -91,6 +90,8 @@ struct HomeView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 

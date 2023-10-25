@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ToolbarView: View {
+    
+    let userData: UserData
+    
     var body: some View {
         Text("Daily")
             .font(.system(size: 18))
@@ -16,7 +19,7 @@ struct ToolbarView: View {
         Spacer()
         
         NavigationLink {
-            // 설정
+            Setting()
         } label: {
             Image(systemName: "gearshape")
                 .font(.system(size: 18))
@@ -24,7 +27,7 @@ struct ToolbarView: View {
         }
         
         NavigationLink {
-            // 프로필
+            MyPageView(userData: userData)
         } label: {
             Image(systemName: "person.crop.circle")
                 .font(.system(size: 18))

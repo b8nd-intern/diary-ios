@@ -68,10 +68,3 @@ struct YearCalendar: View {
 }
 
 
-
-
-struct YearCalendar_Previews: PreviewProvider {
-    static var previews: some View {
-        MyPageView(userData: .constant(UserData(url: nil, name: "이름", email: "이메일")))
-    }
-}
