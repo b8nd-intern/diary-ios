@@ -38,7 +38,7 @@ struct GoogleSignIn: View {
                 .frame(width: 300, height: 60, alignment: .center)
                 .padding(20)
             }
-            .navigationDestination(isPresented: $isLogined, destination: { MyPageView(userData: $userData) })
+            .navigationDestination(isPresented: $isLogined, destination: { HomeView(userData: userData) })
         }
         .onAppear(perform: {
             // 로그인 상태 체크
@@ -50,6 +50,7 @@ struct GoogleSignIn: View {
             Text("다시 시도해주세요")
         }
     }
+    
     // 상태 체크
     func checkState() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in

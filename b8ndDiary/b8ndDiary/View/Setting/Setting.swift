@@ -80,7 +80,7 @@ struct Setting: View {
         )
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("프로필")
+                Text("설정")
                     .bold()
                     .foregroundColor(.black)
                     .font(.system(size: 15))

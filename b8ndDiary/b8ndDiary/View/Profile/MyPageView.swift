@@ -17,7 +17,7 @@ struct MyPageView: View {
                     .font(.system(size: 10))
                     .padding(.vertical,3)
                     .foregroundColor(.black)
-                    
+                
                 
             }
             
@@ -31,16 +31,16 @@ struct MyPageView: View {
     let days = ["일", "월", "화", "수", "목", "금","토"]
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
-        @State private var selectedMonth = ""
+    @State private var selectedMonth = ""
     // 화면 종료
     @Environment(\.dismiss) private var dismiss
     // 유저 데이터 바인딩
-    @Binding var userData:UserData
+    var userData:UserData
     
     var body: some View {
         
         
-        NavigationStack{
+//        NavigationStack{
             
             ScrollView(showsIndicators: false){
                 VStack{
@@ -82,7 +82,7 @@ struct MyPageView: View {
                     .padding(.trailing, 170)
                     .padding(.bottom,10)
                     HStack{
-                       
+                        
                         YearCalendar()
                             .padding(.vertical,30)
                             .padding(.horizontal,30)
@@ -186,19 +186,19 @@ struct MyPageView: View {
                 
                 
             }
-        }
-            }
-            
-        }
-        
-        
-        
+//        }
+    }
+    
+}
+
+
+
 
 
 
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView(userData: .constant(UserData(url: nil, name: "이름", email: "이메일")))
+        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
     }
 }
