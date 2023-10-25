@@ -12,19 +12,11 @@ struct ToolbarView: View {
     let userData: UserData
     
     var body: some View {
-        Text("Daily")
+        Text("하루일기")
             .font(.system(size: 18))
             .bold()
         
         Spacer()
-        
-        NavigationLink {
-            Setting()
-        } label: {
-            Image(systemName: "gearshape")
-                .font(.system(size: 18))
-                .foregroundColor(Colors.Black1.color)
-        }
         
         NavigationLink {
             MyPageView(userData: userData)
@@ -33,5 +25,14 @@ struct ToolbarView: View {
                 .font(.system(size: 18))
                 .foregroundColor(Colors.Black1.color)
         }
+        
+        NavigationLink {
+            Setting()
+        } label: {
+            Image(systemName: "gearshape")
+                .font(.system(size: 18))
+                .foregroundColor(Colors.Black1.color)
+        }
+           
     }
 }
