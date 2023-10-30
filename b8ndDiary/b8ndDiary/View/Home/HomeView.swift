@@ -12,10 +12,10 @@ struct HomeView: View {
     @State var isClicked: Bool = false
     @State var clickedContent: String = ""
     
+    let userData: UserData
+    
     // 일기 내용 가져올 때 사용되는 변수
     @State var day: Int = 0
-    
-    let userData: UserData
     
     @State var diaryContent: String = "오늘은 개발을 했다." // 가로 스크롤 뷰 일기 내용
     @State var name: String = "이예진" // 사용자 이름
@@ -85,13 +85,11 @@ struct HomeView: View {
                     
                     // 포스트잇을 클릭하면 일기를 보여주는 코드
                     if isClicked {
-                        ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent)
+                        ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
                     }
                 }
             }
         }
         .navigationBarBackButtonHidden(true)
-
     }
 }
-

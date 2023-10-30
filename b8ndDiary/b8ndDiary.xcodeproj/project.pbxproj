@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */; };
 		45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */; };
-		45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */; };
 		45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A42AD6B49300A7DAA4 /* DayView.swift */; };
 		45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */; };
 		45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */; };
@@ -81,7 +80,6 @@
 /* Begin PBXFileReference section */
 		45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButtonView.swift; sourceTree = "<group>"; };
 		45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
-		45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollView.swift; sourceTree = "<group>"; };
 		45DC77A42AD6B49300A7DAA4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		45DC77A72AD6B4AF00A7DAA4 /* ShowDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryView.swift; sourceTree = "<group>"; };
 		45DC77AB2AD6B4D500A7DAA4 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
@@ -169,14 +167,6 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
-		45DC77A02AD6B45000A7DAA4 /* HScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				45DC77A12AD6B46B00A7DAA4 /* HScrollView.swift */,
-			);
-			path = HScrollView;
-			sourceTree = "<group>";
-		};
 		45DC77A32AD6B48500A7DAA4 /* Day */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +236,6 @@
 				D771E9F92AE1444A007E3EB6 /* HomeView.swift */,
 				D736C7EC2AD80B7D00C0A6BD /* Elements */,
 				45DC779C2AD6B42A00A7DAA4 /* Toolbar */,
-				45DC77A02AD6B45000A7DAA4 /* HScrollView */,
 				45DC77A32AD6B48500A7DAA4 /* Day */,
 				45DC77A62AD6B4A000A7DAA4 /* Diary */,
 				45DC77AD2AD6B4FB00A7DAA4 /* Click */,
@@ -568,7 +557,6 @@
 				4DFEB1812ACD955800343927 /* thisisdata.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
-				45DC77A22AD6B46B00A7DAA4 /* HScrollView.swift in Sources */,
 				7596ADDE2AE68D4E008EBFD8 /* YearCalendar.swift in Sources */,
 				D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,

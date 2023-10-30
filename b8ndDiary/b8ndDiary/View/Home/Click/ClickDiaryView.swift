@@ -14,6 +14,8 @@ struct ClickDiaryView: View {
     @State var test: Bool = false
     @State var userName: String = "오스트랄로피테쿠스아파렌시스"
     
+    let userData: UserData
+    
     var body: some View {
         
         ZStack {
@@ -39,7 +41,7 @@ struct ClickDiaryView: View {
                     .overlay {
                         VStack {
                             NavigationLink {
-                                ProfileView()
+                                MyPageView(userData: userData)
                             } label: {
                                 Text("\(userName)")
                                     .font(.system(size: 12))
