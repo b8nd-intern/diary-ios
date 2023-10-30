@@ -8,6 +8,7 @@
 import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
+import FirebaseMessaging
 
 
 
@@ -15,16 +16,14 @@ struct GoogleSignIn: View {
     // 로그인 상태
     @State private var isLogined = false
     // 유저 데이터
-    @State private var userData:UserData
-    // 팝업용
+    @State private var userData: UserData?
+
     @State private var isAlert = false
     
-    public init(isLogined: Bool = false, userData: UserData) {
-        _isLogined = State(initialValue: isLogined)
-        _userData = State(initialValue: userData)
-    }
+    @State private var idToken = String()
+    
+    @State private var fcmToken = String()
     var body: some View {
-        
         NavigationStack {
             Login()
             Spacer()
@@ -33,12 +32,13 @@ struct GoogleSignIn: View {
                     scheme: .light,
                     style: .wide,
                     action: {
-                        googleLogin()
+                        print(googleLogin())
                     })
                 .frame(width: 300, height: 60, alignment: .center)
                 .padding(20)
             }
-            .navigationDestination(isPresented: $isLogined, destination: { HomeView(userData: userData) })
+            .navigationDestination(isPresented: $isLogined, destination: {HomeView(userData: userData ?? UserData(url: nil, name: "", email: "")) })
+            
         }
         .onAppear(perform: {
             // 로그인 상태 체크
@@ -69,6 +69,7 @@ struct GoogleSignIn: View {
     }
     // 구글 로그인
     func googleLogin() {
+        
         // rootViewController
         guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else { return }
         // 로그인 진행
@@ -80,18 +81,22 @@ struct GoogleSignIn: View {
             guard let idToken = signInResult?.user.idToken?.tokenString else {
                 return
             }
-            print(idToken)
+            
+            Messaging.messaging().token { token, error in
+                           if let error = error {
+                               print("Error fetching FCM token: \(error)")
+                           } else if let token = token {
+                               self.fcmToken = token
+                           }
+                       }
+
+            
             guard let profile = result.user.profile else { return }
             let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
+            
             userData = data
             isLogined = true
+            self.idToken = idToken
         }
-    }
-}
-
-
-struct GoogleSignIn_Previews: PreviewProvider {
-    static var previews: some View {
-        GoogleSignIn(userData: UserData(url: nil, name: "", email: ""))
     }
 }

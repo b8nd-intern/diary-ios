@@ -30,7 +30,7 @@ struct b8ndDiaryApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            GoogleSignIn(userData: UserData(url: nil, name: "", email: ""))
+            GoogleSignIn()
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
@@ -82,6 +82,7 @@ extension AppDelegate: MessagingDelegate {
     
     // 파이어베이스 MessagingDelegate 설정
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        //파이어 베이스 토큰 출력
       print("Firebase registration token: \(String(describing: fcmToken))")
 
       let dataDict: [String: String] = ["token": fcmToken ?? ""]

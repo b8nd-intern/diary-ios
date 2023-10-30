@@ -17,6 +17,8 @@ struct HomeView: View {
     // 일기 내용 가져올 때 사용되는 변수
     @State var day: Int = 0
     
+    let userData: UserData
+    
     @State var diaryContent: String = "오늘은 개발을 했다." // 가로 스크롤 뷰 일기 내용
     @State var name: String = "이예진" // 사용자 이름
     
