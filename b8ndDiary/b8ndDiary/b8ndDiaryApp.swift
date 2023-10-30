@@ -3,7 +3,19 @@
 //  b8ndDiary
 //
 //  Created by dgsw8th71 on 2023/09/21.
+////
 //
+
+//import SwiftUI
+//
+//@main
+//struct b8ndDiaryApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//    }
+//}
 
 import SwiftUI
 import Firebase
@@ -18,7 +30,7 @@ struct b8ndDiaryApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            GoogleSignIn(userData: UserData(url: nil, name: "", email: ""))
+            GoogleSignIn()
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
@@ -70,6 +82,7 @@ extension AppDelegate: MessagingDelegate {
     
     // 파이어베이스 MessagingDelegate 설정
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        //파이어 베이스 토큰 출력
       print("Firebase registration token: \(String(describing: fcmToken))")
 
       let dataDict: [String: String] = ["token": fcmToken ?? ""]

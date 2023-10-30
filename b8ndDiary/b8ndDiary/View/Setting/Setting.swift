@@ -39,7 +39,7 @@ struct Setting: View {
             
             Button {
                 GIDSignIn.sharedInstance.signOut()
-                GoogleSignIn(userData: UserData(url: nil, name: "", email: ""))
+                GoogleSignIn()
                 
             } label: {
                 Label("로그아웃", systemImage: "rectangle.portrait.and.arrow.right")
@@ -80,7 +80,7 @@ struct Setting: View {
         )
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("프로필")
+                Text("설정")
                     .bold()
                     .foregroundColor(.black)
                     .font(.system(size: 15))
