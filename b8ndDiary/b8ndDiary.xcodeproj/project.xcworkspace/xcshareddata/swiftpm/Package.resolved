@@ -21,7 +21,11 @@
     {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
+<<<<<<< HEAD
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
+=======
+      "location" : "https://github.com/firebase/firebase-ios-sdk",
+>>>>>>> Yc
       "state" : {
         "revision" : "837d4af6ead57cec1fc38007892500d3139c7556",
         "version" : "10.16.0"
@@ -77,8 +81,13 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
+<<<<<<< HEAD
         "revision" : "d415594121c9e8a4f9d79cecee0965cf35e74dbd",
         "version" : "3.1.1"
+=======
+        "revision" : "5ccda3981422a84186387dbb763ba739178b529c",
+        "version" : "2.3.0"
+>>>>>>> Yc
       }
     },
     {
