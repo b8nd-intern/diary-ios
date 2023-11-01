@@ -28,6 +28,8 @@ struct MyPageView: View {
     
     @State var date = Date()
     
+    @State var PageNumber : Int = 520
+    
     let days = ["일", "월", "화", "수", "목", "금","토"]
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
@@ -37,9 +39,12 @@ struct MyPageView: View {
     // 유저 데이터 바인딩
     var userData:UserData
     
+    @State private var selectedYear = "2023년"
+    
+    
+    let yesrs = ["2023년", "2024년", "2025년"]
+    
     var body: some View {
-        
-        
         NavigationStack{
             ScrollView(showsIndicators: false){
                 VStack{
@@ -101,17 +106,27 @@ struct MyPageView: View {
                         HStack{
                             Text("작성글")
                                 .font(.system(size: 20))
-                                .padding(.trailing , 210 )
-                            
-                            DatePicker(
-                                "Start Date",
-                                selection: $date,
-                                displayedComponents: [.date]
+                                .padding(.trailing , 110 )
+                            VStack{
+                                Text("총 \(PageNumber)장")
+                                    .font(Font.custom("Pretendard", size: 12))
+                                    .kerning(0.1)
+                                    .foregroundColor(Color(red: 0.29, green: 0.33, blue: 0.41))
+                                    .padding(.trailing, 43)
+                                    .offset(x:7,y:10)
+                                
+                                Picker("Choose", selection: $selectedYear) {
+                                    ForEach(yesrs, id: \.self) {
+                                        Text($0)
+                                    }
+                                }
+                            }
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .inset(by: 0.5)
+                                    .stroke(Color(red: 0, green: 0.52, blue: 0.93), lineWidth: 1)
                             )
-                            .datePickerStyle(.compact)
-                            .cornerRadius(15)
-                            .frame(width: 5, height: 5)
-                            .padding(.trailing, 40)
+                            .padding(.leading,70)
                             
                         }
                         .padding(10)
