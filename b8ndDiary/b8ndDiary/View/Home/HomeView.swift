@@ -48,14 +48,11 @@ struct HomeView: View {
             NavigationView {
                 ZStack {
                     VStack {
-                        HStack { // 툴바
-                            ToolbarView(scrolling: $viewModel.offset, userData: userData)
-                        }
-                        .padding(.horizontal, 20)
                         
                         ScrollViewReader { proxy in
                             ScrollView(showsIndicators: false) {
                                 VStack {
+                                    scrollObservableView
                                     HStack {
                                         Text("오늘 하루의\n기록을 쌓아보세요!")
                                             .font(.system(size: 20))
@@ -93,44 +90,37 @@ struct HomeView: View {
                                         DayView(day: $day)
                                     }
                                     
-                                    scrollObservableView
-                                    
                                     Divider()
                                         .padding(.horizontal, 50)
-
-//                                    ZStack {
-////                                        if viewModel.offset < 80 {
-////                                        }
-//                                        if isTextAnimation && viewModel.offset >= 80 {
-//                                            HStack {
-//                                                VStack(alignment: .leading) {
-//                                                    Text("오늘의 글")
-//                                                    Text("2023년 10월 31일")
-//                                                        .font(.system(size: 12))
-//                                                        .foregroundStyle(Colors.Gray2.color)
-//                                                }
-//                                                .padding(.leading, 40)
-//                                                .padding(.top, 30)
-//                                                .offset(y: isTextAnimation ? 0 : -100)
-//                                                
-//                                                Spacer()
-//                                            }
-//                                        }
-//                                    }
                                     
                                     Spacer()
-                                        .frame(height: 30)
+                                        .frame(height: 40)
                                     
-                                    // 일기 띄우기
-                                    ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day)
-                                        .padding(.horizontal, 40)
+                                    ZStack {
+                                        // 일기 띄우기
+                                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day)
+                                            .padding(.horizontal, 40)
+                                    }
                                     
                                 }
                             }
+                            .padding(.top, 30)
                             .onPreferenceChange(ScrollOffsetKey.self) {
                                 viewModel.setOffset($0)
                             }
                         }
+                    }
+                    
+                    VStack {
+                        HStack { // 툴바
+                            ToolbarView(scrolling: $viewModel.offset, userData: userData)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 60)
+                        .background(.white)
+                        .ignoresSafeArea(.all)
+                        
+                        Spacer()
                     }
                     
                     // 일기 작성 뷰로 넘어가는 코드
