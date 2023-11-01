@@ -25,6 +25,7 @@
 		45DC77D02AD8124B00A7DAA4 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45DC77C72AD8124B00A7DAA4 /* Pretendard-Medium.otf */; };
 		45E996A82AE689E000F3CDFF /* UINavigationController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E996A72AE689E000F3CDFF /* UINavigationController + Ext.swift */; };
 		45E996AA2AE73A8600F3CDFF /* CornerRadius+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E996A92AE73A8600F3CDFF /* CornerRadius+Ext.swift */; };
+		45E997432AF26E6F00F3CDFF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 45E997422AF26E6F00F3CDFF /* Alamofire */; };
 		4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */; };
 		4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */; };
 		4DF4F3ED2ABC5A1C00D66126 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3EC2ABC5A1C00D66126 /* Preview Assets.xcassets */; };
@@ -137,6 +138,7 @@
 				7596ADF12AE68FCD008EBFD8 /* FirebaseMessaging in Frameworks */,
 				7596ADEE2AE68F23008EBFD8 /* GoogleSignInSwift in Frameworks */,
 				7596ADE92AE68EEF008EBFD8 /* FirebaseAuth in Frameworks */,
+				45E997432AF26E6F00F3CDFF /* Alamofire in Frameworks */,
 				7596ADF32AE68FE5008EBFD8 /* FirebaseAnalytics in Frameworks */,
 				7596ADEC2AE68F23008EBFD8 /* GoogleSignIn in Frameworks */,
 			);
@@ -412,6 +414,7 @@
 				7596ADED2AE68F23008EBFD8 /* GoogleSignInSwift */,
 				7596ADF02AE68FCD008EBFD8 /* FirebaseMessaging */,
 				7596ADF22AE68FE5008EBFD8 /* FirebaseAnalytics */,
+				45E997422AF26E6F00F3CDFF /* Alamofire */,
 			);
 			productName = b8ndDiary;
 			productReference = 4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */;
@@ -488,6 +491,7 @@
 			packageReferences = (
 				7596ADE72AE68EEF008EBFD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7596ADEA2AE68F23008EBFD8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				45E997412AF26E6F00F3CDFF /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 4DF4F3E32ABC5A1B00D66126 /* Products */;
 			projectDirPath = "";
@@ -905,6 +909,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		45E997412AF26E6F00F3CDFF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		7596ADE72AE68EEF008EBFD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -924,6 +936,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		45E997422AF26E6F00F3CDFF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E997412AF26E6F00F3CDFF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		7596ADE82AE68EEF008EBFD8 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7596ADE72AE68EEF008EBFD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
