@@ -49,7 +49,7 @@ struct HomeView: View {
                 ZStack {
                     VStack {
                         HStack { // 툴바
-                            ToolbarView(userData: userData)
+                            ToolbarView(scrolling: $viewModel.offset, userData: userData)
                         }
                         .padding(.horizontal, 20)
                         
@@ -98,38 +98,25 @@ struct HomeView: View {
                                     Divider()
                                         .padding(.horizontal, 50)
 
-                                    ZStack {
-                                        if viewModel.offset < 80 {
-                                            HStack {
-                                                VStack(alignment: .leading) {
-                                                    Text("오늘의 글")
-                                                    Text("2023년 10월 31일")
-                                                        .font(.system(size: 12))
-                                                        .foregroundStyle(Colors.Gray2.color)
-                                                }
-                                                .padding(.leading, 40)
-                                                .padding(.top, 30)
-                                                .offset(y: isTextAnimation ? 0 : -100)
-                                                
-                                                Spacer()
-                                            }
-                                        }
-                                        if isTextAnimation && viewModel.offset >= 80 {
-                                            HStack {
-                                                VStack(alignment: .leading) {
-                                                    Text("오늘의 글")
-                                                    Text("2023년 10월 31일")
-                                                        .font(.system(size: 12))
-                                                        .foregroundStyle(Colors.Gray2.color)
-                                                }
-                                                .padding(.leading, 40)
-                                                .padding(.top, 30)
-                                                .offset(y: isTextAnimation ? 0 : -100)
-                                                
-                                                Spacer()
-                                            }
-                                        }
-                                    }
+//                                    ZStack {
+////                                        if viewModel.offset < 80 {
+////                                        }
+//                                        if isTextAnimation && viewModel.offset >= 80 {
+//                                            HStack {
+//                                                VStack(alignment: .leading) {
+//                                                    Text("오늘의 글")
+//                                                    Text("2023년 10월 31일")
+//                                                        .font(.system(size: 12))
+//                                                        .foregroundStyle(Colors.Gray2.color)
+//                                                }
+//                                                .padding(.leading, 40)
+//                                                .padding(.top, 30)
+//                                                .offset(y: isTextAnimation ? 0 : -100)
+//                                                
+//                                                Spacer()
+//                                            }
+//                                        }
+//                                    }
                                     
                                     Spacer()
                                         .frame(height: 30)
@@ -159,15 +146,6 @@ struct HomeView: View {
                     if isClicked {
                         ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
                     }
-                }
-            }
-        }
-        .onChange(of: offset) { i in
-            withAnimation(.easeInOut(duration: 0.5)) {
-                if i < 80 {
-                    isTextAnimation = true
-                } else {
-                    isTextAnimation = false
                 }
             }
         }
