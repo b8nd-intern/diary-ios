@@ -100,3 +100,6 @@ struct GoogleSignIn: View {
         }
     }
 }
+#Preview {
+    GoogleSignIn()
+}

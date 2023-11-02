@@ -11,6 +11,7 @@ import Firebase
 
 struct Setting: View {
     @Environment(\.presentationMode) var presentationMode
+        @Environment(\.dismiss) private var dismiss
     
     @State var lighton : Bool = false
     @State var LogOut : Bool = false
@@ -30,16 +31,14 @@ struct Setting: View {
                     Label("알람설정", systemImage: "bell")
                 }
             }
-            .toggleStyle(SwitchToggleStyle(tint: .blue)) //토글 색 지정
-    //        .toggleStyle(.switch)
-    //        .tint(.pink)
-            //위와 같은 또 다른 방법
+            .toggleStyle(SwitchToggleStyle(tint: .blue)) //토글 색 지정            //위와 같은 또 다른 방법
             .padding(.horizontal,30)
             .padding(.vertical, 20)
             
             Button {
                 GIDSignIn.sharedInstance.signOut()
-                GoogleSignIn()
+                dismiss()
+//                GoogleSignIn()
                 
             } label: {
                 Label("로그아웃", systemImage: "rectangle.portrait.and.arrow.right")

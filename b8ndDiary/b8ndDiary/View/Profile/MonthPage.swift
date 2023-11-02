@@ -5,10 +5,14 @@
 //  Created by dgsw8th61 on 2023/10/06.
 //
 import SwiftUI
+import GoogleSignIn
 
 struct MonthPage: View {
     var selectedMonth: String
+    
     @Environment(\.presentationMode) var presentationMode
+    
+
         var body: some View {
             VStack{
                 Text( "\(selectedMonth)")
@@ -34,6 +38,11 @@ struct MonthPage: View {
   
                     }
             )
+            
+//            func logout(){
+//                GIDSignIn.sharedInstance.signOut()
+//                dismiss()
+//            }
         }
     }
 
