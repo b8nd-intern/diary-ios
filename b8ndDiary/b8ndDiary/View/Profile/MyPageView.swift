@@ -56,7 +56,7 @@ struct MyPageView: View {
                             .cornerRadius(50)
                             .overlay {
                                 Circle().stroke(.white, lineWidth: 2)
-                            }.shadow(radius: 5)
+                            }
                             .padding(EdgeInsets(top: 60, leading: 0, bottom: 0, trailing: 0))
                             .overlay(
                                 ZStack {
