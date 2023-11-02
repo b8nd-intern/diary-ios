@@ -33,22 +33,6 @@ struct MonthPage: View {
                         Spacer()
   
                     }
-
-//                    HStack(spacing: 16) {
-//                        NavigationLink(destination: MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))) {
-//                            Image(systemName: "person.circle")
-//                                .foregroundColor(.black)
-//                            
-//                            
-//                        }
-                        
-//                        NavigationLink(destination: Setting()) {
-//                            Image(systemName: "gearshape")
-//                                .foregroundColor(.black)
-//                        }
-                        
-                    
-                    
             )
         }
     }
