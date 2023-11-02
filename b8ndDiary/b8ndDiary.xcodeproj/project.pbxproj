@@ -29,6 +29,8 @@
 		45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997502AF3B61F00F3CDFF /* HttpClient.swift */; };
 		45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997522AF3B63E00F3CDFF /* HttpRequest.swift */; };
 		45E997552AF3B86300F3CDFF /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997542AF3B86300F3CDFF /* BaseResponse.swift */; };
+		45E997582AF3C19A00F3CDFF /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45E997572AF3C19A00F3CDFF /* Secrets.plist */; };
+		45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */; };
 		4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */; };
 		4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */; };
 		4DF4F3ED2ABC5A1C00D66126 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3EC2ABC5A1C00D66126 /* Preview Assets.xcassets */; };
@@ -102,6 +104,8 @@
 		45E997502AF3B61F00F3CDFF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		45E997522AF3B63E00F3CDFF /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		45E997542AF3B86300F3CDFF /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		45E997572AF3C19A00F3CDFF /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b8ndDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryApp.swift; sourceTree = "<group>"; };
 		4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */,
+				45E997572AF3C19A00F3CDFF /* Secrets.plist */,
 				D736C7FA2AD80D4700C0A6BD /* Common */,
 				D736C7F72AD80D3100C0A6BD /* Extensions */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
@@ -386,6 +391,7 @@
 				D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */,
 				45E996A72AE689E000F3CDFF /* UINavigationController + Ext.swift */,
 				45E996A92AE73A8600F3CDFF /* CornerRadius+Ext.swift */,
+				45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				45DC77CC2AD8124B00A7DAA4 /* Pretendard-ExtraLight.otf in Resources */,
 				4DF4F3ED2ABC5A1C00D66126 /* Preview Assets.xcassets in Resources */,
 				45DC77CF2AD8124B00A7DAA4 /* Pretendard-ExtraBold.otf in Resources */,
+				45E997582AF3C19A00F3CDFF /* Secrets.plist in Resources */,
 				45DC77CA2AD8124B00A7DAA4 /* Pretendard-Thin.otf in Resources */,
 				45DC77C82AD8124B00A7DAA4 /* Pretendard-Bold.otf in Resources */,
 				45DC77CE2AD8124B00A7DAA4 /* Pretendard-Regular.otf in Resources */,
@@ -580,6 +587,7 @@
 				45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */,
+				45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */,
 				45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
 				7596ADE62AE68D78008EBFD8 /* Setting.swift in Sources */,

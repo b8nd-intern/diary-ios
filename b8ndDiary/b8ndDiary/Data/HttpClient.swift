@@ -31,7 +31,7 @@ final class HttpClient {
     
     static func request<T: Codable>(httpRequest: HttpRequest<T>) async throws -> T {
         
-        let request = session.request("https://koreanjson.com/\(httpRequest.url)",
+        let request = session.request("\(String(describing: Bundle.main.apiKey))\(httpRequest.url)",
                                       method: httpRequest.method,
                                       parameters: httpRequest.params,
                                       encoding: httpRequest.method == .get ? URLEncoding.default : JSONEncoding.default,
