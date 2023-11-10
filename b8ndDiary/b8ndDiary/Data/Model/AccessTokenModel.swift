@@ -8,13 +8,6 @@
 import Foundation
 import Alamofire
 
-
-struct RefreshTokenRequest: Codable {
-    let refreshToken: String
-}
-
-
-
 struct BaseReponse<T: Codable>: Codable {
     let status: Int
     let message: String
