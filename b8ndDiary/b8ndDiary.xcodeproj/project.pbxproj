@@ -40,6 +40,7 @@
 		4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1762ACD952300343927 /* ProfileView.swift */; };
 		4DFEB1792ACD952900343927 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1782ACD952900343927 /* LoginView.swift */; };
 		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
+		7594461F2AFDA9F400C0C0B1 /* AccessTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594461E2AFDA9F400C0C0B1 /* AccessTokenModel.swift */; };
 		7596ADD62AE68D1C008EBFD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */; };
 		7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */; };
 		7596ADDA2AE68D41008EBFD8 /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD92AE68D41008EBFD8 /* UserPage.swift */; };
@@ -118,6 +119,7 @@
 		4DFEB1762ACD952300343927 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4DFEB1782ACD952900343927 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		7594461E2AFDA9F400C0C0B1 /* AccessTokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenModel.swift; sourceTree = "<group>"; };
 		7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		7596ADD92AE68D41008EBFD8 /* UserPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		D736C7E92AD80B6C00C0A6BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7594461E2AFDA9F400C0C0B1 /* AccessTokenModel.swift */,
 				D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */,
 			);
 			path = Model;
@@ -566,6 +569,7 @@
 				D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */,
 				45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */,
 				7596ADE42AE68D64008EBFD8 /* Login.swift in Sources */,
+				7594461F2AFDA9F400C0C0B1 /* AccessTokenModel.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
 				45E997552AF3B86300F3CDFF /* BaseResponse.swift in Sources */,
 				45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */,

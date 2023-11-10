@@ -6,16 +6,6 @@
 ////
 //
 
-//import SwiftUI
-//
-//@main
-//struct b8ndDiaryApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            ContentView()
-//        }
-//    }
-//}
 
 import SwiftUI
 import Firebase
@@ -23,6 +13,7 @@ import GoogleSignIn
 import Foundation
 import UserNotifications
 import FirebaseMessaging
+import Alamofire
 
 
 @main
@@ -58,6 +49,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         // 파이어베이스 Meesaging 설정
         Messaging.messaging().delegate = self
+        // FCM 등록
+        application.registerForRemoteNotifications()
+        
+        // Messaging 설정
+        Messaging.messaging().delegate = self
+        
         
         return true
     }
@@ -76,23 +73,57 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.list, .banner])
     }
+
+    
 }
 
 extension AppDelegate: MessagingDelegate {
     
     // 파이어베이스 MessagingDelegate 설정
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) async {
         //파이어 베이스 토큰 출력
-      print("Firebase registration token: \(String(describing: fcmToken))")
+        print("Firebase registration token: \(String(describing: fcmToken))")
+        
+        
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(
+            name: Notification.Name("FCMToken"),
+            object: nil,
+            userInfo: dataDict
+        )
 
-      let dataDict: [String: String] = ["token": fcmToken ?? ""]
-      NotificationCenter.default.post(
-        name: Notification.Name("FCMToken"),
-        object: nil,
-        userInfo: dataDict
-      )
+        
+        // 서버로 FCM 토큰과 ID 토큰 전송
+        await sendTokensToServer(fcmToken)
     }
 }
+struct Response : Codable {
+    let accessToken : String
+    let refreshToken : String
+}
+
+
+private func sendTokensToServer(_ fcmToken: String?) async {
+    guard let fcmToken = fcmToken else { return }
+    // ID 토큰 가져오기
+    if let idToken = Auth.auth().currentUser?.uid {
+        print(idToken)
+        let parameters = [
+            "fcmToken": fcmToken,
+            "idToken": idToken
+        ]
+        do {
+            let httpResponse = try await HttpClient.request(httpRequest: HttpRequest(url: "https://15.164.163.4", method: .post, params :parameters, model: BaseReponse<Response>.self))
+        }  catch APIError.responseError(let e) {
+            print(e)
+        } catch (let e) {
+            print(e)
+        }
+    }
+}
+
 func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     completionHandler([.list, .banner])
 }
+
+
