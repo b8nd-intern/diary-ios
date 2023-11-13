@@ -64,7 +64,7 @@ struct HomeView: View {
                                     ZStack {
                                         Image("DottedBackground")
                                             .resizable()
-                                            .frame(width: 393, height: 220)
+                                            .frame(width: geo.size.width, height: 220)
                                             .padding(.top, 40)
                                         
                                         PrettyHScrollView(cards: [
