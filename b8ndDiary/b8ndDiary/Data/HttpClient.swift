@@ -31,18 +31,20 @@ final class HttpClient {
     
     static func request<T: Codable>(httpRequest: HttpRequest<T>) async throws -> T {
         
-        let request = session.request("\(String(describing: Bundle.main.apiKey))\(httpRequest.url)",
+        let request = session.request("\(httpRequest.url)", //\(String(describing: Bundle.main.apiKey))
                                       method: httpRequest.method,
                                       parameters: httpRequest.params,
                                       encoding: httpRequest.method == .get ? URLEncoding.default : JSONEncoding.default,
                                       headers: httpRequest.headers)
         let dataTask = request.serializingDecodable(httpRequest.model)
+        print("3")
         switch await dataTask.result {
             
         case .success(let value):
             guard let response = await dataTask.response.response, (200...299).contains(response.statusCode) else {
                 throw await APIError.responseError(dataTask.response.response!.statusCode)
             }
+            print("4")
             return value
             
         case .failure(let error):

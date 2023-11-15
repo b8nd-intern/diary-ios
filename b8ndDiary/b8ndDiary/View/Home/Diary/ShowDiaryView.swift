@@ -14,7 +14,7 @@ struct ShowDiaryView: View {
     
     @Binding var day: Int
     
-    let diaryContent: [String]
+    let diaryContent: [DataModel]
     
     var columns: [GridItem] = [
         GridItem(.flexible()),
@@ -26,9 +26,9 @@ struct ShowDiaryView: View {
             ForEach(diaryContent, id: \.self) { content in
                 Button {
                     isClicked = true
-                    clickedContent = content
+                    clickedContent = content.content
                 } label: {
-                    DiaryCell(data: content)
+                    DiaryCell(data: content.content)
                         .frame(width: 150, height: 150)
                 }
             }

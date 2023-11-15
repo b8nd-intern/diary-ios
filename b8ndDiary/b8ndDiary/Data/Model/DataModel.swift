@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataModel: Codable {
+struct DataModel: Codable, Hashable {
     
     let postId: Int
     let content, color, emoji, name: String
