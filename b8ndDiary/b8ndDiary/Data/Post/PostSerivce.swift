@@ -11,10 +11,11 @@ class PostSerivce {
     
     static func getList() async throws -> Response<DataModel> {
         
-        let response = try await HttpClient.request(httpRequest: HttpRequest(url: "", method: .get, model: Response<DataModel>.self))
+        let response = try await HttpClient.request(httpRequest: HttpRequest(url: "/post/list", method: .get, model: Response<DataModel>.self))
         
         return response
     }
     
     
 }
+
