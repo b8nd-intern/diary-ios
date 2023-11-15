@@ -14,7 +14,7 @@ struct ShowDiaryView: View {
     
     @Binding var day: Int
     
-    var diaryContent: [String] = ["오늘도 바인드를 회의를 했는데 이번 아이디어가 매우 좋은 것 같아서 행복했다. 그리고 나중에", "개발을 했다1", "개발을 했다2", "개발을 했다3", "개발을 했다4"]
+    let diaryContent: [String]
     
     var columns: [GridItem] = [
         GridItem(.flexible()),

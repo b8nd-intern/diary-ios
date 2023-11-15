@@ -14,6 +14,8 @@ struct DiaryView: View {
     let height: CGFloat
     let imojiOpacity: CGFloat
     let boardTextOpacity: CGFloat
+    
+    @State var userName: String = "오스트랄로피테쿠스아파렌시스"
 
     var body: some View {
         ZStack {
@@ -37,6 +39,15 @@ struct DiaryView: View {
                     .font(.body)
                     .frame(width: width, height: height, alignment: .leading)
                     .lineLimit(6)
+                
+                Text("\(userName)")
+                    .lineLimit(1)
+                    .frame(width: 70)
+                    .foregroundColor(Colors.Blue5.color)
+                    .font(.system(size: 12))
+                    .font(.body)
+                    .padding(.top, 180)
+                    .padding(.leading, 130)
             }
             .opacity(boardTextOpacity)
             .background(card.color)
