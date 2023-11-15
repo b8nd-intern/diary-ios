@@ -9,10 +9,12 @@ import Foundation
 
 class PostSerivce {
     
+    static let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY")!
+    
     static func getList() async throws -> Response<[DataModel]> {
-        print("1")
-        let response = try await HttpClient.request(httpRequest: HttpRequest(url: "http://15.164.163.4/post/list", method: .get, model: Response<[DataModel]>.self))
-        print("2")
+
+        let response = try await HttpClient.request(httpRequest: HttpRequest(url: "http://\(String(describing: apiKey))/post/list", method: .get, model: Response<[DataModel]>.self))
+
         return response
     }
     
