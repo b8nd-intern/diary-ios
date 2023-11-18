@@ -50,7 +50,7 @@ struct YearCalendar: View {
                         VStack{
                             Text(month)
                                 .font(.system(size :10))
-                                .padding(.trailing ,60 )
+                                .padding(.trailing ,50 )
                                 .foregroundColor(.black)
                             
                             createSquareGrid(rows :totalRows , columns:squaresPerRow , totalSquares :totalSquares)
@@ -67,4 +67,6 @@ struct YearCalendar: View {
     
 }
 
-
+#Preview {
+    YearCalendar()
+}
