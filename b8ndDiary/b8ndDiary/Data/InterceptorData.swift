@@ -33,7 +33,7 @@ final class Interceptor: RequestInterceptor {
             return
         }
         if let refreshToken = Token.get(.refreshToken) {
-            AF.request("\(Config.apiKey)/token/refresh",
+            AF.request("\(Config.apiKey)/auth/refresh",
                        method: .post,
                        parameters: ["refreshToken": "Bearer \(refreshToken)"],
                        encoding: JSONEncoding.default,

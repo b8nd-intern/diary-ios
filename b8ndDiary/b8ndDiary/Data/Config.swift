@@ -8,5 +8,10 @@
 import Foundation
 
 final class Config {
-    static let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY")! as! String
+    static let apiKey = getString("API_KEY")
+    static let testToken = getString("TEST_TOKEN")
+    
+    static func getString(_ key: String) -> String {
+        return Bundle.main.object(forInfoDictionaryKey: key) as! String
+    }
 }
