@@ -146,7 +146,7 @@ struct GoogleSignIn: View {
                     httpRequest: HttpRequest(url: "http://\(Config.apiKey)/auth/login/google",
                                              method: .post,
                                              headers: headers,
-                                             model: Response<GoogleResponse>.self))
+                                             model: baseResponse<GoogleResponse>.self))
                 
                 print("서버 응답: \(response)")
                 
