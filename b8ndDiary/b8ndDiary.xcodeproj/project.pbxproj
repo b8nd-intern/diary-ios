@@ -33,6 +33,9 @@
 		45FB1BA22B04D73800913F03 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA12B04D73800913F03 /* DataModel.swift */; };
 		45FB1BA42B04E0CC00913F03 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */; };
 		4D4A17162B0B759600941F30 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A17152B0B759500941F30 /* Response.swift */; };
+		4D4A17182B0B7A0900941F30 /* InterceptorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A17172B0B7A0900941F30 /* InterceptorData.swift */; };
+		4D4A171A2B0B7A2900941F30 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A17192B0B7A2900941F30 /* Token.swift */; };
+		4D4A171C2B0B7A5300941F30 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A171B2B0B7A5300941F30 /* Config.swift */; };
 		4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */; };
 		4DF4F3EA2ABC5A1C00D66126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */; };
 		4DF4F3ED2ABC5A1C00D66126 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4F3EC2ABC5A1C00D66126 /* Preview Assets.xcassets */; };
@@ -113,6 +116,9 @@
 		45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4D22D46D2B0B749C0011050D /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		4D4A17152B0B759500941F30 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		4D4A17172B0B7A0900941F30 /* InterceptorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptorData.swift; sourceTree = "<group>"; };
+		4D4A17192B0B7A2900941F30 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		4D4A171B2B0B7A5300941F30 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4DF4F3E22ABC5A1B00D66126 /* b8ndDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b8ndDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryApp.swift; sourceTree = "<group>"; };
 		4DF4F3E92ABC5A1C00D66126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -257,6 +263,9 @@
 				45E997502AF3B61F00F3CDFF /* HttpClient.swift */,
 				45E997522AF3B63E00F3CDFF /* HttpRequest.swift */,
 				4D4A17152B0B759500941F30 /* Response.swift */,
+				4D4A17172B0B7A0900941F30 /* InterceptorData.swift */,
+				4D4A17192B0B7A2900941F30 /* Token.swift */,
+				4D4A171B2B0B7A5300941F30 /* Config.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -581,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4A171A2B0B7A2900941F30 /* Token.swift in Sources */,
 				45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */,
 				45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */,
 				7596ADE22AE68D5F008EBFD8 /* UserData.swift in Sources */,
@@ -592,10 +602,12 @@
 				7594461F2AFDA9F400C0C0B1 /* AccessTokenModel.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
 				45FB1BA42B04E0CC00913F03 /* HomeViewModel.swift in Sources */,
+				4D4A17182B0B7A0900941F30 /* InterceptorData.swift in Sources */,
 				45DC77AC2AD6B4D500A7DAA4 /* DiaryCell.swift in Sources */,
 				45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */,
 				7596ADE02AE68D5A008EBFD8 /* GoogleSignIn.swift in Sources */,
 				D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */,
+				4D4A171C2B0B7A5300941F30 /* Config.swift in Sources */,
 				45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */,
