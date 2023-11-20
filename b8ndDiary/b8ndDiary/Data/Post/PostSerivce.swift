@@ -13,7 +13,7 @@ class PostSerivce {
     
     static func getList() async throws -> Response<[DataModel]> {
 
-        let response = try await HttpClient.request(httpRequest: HttpRequest(url: "http://\(String(describing: Config.apiKey))/post/list", method: .get, model: Response<[DataModel]>.self))
+        let response = try await HttpClient.request(httpRequest: HttpRequest(url: "http://\(Config.apiKey)/post/list", method: .get, model: Response<[DataModel]>.self))
 
         return response
     }
