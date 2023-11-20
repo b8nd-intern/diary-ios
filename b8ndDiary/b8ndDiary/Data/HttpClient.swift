@@ -31,10 +31,7 @@ final class HttpClient {
     
     static func request<T: Codable>(httpRequest: HttpRequest<T>) async throws -> T {
         
-        print(httpRequest.url)
-        print()
-        
-        let request = session.request("\(httpRequest.url)", //\(String(describing: Bundle.main.apiKey))
+        let request = session.request("\(httpRequest.url)",
                                       method: httpRequest.method,
                                       parameters: httpRequest.params,
                                       encoding: httpRequest.method == .get ? URLEncoding.default : JSONEncoding.default,

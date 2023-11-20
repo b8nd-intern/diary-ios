@@ -29,6 +29,7 @@
 		45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997502AF3B61F00F3CDFF /* HttpClient.swift */; };
 		45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997522AF3B63E00F3CDFF /* HttpRequest.swift */; };
 		45E997552AF3B86300F3CDFF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997542AF3B86300F3CDFF /* Response.swift */; };
+		45E997552AF3B86300F3CDFF /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997542AF3B86300F3CDFF /* BaseResponse.swift */; };
 		45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */; };
 		45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */; };
 		45FB1BA22B04D73800913F03 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA12B04D73800913F03 /* DataModel.swift */; };
@@ -42,6 +43,7 @@
 		4DFEB1772ACD952300343927 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1762ACD952300343927 /* ProfileView.swift */; };
 		4DFEB1792ACD952900343927 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB1782ACD952900343927 /* LoginView.swift */; };
 		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
+		7594461F2AFDA9F400C0C0B1 /* AccessTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594461E2AFDA9F400C0C0B1 /* AccessTokenModel.swift */; };
 		7596ADD62AE68D1C008EBFD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */; };
 		7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */; };
 		7596ADDA2AE68D41008EBFD8 /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD92AE68D41008EBFD8 /* UserPage.swift */; };
@@ -56,6 +58,7 @@
 		7596ADEE2AE68F23008EBFD8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADED2AE68F23008EBFD8 /* GoogleSignInSwift */; };
 		7596ADF12AE68FCD008EBFD8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADF02AE68FCD008EBFD8 /* FirebaseMessaging */; };
 		7596ADF32AE68FE5008EBFD8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADF22AE68FE5008EBFD8 /* FirebaseAnalytics */; };
+		75FC728E2B03646D00020FCF /* Post-cnt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC728D2B03646D00020FCF /* Post-cnt.swift */; };
 		D736C7E62AD80B0F00C0A6BD /* PagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7E52AD80B0F00C0A6BD /* PagingScrollView.swift */; };
 		D736C7EB2AD80B7400C0A6BD /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */; };
 		D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C7ED2AD80B9200C0A6BD /* PageControl.swift */; };
@@ -106,6 +109,7 @@
 		45E997502AF3B61F00F3CDFF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		45E997522AF3B63E00F3CDFF /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		45E997542AF3B86300F3CDFF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		45E997542AF3B86300F3CDFF /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSerivce.swift; sourceTree = "<group>"; };
 		45FB1BA12B04D73800913F03 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		4DFEB1762ACD952300343927 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4DFEB1782ACD952900343927 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		7594461E2AFDA9F400C0C0B1 /* AccessTokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenModel.swift; sourceTree = "<group>"; };
 		7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		7596ADD92AE68D41008EBFD8 /* UserPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
@@ -132,6 +137,8 @@
 		7596ADE12AE68D5F008EBFD8 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7596ADE32AE68D64008EBFD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7596ADE52AE68D78008EBFD8 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		75E563092B08B7D3008DFAFC /* b8ndDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = b8ndDiary.entitlements; sourceTree = "<group>"; };
+		75FC728D2B03646D00020FCF /* Post-cnt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post-cnt.swift"; sourceTree = "<group>"; };
 		D736C7E52AD80B0F00C0A6BD /* PagingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollView.swift; sourceTree = "<group>"; };
 		D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		D736C7ED2AD80B9200C0A6BD /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
@@ -314,6 +321,7 @@
 		4DF4F3E42ABC5A1B00D66126 /* b8ndDiary */ = {
 			isa = PBXGroup;
 			children = (
+				75E563092B08B7D3008DFAFC /* b8ndDiary.entitlements */,
 				7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */,
 				D736C7FA2AD80D4700C0A6BD /* Common */,
 				D736C7F72AD80D3100C0A6BD /* Extensions */,
@@ -383,8 +391,10 @@
 		D736C7E92AD80B6C00C0A6BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7594461E2AFDA9F400C0C0B1 /* AccessTokenModel.swift */,
 				D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */,
 				45FB1BA12B04D73800913F03 /* DataModel.swift */,
+				75FC728D2B03646D00020FCF /* Post-cnt.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,6 +591,7 @@
 				D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */,
 				45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */,
 				7596ADE42AE68D64008EBFD8 /* Login.swift in Sources */,
+				7594461F2AFDA9F400C0C0B1 /* AccessTokenModel.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
 				45E997552AF3B86300F3CDFF /* Response.swift in Sources */,
 				45FB1BA42B04E0CC00913F03 /* HomeViewModel.swift in Sources */,
@@ -595,6 +606,7 @@
 				7596ADDE2AE68D4E008EBFD8 /* YearCalendar.swift in Sources */,
 				D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */,
 				4DFEB1792ACD952900343927 /* LoginView.swift in Sources */,
+				75FC728E2B03646D00020FCF /* Post-cnt.swift in Sources */,
 				7596ADDA2AE68D41008EBFD8 /* UserPage.swift in Sources */,
 				45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */,
 				D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */,
@@ -768,13 +780,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = b8ndDiary/b8ndDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
-				DEVELOPMENT_TEAM = 88BPYM8C62;
+				DEVELOPMENT_TEAM = NW88BSVGJV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = b8ndDiary/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -799,13 +813,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = b8ndDiary/b8ndDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
-				DEVELOPMENT_TEAM = 88BPYM8C62;
+				DEVELOPMENT_TEAM = NW88BSVGJV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = b8ndDiary/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

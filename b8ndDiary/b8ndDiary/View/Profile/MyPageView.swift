@@ -10,6 +10,7 @@ import GoogleSignIn
 
 struct MyPageView: View {
     
+    
     func createDayViews(for days: [String]) -> some View {
         ForEach(days, id: \.self) { day in
             VStack {
@@ -17,19 +18,24 @@ struct MyPageView: View {
                     .font(.system(size: 10))
                     .padding(.vertical,3)
                     .foregroundColor(.black)
-                
-                
             }
             
         }
     }
     
+    var test : Bool = true
+    
+    @State var PageNumber : Int = 0
+    
+    @State private var selectedYear = "2023년"
+    
+    let yesrs = ["2023년", "2024년", "2025년"]
+    
     @Environment(\.presentationMode) var presentationMode
     
     @State var date = Date()
-    
-    @State var PageNumber : Int = 520
-    
+    @ObservedObject var viewModel = PostCountsData()
+
     let days = ["일", "월", "화", "수", "목", "금","토"]
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
@@ -57,7 +63,7 @@ struct MyPageView: View {
                             .overlay {
                                 Circle().stroke(.white, lineWidth: 2)
                             }
-                            .padding(EdgeInsets(top: 60, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 60, leading: 20, bottom: 0, trailing: 0))
                             .overlay(
                                 ZStack {
                                     Circle()
@@ -75,14 +81,14 @@ struct MyPageView: View {
                                     })
                                     
                                 }
-                                    .offset(x: 35, y: 65) // 위치 조정
+                                    .offset(x: 45, y: 65) // 위치 조정
                             )
                         Text(userData.name)
                             .font(.system(size: 23 ))
                             .bold()
-                            .padding(EdgeInsets(top: 95, leading: 20, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 95, leading: 30, bottom: 0, trailing: 0))
                     }
-                    .padding(.trailing, 170)
+                    .padding(.trailing, 100)
                     .padding(.bottom,10)
                     HStack{
                         YearCalendar()
@@ -130,11 +136,11 @@ struct MyPageView: View {
                             
                         }
                         .padding(10)
-                        
-                        
+                       
                         VStack {
-                            ForEach(months, id: \.self) { month in
+                            ForEach(Array(zip(months,viewModel.postCounts)), id: \.0) { month,count in
                                 NavigationLink(
+
                                     destination: MonthPage(selectedMonth: month),
                                     label: {
                                         HStack {
@@ -146,7 +152,7 @@ struct MyPageView: View {
                                             
                                             Spacer()
                                             
-                                            Text("n장")
+                                            Text("\(count)장")
                                                 .padding(.trailing, 30)
                                                 .foregroundColor(Colors.Gray3.color)
                                                 .opacity(0.5)
@@ -169,6 +175,9 @@ struct MyPageView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.fetchPostCountsAndNavigateToMypage()
+               }
         .navigationBarBackButtonHidden()
         .navigationBarTitle(
             "",
@@ -201,8 +210,11 @@ struct MyPageView: View {
                 }
         )
         
-        
     }
+
+      
+
+      
 }
 
 
@@ -214,8 +226,8 @@ struct MyPageView: View {
 
 
 
-struct MyPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
-    }
-}
+//struct MyPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
+//    }
+//}
