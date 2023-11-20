@@ -128,6 +128,7 @@
 		7596ADE12AE68D5F008EBFD8 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7596ADE32AE68D64008EBFD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7596ADE52AE68D78008EBFD8 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		75E563092B08B7D3008DFAFC /* b8ndDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = b8ndDiary.entitlements; sourceTree = "<group>"; };
 		75FC728D2B03646D00020FCF /* Post-cnt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post-cnt.swift"; sourceTree = "<group>"; };
 		D736C7E52AD80B0F00C0A6BD /* PagingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollView.swift; sourceTree = "<group>"; };
 		D736C7EA2AD80B7400C0A6BD /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -300,6 +301,7 @@
 		4DF4F3E42ABC5A1B00D66126 /* b8ndDiary */ = {
 			isa = PBXGroup;
 			children = (
+				75E563092B08B7D3008DFAFC /* b8ndDiary.entitlements */,
 				7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */,
 				D736C7FA2AD80D4700C0A6BD /* Common */,
 				D736C7F72AD80D3100C0A6BD /* Extensions */,
@@ -753,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = b8ndDiary/b8ndDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";
@@ -785,6 +788,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = b8ndDiary/b8ndDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"b8ndDiary/Preview Content\"";

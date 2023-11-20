@@ -11,9 +11,11 @@ import GoogleSignInSwift
 import FirebaseMessaging
 import FirebaseAuth
 import Alamofire
+import FirebaseCore
 
 
 struct GoogleSignIn: View {
+    
     // 로그인 상태
     @State private var isLogined = false
     // 유저 데이터
@@ -30,34 +32,6 @@ struct GoogleSignIn: View {
         let refreshToken : String
         let isFirst : Bool
     }
-//    
-//    public func sendTokensToServer(/*_ idToken: String*/) async {
-//        Task{
-//            //        if let uid = Auth.auth().currentUser?.uid {
-//            let headers: HTTPHeaders = [
-//                "id_token": idToken,
-//                "fcm_token": fcmToken,
-//                "Accept": "application/json"
-//            ]
-//            
-//            do {
-//                let response = try await HttpClient.request(
-//                    httpRequest: HttpRequest(url: "http://15.164.163.4/auth/login/google",
-//                                             method: .post,
-//                                             headers: headers,
-//                                             model: BaseResponse<GoogleResponse>.self))
-//                
-//                print("서버 응답: \(response)")
-//                
-//            } catch APIError.responseError(let statusCode) {
-//                print("서버 응답 오류: HTTP 상태 코드 \(statusCode)")
-//            } catch {
-//                print("서버 응답 오류: \(error)")
-//            }
-//            //        }
-//        }
-//    }
-
 
     var body: some View {
         NavigationStack {
@@ -128,18 +102,16 @@ struct GoogleSignIn: View {
                 return
             }
             
-            // FCM 토큰 가져오기 (이 부분을 주석 해제하고 사용하려면 알맞게 수정하세요)
-    //        Messaging.messaging().token { token, error in
-    //            if let error = error {
-    //                print("Error fetching FCM token: \(error)")
-    //            } else if let token = token {
-    //                self.fcmToken = token
-    //                print("FCM Token: \(token)")
-    //
-    //                // FCM 토큰과 ID 토큰을 서버로 보내는 함수 호출
-    //                sendTokensToServer()
-    //            }
-    //        }
+     
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                    print("Error fetching FCM token: \(error)")
+                } else if let token = token {
+                    self.fcmToken = token
+                    print("FCM Token: \(token)")
+    
+                }
+            }
 
             // FCM 토큰이 아직 필요하지 않다면 아래의 라인을 주석 처리하세요
             self.fcmToken = ""
@@ -154,6 +126,7 @@ struct GoogleSignIn: View {
             isLogined = true
             self.idToken = idToken
             print("ID Token: \(self.idToken)")
+            print("fcm Token: \(self.fcmToken)")
         }
     }
 
@@ -162,7 +135,7 @@ struct GoogleSignIn: View {
         Task {
             let headers: HTTPHeaders = [
                 "id_token": idToken,
-                "fcm_token": fcmToken,
+                "fcm_token": "",
                 "Accept": "application/json"
             ]
             
@@ -182,7 +155,37 @@ struct GoogleSignIn: View {
             }
         }
     }
-
+    
+    class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+        func application(_ application: UIApplication,
+                         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+            
+            // 파이어베이스 설정
+            FirebaseApp.configure()
+            
+            // 앱 실행 시 사용자에게 알림 허용 권한을 받음
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound] // 필요한 알림 권한을 설정
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: { _, _ in }
+            )
+            
+            // UNUserNotificationCenterDelegate를 구현한 메서드를 실행시킴
+            application.registerForRemoteNotifications()
+            
+            // 파이어베이스 Meesaging 설정
+            Messaging.messaging().delegate = self
+            
+            return true
+        }
     }
+
+   
+
+        }
+
+
 
 
