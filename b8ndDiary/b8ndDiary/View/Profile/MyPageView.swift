@@ -45,10 +45,6 @@ struct MyPageView: View {
     // 유저 데이터 바인딩
     var userData:UserData
     
-    @State private var selectedYear = "2023년"
-    
-    
-    let yesrs = ["2023년", "2024년", "2025년"]
     
     var body: some View {
         NavigationStack{
