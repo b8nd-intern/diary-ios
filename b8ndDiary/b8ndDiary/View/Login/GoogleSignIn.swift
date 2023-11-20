@@ -112,6 +112,7 @@ struct GoogleSignIn: View {
     
                 }
             }
+            
 
             // FCM 토큰이 아직 필요하지 않다면 아래의 라인을 주석 처리하세요
             self.fcmToken = ""
@@ -140,8 +141,9 @@ struct GoogleSignIn: View {
             ]
             
             do {
+                print("before request")
                 let response = try await HttpClient.request(
-                    httpRequest: HttpRequest(url: "http://15.164.163.4/auth/login/google",
+                    httpRequest: HttpRequest(url: "http://\(Config.apiKey)/auth/login/google",
                                              method: .post,
                                              headers: headers,
                                              model: Response<GoogleResponse>.self))
