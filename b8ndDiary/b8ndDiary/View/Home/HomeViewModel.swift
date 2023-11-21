@@ -33,9 +33,10 @@ final class HomeViewModel : ObservableObject {
     func initDiaryList() {
         Task {
             do {
+                print("home viewmodel - request...")
                 let data = try await PostSerivce.getList()
                 list = data.data!
-                print(list)
+                print("home viewmodel - ", list)
             } catch {
                 
             }

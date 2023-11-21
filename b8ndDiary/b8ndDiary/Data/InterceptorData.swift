@@ -14,6 +14,7 @@ struct InterceptorData: Codable {
 
 final class Interceptor: RequestInterceptor {
     
+    
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         guard urlRequest.url?.absoluteString.hasPrefix(Config.apiKey) == true,
               let accessToken = Token.get(.accessToken) else {

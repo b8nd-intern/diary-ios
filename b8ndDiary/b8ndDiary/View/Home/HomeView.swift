@@ -143,7 +143,6 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.initDiaryList()
-            print(viewModel.list)
         }
         .navigationBarBackButtonHidden(true)
         

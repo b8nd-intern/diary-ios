@@ -16,9 +16,7 @@ final class HttpClient {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10
         configuration.timeoutIntervalForResource = 10
-        let interceptor = Interceptor()
-        return Session(configuration: configuration,
-                       interceptor: interceptor)
+        return Session(configuration: configuration)
     }()
     
     /// 안드든 웹이든 대략적인  http 통신 구현 방법은
@@ -31,20 +29,19 @@ final class HttpClient {
     
     static func request<T: Codable>(httpRequest: HttpRequest<T>) async throws -> T {
         
-        let request = session.request("\(httpRequest.url)",
+        let request = session.request("http://\(Config.apiKey)/\(httpRequest.url)",
                                       method: httpRequest.method,
                                       parameters: httpRequest.params,
                                       encoding: httpRequest.method == .get ? URLEncoding.default : JSONEncoding.default,
-                                      headers: httpRequest.headers)
+                                      headers: httpRequest.headers,
+                                      interceptor: Interceptor())
         let dataTask = request.serializingDecodable(httpRequest.model)
-        print("3")
         switch await dataTask.result {
             
         case .success(let value):
             guard let response = await dataTask.response.response, (200...299).contains(response.statusCode) else {
                 throw await APIError.responseError(dataTask.response.response!.statusCode)
             }
-            print("4")
             return value
             
         case .failure(let error):

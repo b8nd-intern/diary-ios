@@ -119,19 +119,19 @@ struct GoogleSignIn: View {
             self.idToken = idToken
             
             // FCM 토큰과 ID 토큰을 서버로 보내는 함수 호출
-            sendTokensToServer()
-
-            guard let profile = result.user.profile else { return }
-            let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
-            
-            userData = data
-            isLogined = true
-            
+            sendTokensToServer {
+                
+                guard let profile = result.user.profile else { return }
+                let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
+                
+                userData = data
+                isLogined = true
+            }
         }
     }
 
     // FCM 토큰과 ID 토큰을 서버로 보내는 함수
-    func sendTokensToServer() {
+    func sendTokensToServer(callback: @escaping () -> Void) {
         Task {
             let headers: HTTPHeaders = [
                 "id_token": idToken,
@@ -139,19 +139,16 @@ struct GoogleSignIn: View {
                 "Accept": "application/json"
             ]
             
-            print(headers)
-            let url = "http://\(Config.apiKey)/auth/login/google"
-            
             do {
-                print("before request")
                 let response = try await HttpClient.request(
-                    httpRequest: HttpRequest(url: url,
+                    httpRequest: HttpRequest(url: "auth/login/google",
                                              method: .post,
                                              headers: headers,
                                              model: Response<GoogleResponse>.self))
                 
-                print("서버 응답: \(response)")
-                
+                Token.save(.accessToken, response.data!.accessToken)
+                Token.save(.refreshToken, response.data!.refreshToken)
+                callback()
             } catch APIError.responseError(let statusCode) {
                 print("서버 응답 오류: HTTP 상태 코드; \(statusCode)")
             } catch {
