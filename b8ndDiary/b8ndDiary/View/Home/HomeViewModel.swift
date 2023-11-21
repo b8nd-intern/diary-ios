@@ -34,7 +34,7 @@ final class HomeViewModel : ObservableObject {
         Task {
             do {
                 let data = try await PostSerivce.getList()
-                list = data.data
+                list = data.data!
                 print(list)
             } catch {
                 

@@ -116,6 +116,7 @@ struct GoogleSignIn: View {
 
             // FCM 토큰이 아직 필요하지 않다면 아래의 라인을 주석 처리하세요
             self.fcmToken = ""
+            self.idToken = idToken
             
             // FCM 토큰과 ID 토큰을 서버로 보내는 함수 호출
             sendTokensToServer()
@@ -125,9 +126,7 @@ struct GoogleSignIn: View {
             
             userData = data
             isLogined = true
-            self.idToken = idToken
-            print("ID Token: \(self.idToken)")
-            print("fcm Token: \(self.fcmToken)")
+            
         }
     }
 
@@ -136,22 +135,25 @@ struct GoogleSignIn: View {
         Task {
             let headers: HTTPHeaders = [
                 "id_token": idToken,
-                "fcm_token": "",
+                "fcm_token": "ㅎㅇ",
                 "Accept": "application/json"
             ]
+            
+            print(headers)
+            let url = "http://\(Config.apiKey)/auth/login/google"
             
             do {
                 print("before request")
                 let response = try await HttpClient.request(
-                    httpRequest: HttpRequest(url: "http://\(Config.apiKey)/auth/login/google",
+                    httpRequest: HttpRequest(url: url,
                                              method: .post,
                                              headers: headers,
-                                             model: baseResponse<GoogleResponse>.self))
+                                             model: Response<GoogleResponse>.self))
                 
                 print("서버 응답: \(response)")
                 
             } catch APIError.responseError(let statusCode) {
-                print("서버 응답 오류: HTTP 상태 코드 \(statusCode)")
+                print("서버 응답 오류: HTTP 상태 코드; \(statusCode)")
             } catch {
                 print("서버 응답 오류: \(error)")
             }

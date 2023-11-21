@@ -92,8 +92,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
 private func sendTokensToServer(_ fcmToken: String?) {
     guard let fcmToken = fcmToken else { return }
     
-    let url = "http://15.164.163.4"
-    
     // ID 토큰 가져오기
     if let idToken = Auth.auth().currentUser?.uid {
         let parameters = [
@@ -101,7 +99,7 @@ private func sendTokensToServer(_ fcmToken: String?) {
             "idToken": idToken
         ]
         
-        AF.request(url, method: .post, parameters: parameters).responseJSON { response in
+        AF.request("http://" + Config.apiKey, method: .post, parameters: parameters).responseJSON { response in
             switch response.result {
             case .success:
                 print("Tokens sent to server successfully")

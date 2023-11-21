@@ -13,12 +13,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.984777438583-18g6f35ie4pjaj1c04e2aq15sag9prgb</string>
+				<string>com.googleusercontent.apps.941387610926-5drk2atulof38uagm61oeop4gph5oc7i</string>
 			</array>
 		</dict>
 	</array>
 	<key>GIDClientID</key>
-	<string>984777438583-18g6f35ie4pjaj1c04e2aq15sag9prgb.apps.googleusercontent.com</string>
+	<string>941387610926-5drk2atulof38uagm61oeop4gph5oc7i.apps.googleusercontent.com</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
