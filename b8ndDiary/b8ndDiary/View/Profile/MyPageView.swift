@@ -25,8 +25,6 @@ struct MyPageView: View {
     
     var test : Bool = true
     
-    @State var PageNumber : Int = 0
-    
     @State private var selectedYear = "2023년"
     
     let yesrs = ["2023년", "2024년", "2025년"]
@@ -35,14 +33,19 @@ struct MyPageView: View {
     
     @State var date = Date()
     @ObservedObject var viewModel = PostCountsData()
+    
+//    var PageNumber = viewModel.postCounts
 
     let days = ["일", "월", "화", "수", "목", "금","토"]
+
+
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
     @State private var selectedMonth = ""
     // 화면 종료
     @Environment(\.dismiss) private var dismiss
     // 유저 데이터 바인딩
+    
     var userData:UserData
     
     
@@ -88,7 +91,7 @@ struct MyPageView: View {
                     .padding(.bottom,10)
                     HStack{
                         YearCalendar()
-                            .padding(.vertical,30)
+                            .padding(.vertical,40)
                             .padding(.horizontal,30)
                     }
                     .overlay {
@@ -110,7 +113,7 @@ struct MyPageView: View {
                                 .font(.system(size: 20))
                                 .padding(.trailing , 110 )
                             VStack{
-                                Text("총 \(PageNumber)장")
+                                Text("총 \(viewModel.number)장")
                                     .font(Font.custom("Pretendard", size: 12))
                                     .kerning(0.1)
                                     .foregroundColor(Color(red: 0.29, green: 0.33, blue: 0.41))
@@ -145,9 +148,8 @@ struct MyPageView: View {
                                                 .bold()
                                                 .foregroundColor(.black)
                                             
-                                            
                                             Spacer()
-                                            
+
                                             Text("\(count)장")
                                                 .padding(.trailing, 30)
                                                 .foregroundColor(Colors.Gray3.color)
@@ -172,7 +174,8 @@ struct MyPageView: View {
             }
         }
         .onAppear {
-            viewModel.fetchPostCountsAndNavigateToMypage()
+            viewModel.PostYearCnt()
+           
                }
         .navigationBarBackButtonHidden()
         .navigationBarTitle(
@@ -205,5 +208,25 @@ struct MyPageView: View {
                     
                 }
         )
+        
     }
+
+      
+
+      
 }
+
+
+
+
+
+
+
+
+
+
+//struct MyPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
+//    }
+//}
