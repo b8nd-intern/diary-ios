@@ -141,7 +141,7 @@ struct GoogleSignIn: View {
             
             do {
                 let response = try await HttpClient.request(
-                    httpRequest: HttpRequest(url: "auth/login/google",
+                    HttpRequest(url: "auth/login/google",
                                              method: .post,
                                              headers: headers,
                                              model: Response<GoogleResponse>.self))

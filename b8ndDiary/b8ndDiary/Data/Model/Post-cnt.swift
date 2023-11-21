@@ -110,7 +110,7 @@ class PostCountsData: ObservableObject {
             let params = ["month": month]
             Task{
                 do {
-                    let response  = try await HttpClient.request(httpRequest: HttpRequest(url: "http://15.164.163.4/record/post-cnt", method:.get ,params: params , model: Response<PostcntResponse>.self))
+                    let response  = try await HttpClient.request(HttpRequest(url: "http://15.164.163.4/record/post-cnt", method:.get ,params: params , model: Response<PostcntResponse>.self))
                     print("\(response)")
                     postCounts.append(response.data!.cnt)
         

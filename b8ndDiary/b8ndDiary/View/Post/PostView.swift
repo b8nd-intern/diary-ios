@@ -14,13 +14,9 @@ struct PostView: View {
     }
     
     @Environment(\.dismiss) private var dismiss
-    
-    @State var text: String = ""
-    @State var publicState: Bool = true
-    @State var backgroundColor: Color = Colors.Blue1.color
+    @ObservedObject var viewModel: PostViewModel = PostViewModel()
     
     @State var isTapEmojiButton: Bool = false
-    @State var selectedEmoji: String = "DefaultEmoji"
     
     @FocusState var isFocused: test?
     
@@ -45,9 +41,9 @@ struct PostView: View {
                             // 공개
                             Button {
                                 // 공개로 설정되는 코드
-                                publicState = true
+                                viewModel.publicState = true
                             } label: {
-                                if publicState {
+                                if viewModel.publicState {
                                     Text("공개")
                                         .foregroundColor(Colors.Blue5.color)
                                         .font(.system(size: 16))
@@ -61,9 +57,9 @@ struct PostView: View {
                             // 비공개
                             Button {
                                 // 비공개로 설정되는 코드
-                                publicState = false
+                                viewModel.publicState = false
                             } label: {
-                                if publicState {
+                                if viewModel.publicState {
                                     Text("비공개")
                                         .foregroundColor(Colors.Gray2.color)
                                         .font(.system(size: 16))
@@ -80,7 +76,7 @@ struct PostView: View {
                         
                         // 일기 미리보기
                         Rectangle()
-                            .foregroundColor(backgroundColor)
+                            .foregroundColor(viewModel.backgroundColor)
                             .frame(width: 300, height: 300)
                             .padding(.bottom, 20)
                             .overlay {
@@ -90,7 +86,7 @@ struct PostView: View {
                                             Button {
                                                 isTapEmojiButton = true
                                             } label: {
-                                                Image(selectedEmoji)
+                                                Image(viewModel.selectedEmoji)
                                                     .resizable()
                                                     .scaledToFit()
                                                     .frame(width: 50, height: 50)
@@ -110,7 +106,7 @@ struct PostView: View {
                                                         HStack {
                                                             ForEach(emojiList, id: \.self) { emojiName in
                                                                 Button {
-                                                                    selectedEmoji = emojiName
+                                                                    viewModel.selectedEmoji = emojiName
                                                                     isTapEmojiButton = false
                                                                 } label: {
                                                                     Image(emojiName)
@@ -125,7 +121,7 @@ struct PostView: View {
                                         
                                     }
                                     
-                                    TextEditor(text: $text)
+                                    TextEditor(text: $viewModel.text)
                                         .focused($isFocused, equals: .test)
                                         .scrollContentBackground(.hidden)
                                     
@@ -146,7 +142,7 @@ struct PostView: View {
                                         // 미리보기 포스트잇 색 설정
                                         ForEach(backgroundColorList, id: \.self) { color in
                                             Button {
-                                                backgroundColor = color
+                                                viewModel.backgroundColor = color
                                             } label: {
                                                 RoundedRectangle(cornerRadius: 16)
                                                     .frame(width: 20, height: 20)
@@ -158,7 +154,8 @@ struct PostView: View {
                                         Spacer()
                                         
                                         Button {
-                                            dismiss()
+                                            viewModel.post()
+
                                         } label: {
                                             Text("올리기")
                                                 .foregroundColor(Colors.Blue4.color)

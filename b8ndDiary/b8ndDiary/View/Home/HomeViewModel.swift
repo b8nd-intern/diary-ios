@@ -37,8 +37,10 @@ final class HomeViewModel : ObservableObject {
                 let data = try await PostSerivce.getList()
                 list = data.data!
                 print("home viewmodel - ", list)
-            } catch {
-                
+            } catch APIError.responseError(let e) {
+                print(e)
+            } catch APIError.transportError(let e) {
+                print(e.localizedDescription)
             }
         }
     }
