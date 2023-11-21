@@ -21,7 +21,7 @@ class Info: ObservableObject {
 struct GoogleSignIn: View {
     
     // 로그인 상태
-    @ObservedObject var info: Info = Info()
+    @EnvironmentObject var info: Info
     // 유저 데이터
     @State private var userData: UserData?
 

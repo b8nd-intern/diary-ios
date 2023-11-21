@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
-    @Environment(\.dismiss) private var dismiss
+    
     @State var isTextAnimation = false
-//    @EnvironmentObject var info: Info
+    @EnvironmentObject var info: Info
     
     private var scrollObservableView: some View {
         GeometryReader { proxy in
@@ -140,7 +140,7 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.initDiaryList {
-//                info.isLogined = false
+                info.isLogined = false
             }
         }
         .navigationBarBackButtonHidden(true)

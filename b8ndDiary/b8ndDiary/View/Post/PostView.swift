@@ -15,9 +15,10 @@ struct PostView: View {
     
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var viewModel: PostViewModel = PostViewModel()
-//    @EnvironmentObject var info: Info
+    @EnvironmentObject var info: Info
     
     @State var isTapEmojiButton: Bool = false
+    @State private var isAlert = false
     
     @FocusState var isFocused: test?
     
@@ -155,7 +156,14 @@ struct PostView: View {
                                         Spacer()
                                         
                                         Button {
-                                            viewModel.post()
+                                            viewModel.post {
+                                                dismiss()
+                                            } error: {
+                                                dismiss()
+                                                info.isLogined = false
+                                            } error2: {
+                                                isAlert = true
+                                            }
 
                                         } label: {
                                             Text("올리기")
@@ -163,7 +171,6 @@ struct PostView: View {
                                                 .frame(width: 65, height: 33)
                                                 .background(Colors.Blue1.color)
                                                 .cornerRadius(20)
-                                            
                                         }
                                     }
                                     .padding(.horizontal, 15)
@@ -177,7 +184,6 @@ struct PostView: View {
                                 .padding(.bottom, -30)
                                 
                             }
-                            
                         }
                     }
                 }
@@ -200,6 +206,13 @@ struct PostView: View {
             .navigationBarBackButtonHidden(true)
             .onAppear {
                 isFocused = .test
+            }
+            .alert(LocalizedStringKey("하루에 두 번만 작성이 가능해요!"), isPresented: $isAlert) {
+                Button("확인") {
+                    dismiss()
+                }
+            } message: {
+                Text("작성 실패")
             }
         }
     }

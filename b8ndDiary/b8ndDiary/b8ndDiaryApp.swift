@@ -25,7 +25,7 @@ struct b8ndDiaryApp: App {
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
-//                .environmentObject(Info())
+                .environmentObject(Info())
         }
     }
 }

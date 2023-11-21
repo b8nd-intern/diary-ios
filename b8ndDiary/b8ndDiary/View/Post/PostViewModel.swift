@@ -16,10 +16,15 @@ class PostViewModel : ObservableObject {
     @Published var backgroundColor: Color = Colors.Blue1.color
     @Published var selectedEmoji: String = "DefaultEmoji"
     
+    
     @MainActor
-    func post() {
+    func post(complete: @escaping () -> Void, 
+              error: @escaping () -> Void,
+              error2: @escaping () -> Void
+    ) {
         Task {
             do {
+                print(text, backgroundColor.description, selectedEmoji, publicState)
                 let response = try await HttpClient.request(
                     HttpRequest(url: "post/create",
                                 method: .post,
@@ -29,9 +34,14 @@ class PostViewModel : ObservableObject {
                                          "isSecret":publicState
                                         ],
                                 model: Response<String>.self))
-                print(response.data!)
-            } catch APIError.responseError(_) {
-                
+                print("post -", response.data ?? "")
+                complete()
+            } catch APIError.responseError(let e) {
+                if e == 400 {
+                    error2()
+                }
+            } catch APIError.transportError {
+                error()
             }
         }
     }
