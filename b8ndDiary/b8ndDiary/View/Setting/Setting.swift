@@ -12,21 +12,22 @@ import Firebase
 struct Setting: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var appViewModel: AppViewModel
     
     @State var lighton : Bool = false
     @State var LogOut : Bool = false
     
     let urlString = "https://www.notion.so/b03fb959d2b34a0981b37db66c1e9a4e?pvs=4"
-
+    
     var body: some View {
         VStack{
             
             Toggle(isOn: $lighton) {
                 if lighton{
                     Label("알람설정", systemImage: "bell.fill")
-                        
+                    
                 }
-            
+                
                 else{
                     Label("알람설정", systemImage: "bell")
                 }
@@ -36,41 +37,39 @@ struct Setting: View {
             .padding(.vertical, 20)
             
             Button {
-                GIDSignIn.sharedInstance.signOut()
-                dismiss()
-//                GoogleSignIn()
                 
+                appViewModel.save(false)
             } label: {
                 Label("로그아웃", systemImage: "rectangle.portrait.and.arrow.right")
                     .foregroundColor(.black)
                     .padding(.trailing, 240)
                     .padding(.bottom,20)
             }
-
             
-
-
+            
+            
+            
             Divider()
             
             Button {
-                        if let url = URL(string: urlString) {
-                            UIApplication.shared.open(url)
-                        }
-                    } label: {
-                        Text("about B8nd")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                            .opacity(0.5)
-                            .padding(15)
-                            .padding(.leading, 260)
-                    }
-
+                if let url = URL(string: urlString) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                Text("about B8nd")
+                    .font(.system(size: 10))
+                    .foregroundColor(.gray)
+                    .opacity(0.5)
+                    .padding(15)
+                    .padding(.leading, 260)
+            }
             
-       
+            
+            
             
             Spacer()
             
-
+            
         }
         .navigationBarBackButtonHidden()
         .navigationBarTitle(
@@ -85,7 +84,7 @@ struct Setting: View {
                     .font(.system(size: 15))
             }
         }
-            .navigationBarItems(
+        .navigationBarItems(
             leading:
                 HStack(spacing: 16) {
                     Button(action: {
@@ -96,21 +95,7 @@ struct Setting: View {
                     })
                     
                     Spacer()
-                    
-
-                    
-                
-                
                 }
         )
-        
-       
-
-    }
-}
-
-struct Setting_Previews: PreviewProvider {
-    static var previews: some View {
-        Setting()
     }
 }
