@@ -30,7 +30,7 @@ final class HomeViewModel : ObservableObject {
     
     
     @MainActor
-    func initDiaryList() {
+    func initDiaryList(callback: @escaping () -> Void) {
         Task {
             do {
                 print("home viewmodel - request...")
@@ -38,9 +38,9 @@ final class HomeViewModel : ObservableObject {
                 list = data.data!
                 print("home viewmodel - ", list)
             } catch APIError.responseError(let e) {
-                print(e)
-            } catch APIError.transportError(let e) {
-                print(e.localizedDescription)
+                print("home viewmodel - ", e)
+            } catch APIError.transportError {
+                callback()
             }
         }
     }

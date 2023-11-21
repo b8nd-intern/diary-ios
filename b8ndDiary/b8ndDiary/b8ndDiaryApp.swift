@@ -18,12 +18,14 @@ import Alamofire
 @main
 struct b8ndDiaryApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             GoogleSignIn()
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
+//                .environmentObject(Info())
         }
     }
 }

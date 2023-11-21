@@ -13,11 +13,15 @@ import FirebaseAuth
 import Alamofire
 import FirebaseCore
 
+class Info: ObservableObject {
+    @Published var isLogined = false
+}
+
 
 struct GoogleSignIn: View {
     
     // 로그인 상태
-    @State private var isLogined = false
+    @ObservedObject var info: Info = Info()
     // 유저 데이터
     @State private var userData: UserData?
 
@@ -42,17 +46,15 @@ struct GoogleSignIn: View {
                     scheme: .light,
                     style: .wide,
                     action: {
-//                        print(googleLogin())
                         googleLogin()
-                        
-               
-                        
                     })
                 .frame(width: 300, height: 60, alignment: .center)
                 .padding(20)
             }
-            .navigationDestination(isPresented: $isLogined, destination: {HomeView(userData: userData ?? UserData(url: nil, name: "", email: "")) })
-            
+            .navigationDestination(isPresented: $info.isLogined, destination: {
+                HomeView(userData: userData ?? UserData(url: nil, name: "", email: ""))
+//                    .environmentObject(info)
+            })
         }
         .onAppear(perform: {
             // 로그인 상태 체크
@@ -79,8 +81,8 @@ struct GoogleSignIn: View {
                 guard let profile = user?.profile else { return }
                 let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
                 userData = data
-                isLogined = true
-                print(isLogined)
+                info.isLogined = true
+                print(info.isLogined)
             }
         }
     }
@@ -109,10 +111,8 @@ struct GoogleSignIn: View {
                 } else if let token = token {
                     self.fcmToken = token
                     print("FCM Token: \(token)")
-    
                 }
             }
-            
 
             // FCM 토큰이 아직 필요하지 않다면 아래의 라인을 주석 처리하세요
             self.fcmToken = ""
@@ -125,7 +125,7 @@ struct GoogleSignIn: View {
                 let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
                 
                 userData = data
-                isLogined = true
+                info.isLogined = true
             }
         }
     }
@@ -145,7 +145,8 @@ struct GoogleSignIn: View {
                                              method: .post,
                                              headers: headers,
                                              model: Response<GoogleResponse>.self))
-                
+                print(response.data!.accessToken)
+                print(response.data!.refreshToken)
                 Token.save(.accessToken, response.data!.accessToken)
                 Token.save(.refreshToken, response.data!.refreshToken)
                 callback()

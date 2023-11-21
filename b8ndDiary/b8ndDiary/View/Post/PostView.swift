@@ -15,6 +15,7 @@ struct PostView: View {
     
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var viewModel: PostViewModel = PostViewModel()
+//    @EnvironmentObject var info: Info
     
     @State var isTapEmojiButton: Bool = false
     

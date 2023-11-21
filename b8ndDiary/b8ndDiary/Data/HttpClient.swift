@@ -28,7 +28,7 @@ final class HttpClient {
     ///  이럼.
     
     static func request<T: Codable>(_ httpRequest: HttpRequest<T>) async throws -> T {
-        let url = "http://\(Config.apiKey)/\(httpRequest.url)"
+        let url = "\(Config.apiKey)/\(httpRequest.url)"
         let request = session.request(url,
                                       method: httpRequest.method,
                                       parameters: httpRequest.params,

@@ -110,7 +110,7 @@ class PostCountsData: ObservableObject {
             let params = ["month": month]
             Task{
                 do {
-                    let response  = try await HttpClient.request(HttpRequest(url: "http://15.164.163.4/record/post-cnt", method:.get ,params: params , model: Response<PostcntResponse>.self))
+                    let response  = try await HttpClient.request(HttpRequest(url: "record/post-cnt", method:.get ,params: params , model: Response<PostcntResponse>.self))
                     print("\(response)")
                     postCounts.append(response.data!.cnt)
         
@@ -118,9 +118,7 @@ class PostCountsData: ObservableObject {
                 catch APIError.responseError(let statusCode) {
                     print("서버 응답 오류: HTTP 상태 코드 \(statusCode)")
                 } catch {
-                   
                     print("오류: \(error)")
-                    
                 }
             }
         }

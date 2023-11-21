@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import GoogleSignIn
 
 struct InterceptorData: Codable {
     let accessToken: String
@@ -17,6 +18,7 @@ final class Interceptor: RequestInterceptor {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         print("adapt")
+        print("url -", urlRequest.url)
         print(Token.get(.accessToken))
         guard let accessToken = Token.get(.accessToken) else {
             completion(.success(urlRequest))
@@ -37,16 +39,18 @@ final class Interceptor: RequestInterceptor {
         guard let response = request.task?.response as? HTTPURLResponse else {
             return
         }
+        
         print("interceptor.retry -", response.statusCode)
         print(Token.get(.refreshToken))
-        guard response.statusCode == 401 else {
+        let refreshCode = 403
+        guard response.statusCode == refreshCode else {
             print("interceptor.retry -", error)
             completion(.doNotRetryWithError(error))
             return
         }
         
         if let refreshToken = Token.get(.refreshToken) {
-            AF.request("http://\(Config.apiKey)/auth/refresh",
+            AF.request("\(Config.apiKey)/auth/refresh",
                        method: .post,
                        parameters: ["refreshToken": refreshToken],
                        encoding: JSONEncoding.default,
@@ -59,15 +63,17 @@ final class Interceptor: RequestInterceptor {
                         let decoder: JSONDecoder = JSONDecoder()
                         guard let value = response.value else { return }
                         guard let result = try? decoder.decode(Response<InterceptorData>.self, from: value) else { return }
-                        print(result.data?.accessToken)
+                        print("interceptor.retry -", result.data?.accessToken)
                         Token.save(.accessToken, result.data?.accessToken ?? "")
                         completion(.retry)
                     case .failure(let error):
                         print("통신 오류!\nCode:\(error._code), Message: \(error.errorDescription!)")
                         Token.remove(.accessToken)
                         Token.remove(.refreshToken)
+                        if error.responseCode == 401 {
+                            GIDSignIn.sharedInstance.signOut()
+                        }
                         completion(.doNotRetryWithError(error))
-                        exit(0)
                     }
                 }
         }

@@ -29,8 +29,8 @@ class PostViewModel : ObservableObject {
                                          "isSecret":publicState
                                         ],
                                 model: Response<String>.self))
-                print(response.data)
-            } catch APIError.responseError(let e) {
+                print(response.data!)
+            } catch APIError.responseError(_) {
                 
             }
         }
