@@ -205,25 +205,5 @@ struct MyPageView: View {
                     
                 }
         )
-        
     }
-
-      
-
-      
 }
-
-
-
-
-
-
-
-
-
-
-//struct MyPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
-//    }
-//}

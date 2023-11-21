@@ -9,8 +9,6 @@ import Foundation
 
 class PostSerivce {
     
-    
-    
     static func getList() async throws -> Response<[DataModel]> {
 
         let response = try await HttpClient.request(HttpRequest(url: "post/list", method: .get, model: Response<[DataModel]>.self))

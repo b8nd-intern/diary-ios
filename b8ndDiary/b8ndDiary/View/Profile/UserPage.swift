@@ -12,9 +12,3 @@ struct UserPage: View {
         Text("User Page")
     }
 }
-
-struct UserPage_Previews: PreviewProvider {
-    static var previews: some View {
-        UserPage()
-    }
-}
