@@ -57,3 +57,40 @@ enum Colors {
         }
     }
 }
+
+extension Color {
+    private static let skyBlue = "skyBlue"
+    private static let yellow = "yellow"
+    private static let blue = "blue"
+    private static let darkBlue = "darkBlue"
+    
+    static func fromString(_ s: String) -> Color {
+        switch s {
+        case skyBlue:
+            return Colors.Blue1.color
+        case yellow:
+            return Colors.Yellow1.color
+        case blue:
+            return Colors.Blue2.color
+        case darkBlue:
+            return Colors.Blue3.color
+        default:
+            return Colors.Blue1.color
+        }
+    }
+    
+    static func toString(_ c: Color) -> String {
+        switch c {
+        case Colors.Blue1.color:
+            return skyBlue
+        case Colors.Yellow1.color:
+            return yellow
+        case Colors.Blue2.color:
+            return blue
+        case Colors.Blue3.color:
+            return darkBlue
+        default:
+            return skyBlue
+        }
+    }
+}

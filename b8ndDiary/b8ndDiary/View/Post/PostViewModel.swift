@@ -29,7 +29,7 @@ class PostViewModel : ObservableObject {
                     HttpRequest(url: "post/create",
                                 method: .post,
                                 params: ["content": text,
-                                         "color":backgroundColor.description,
+                                         "color": Color.toString(backgroundColor),
                                          "emoji":selectedEmoji,
                                          "isSecret":publicState
                                         ],

@@ -22,7 +22,7 @@ struct PostView: View {
     
     @FocusState var isFocused: test?
     
-    var emojiList: [String] = ["SmileEmoji", "CrazyEmoji", "SwagEmoji", "TiredEmoji", "MadEmoji"]
+    var emojiList: [String] = ["smile", "wacky", "woo", "stress", "angry"]
     var backgroundColorList: [Color] = [Colors.Blue1.color, Colors.Blue2.color, Colors.Blue3.color, Colors.Yellow1.color]
     var placeholder: String = "오늘 즐거웠던 활동은 무엇인가요?"
     
@@ -149,7 +149,6 @@ struct PostView: View {
                                                 RoundedRectangle(cornerRadius: 16)
                                                     .frame(width: 20, height: 20)
                                                     .foregroundColor(color)
-                                                
                                             }
                                         }
                                         

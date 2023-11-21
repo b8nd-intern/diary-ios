@@ -16,7 +16,7 @@ struct PrettyHScrollView: View {
     @State private var isScrolling: Bool = false
     @State private var timer: Timer?
     
-    @State var _activePageIndex: Int = 2
+    @State var _activePageIndex: Int
     var activePageIndex: Binding<Int> {
         Binding(
             get: {
@@ -24,17 +24,20 @@ struct PrettyHScrollView: View {
             },
             set: { newValue in
                 if newValue <= 1 {
-                    var last = self.cards.last!
-                    last.id = UUID()
+                    guard var last = self.cards.last else {
+                        return
+                    }
+                    last.uuid = UUID()
                     self.cards.insert(last, at: 0)
                     self.cards.remove(at: self.cards.count - 1)
-                } else if newValue >= self.cards.count - 2 {
-                    var first = self.cards.first!
-                    first.id = UUID()
+                } else if newValue >= self.cards.count - 2 { // 6
+                    
+                    guard var first = self.cards.first else {
+                        return
+                    }
+                    first.uuid = UUID()
                     self.cards.append(first)
                     self.cards.remove(at: 0)
-                } else {
-                    self._activePageIndex = newValue
                 }
             }
         )
@@ -86,7 +89,7 @@ struct PrettyHScrollView: View {
                                  gestureDragOffset: $gestureDragOffset, isScrolling: $isScrolling, scrollEndCallback: {
                     restartTimer()
                 }, content: {
-                    ForEach(Array(self.cards.enumerated()), id: \.element) { idx, card in
+                    ForEach(Array(self.cards.enumerated()), id: \.element.uuid) { idx, card in
                         DiaryView(card: card, width: geo.size.width / 1.7, height: geo.size.height / 3.6, imojiOpacity: idx == self.activePageIndex.wrappedValue ?  imojiOpacity : 0.0, boardTextOpacity:  idx == self.activePageIndex.wrappedValue ? boardTextOpacity : 0.0)
                     }
                 })

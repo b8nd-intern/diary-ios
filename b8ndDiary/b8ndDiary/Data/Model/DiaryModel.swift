@@ -9,8 +9,9 @@ import SwiftUI
 
 struct DiaryModel: Identifiable, Equatable, Hashable {
 
-    var id: UUID
+    var id: Int
     var text: String
     var color: Color
     var image: String
+    var uuid: UUID
 }

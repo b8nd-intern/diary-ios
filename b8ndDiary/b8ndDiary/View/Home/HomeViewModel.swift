@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 final class HomeViewModel : ObservableObject {
     @Published var list: [DataModel] = []
+    @Published var topList: [DiaryModel] = []
     
     @Published var offset: CGFloat = 0
     //    @Published var direct: Direct = .none
@@ -39,6 +41,26 @@ final class HomeViewModel : ObservableObject {
                 print("home viewmodel - ", list)
             } catch APIError.responseError(let e) {
                 print("home viewmodel - ", e)
+            } catch APIError.transportError {
+                callback()
+            }
+        }
+    }
+    
+    @MainActor
+    func initTopSevenList(callback: @escaping () -> Void) {
+        Task {
+            do {
+                let data = try await PostSerivce.getTopSevenList()
+                topList = data.data!.map {
+                    DiaryModel(id: $0.postId,
+                               text: $0.content,
+                               color: Color.fromString($0.color),
+                               image: $0.emoji,
+                               uuid: UUID())
+                }
+            } catch APIError.responseError(let e) {
+                print(e)
             } catch APIError.transportError {
                 callback()
             }
