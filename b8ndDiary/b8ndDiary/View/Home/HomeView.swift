@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
+    @EnvironmentObject var appViewModel: AppViewModel
     
     @State var isTextAnimation = false
-    @EnvironmentObject var info: Info
     
     private var scrollObservableView: some View {
         GeometryReader { proxy in
@@ -119,7 +119,6 @@ struct HomeView: View {
                     // 일기 작성 뷰로 넘어가는 코드
                     NavigationLink {
                         PostView()
-                            .environmentObject(info)
                     } label: {
                         PostButtonView()
                     }
@@ -135,7 +134,7 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.initDiaryList {
-                info.isLogined = false
+                appViewModel.save(false)
             }
         }
         .navigationBarBackButtonHidden(true)

@@ -25,7 +25,7 @@ struct b8ndDiaryApp: App {
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
-                .environmentObject(Info())
+                .environmentObject(AppViewModel())
         }
     }
 }
@@ -83,31 +83,8 @@ extension AppDelegate: MessagingDelegate {
         object: nil,
         userInfo: dataDict
       )
-        // 서버로 FCM 토큰과 ID 토큰 전송
-        sendTokensToServer(fcmToken)
     }
 }
 func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     completionHandler([.list, .banner])
-}
-
-private func sendTokensToServer(_ fcmToken: String?) {
-    guard let fcmToken = fcmToken else { return }
-    
-    // ID 토큰 가져오기
-    if let idToken = Auth.auth().currentUser?.uid {
-        let parameters = [
-            "fcmToken": fcmToken,
-            "idToken": idToken
-        ]
-        
-        AF.request("http://" + Config.apiKey, method: .post, parameters: parameters).responseJSON { response in
-            switch response.result {
-            case .success:
-                print("Tokens sent to server successfully")
-            case .failure(let error):
-                print("Failed to send tokens to server:", error)
-            }
-        }
-    }
 }

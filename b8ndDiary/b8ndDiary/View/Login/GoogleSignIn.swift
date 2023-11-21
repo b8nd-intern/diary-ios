@@ -13,15 +13,11 @@ import FirebaseAuth
 import Alamofire
 import FirebaseCore
 
-class Info: ObservableObject {
-    @Published var isLogined = false
-}
-
 
 struct GoogleSignIn: View {
     
-    // 로그인 상태
-    @EnvironmentObject var info: Info
+    @EnvironmentObject var appViewModel: AppViewModel
+    
     // 유저 데이터
     @State private var userData: UserData?
 
@@ -51,7 +47,7 @@ struct GoogleSignIn: View {
                 .frame(width: 300, height: 60, alignment: .center)
                 .padding(20)
             }
-            .navigationDestination(isPresented: $info.isLogined, destination: {
+            .navigationDestination(isPresented: $appViewModel.isLogin, destination: {
                 HomeView(userData: userData ?? UserData(url: nil, name: "", email: ""))
 //                    .environmentObject(info)
             })
@@ -81,8 +77,7 @@ struct GoogleSignIn: View {
                 guard let profile = user?.profile else { return }
                 let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
                 userData = data
-                info.isLogined = true
-                print(info.isLogined)
+                appViewModel.save(true)
             }
         }
     }
@@ -124,8 +119,8 @@ struct GoogleSignIn: View {
                 guard let profile = result.user.profile else { return }
                 let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
                 
-                userData = data
-                info.isLogined = true
+                userData = data            
+                appViewModel.save(true)
             }
         }
     }

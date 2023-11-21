@@ -9,7 +9,21 @@ import SwiftUI
 import GoogleSignIn
 
 struct MyPageView: View {
+    var test : Bool = true
     
+    var userData: UserData
+    
+    @State private var selectedYear = "2023년"
+    @State private var selectedMonth = ""
+    // 화면 종료
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.presentationMode) var presentationMode
+    @State var date = Date()
+    @ObservedObject var viewModel = MyPageViewModel()
+    
+    let yesrs = ["2023년", "2024년", "2025년"]
+    let days = ["일", "월", "화", "수", "목", "금","토"]
+    let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
     
     func createDayViews(for days: [String]) -> some View {
         ForEach(days, id: \.self) { day in
@@ -19,34 +33,9 @@ struct MyPageView: View {
                     .padding(.vertical,3)
                     .foregroundColor(.black)
             }
-            
         }
     }
     
-    var test : Bool = true
-    
-    @State private var selectedYear = "2023년"
-    
-    let yesrs = ["2023년", "2024년", "2025년"]
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    @State var date = Date()
-    @ObservedObject var viewModel = PostCountsData()
-    
-//    var PageNumber = viewModel.postCounts
-
-    let days = ["일", "월", "화", "수", "목", "금","토"]
-
-
-    
-    let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
-    @State private var selectedMonth = ""
-    // 화면 종료
-    @Environment(\.dismiss) private var dismiss
-    // 유저 데이터 바인딩
-    
-    var userData:UserData
     
     
     var body: some View {
@@ -135,11 +124,11 @@ struct MyPageView: View {
                             
                         }
                         .padding(10)
-                       
+                        
                         VStack {
                             ForEach(Array(zip(months,viewModel.postCounts)), id: \.0) { month,count in
                                 NavigationLink(
-
+                                    
                                     destination: MonthPage(selectedMonth: month),
                                     label: {
                                         HStack {
@@ -149,7 +138,7 @@ struct MyPageView: View {
                                                 .foregroundColor(.black)
                                             
                                             Spacer()
-
+                                            
                                             Text("\(count)장")
                                                 .padding(.trailing, 30)
                                                 .foregroundColor(Colors.Gray3.color)
@@ -174,9 +163,11 @@ struct MyPageView: View {
             }
         }
         .onAppear {
-            viewModel.PostYearCnt()
-           
-               }
+            viewModel.postYearCnt(callback: {
+                
+            })
+            
+        }
         .navigationBarBackButtonHidden()
         .navigationBarTitle(
             "",
@@ -201,32 +192,7 @@ struct MyPageView: View {
                     })
                     
                     Spacer()
-                    
-                    
-                    
-                    
-                    
                 }
         )
-        
     }
-
-      
-
-      
 }
-
-
-
-
-
-
-
-
-
-
-//struct MyPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyPageView(userData: UserData(url: nil, name: "이름", email: "이메일"))
-//    }
-//}

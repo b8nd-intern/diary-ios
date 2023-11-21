@@ -14,8 +14,8 @@ struct PostView: View {
     }
     
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var appViewModel: AppViewModel
     @ObservedObject var viewModel: PostViewModel = PostViewModel()
-    @EnvironmentObject var info: Info
     
     @State var isTapEmojiButton: Bool = false
     @State private var isAlert = false
@@ -161,7 +161,7 @@ struct PostView: View {
                                             isAlert = true
                                         }, error2: {
                                             dismiss()
-                                            info.isLogined = false
+                                            appViewModel.save(false)
                                         })
                                         
                                     } label: {
