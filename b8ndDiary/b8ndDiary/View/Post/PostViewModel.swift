@@ -16,7 +16,6 @@ class PostViewModel : ObservableObject {
     @Published var backgroundColor: Color = Colors.Blue1.color
     @Published var selectedEmoji: String = "DefaultEmoji"
     
-    
     @MainActor
     func post(complete: @escaping () -> Void, 
               error: @escaping () -> Void,
@@ -31,17 +30,15 @@ class PostViewModel : ObservableObject {
                                 params: ["content": text,
                                          "color": Color.toString(backgroundColor),
                                          "emoji":selectedEmoji,
-                                         "isSecret":publicState
-                                        ],
+                                         "isSecret":publicState],
                                 model: Response<String>.self))
                 print("post -", response.data ?? "")
                 complete()
             } catch APIError.responseError(let e) {
-                if e == 400 {
-                    error2()
-                }
-            } catch APIError.transportError {
+                print(e)
                 error()
+            } catch APIError.transportError {
+                error2()
             }
         }
     }

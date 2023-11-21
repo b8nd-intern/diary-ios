@@ -119,6 +119,7 @@ struct HomeView: View {
                     // 일기 작성 뷰로 넘어가는 코드
                     NavigationLink {
                         PostView()
+                            .environmentObject(info)
                     } label: {
                         PostButtonView()
                     }
