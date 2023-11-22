@@ -11,17 +11,13 @@ struct ClickDiaryView: View {
     
     @Binding var isClicked: Bool
     @Binding var clickedContent: DataModel?
-    let backgroundColor: Color
     @State var test: Bool = false
     @State var userName: String = "오스트랄로피테쿠스아파렌시스"
     
     let userData: UserData
     
     var body: some View {
-        
         ZStack {
-            
-            
             Button {
                 isClicked = false
             } label: {
@@ -37,7 +33,7 @@ struct ClickDiaryView: View {
             
             VStack {
                 Spacer()
-                ClickCell(data: clickedContent?.content ?? "", backgroundColor: backgroundColor)
+                ClickCell(data: clickedContent)
                     .frame(width: 327, height: 319)
                     .overlay {
                         VStack {

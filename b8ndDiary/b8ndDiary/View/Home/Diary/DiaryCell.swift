@@ -9,24 +9,22 @@ import SwiftUI
 
 struct DiaryCell: View {
     
-    @State var data: String = ""
+    let data: DataModel
     
     @State var userName: String = "오스트랄로피테쿠스아파렌시스"
-    
-    let backgroundColor: Color
     
     var body: some View {
         HStack {
             RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(backgroundColor)
+                .foregroundColor(Color.fromString(data.color))
                 .overlay {
                     VStack(alignment: .leading) {
                         HStack {
-                            Image("SmileEmoji")
+                            Image(data.emoji)
                             Spacer()
                         }
                         .padding(.top, 8)
-                        Text("\(data)")
+                        Text("\(data.content)")
                             .lineLimit(4)
                             .foregroundColor(Colors.Black1.color)
                         Spacer()

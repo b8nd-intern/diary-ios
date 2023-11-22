@@ -28,7 +28,7 @@ struct ShowDiaryView: View {
                     isClicked = true
                     clickedContent = content
                 } label: {
-                    DiaryCell(data: content.content, backgroundColor: Color.fromString(content.color))
+                    DiaryCell(data: content)
                         .frame(width: 150, height: 150)
                 }
             }

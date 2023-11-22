@@ -127,7 +127,7 @@ struct HomeView: View {
                     
                     // 포스트잇을 클릭하면 일기를 보여주는 코드
                     if isClicked && (clickedContent != nil) {
-                        ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, backgroundColor: Color.fromString(clickedContent!.color), userData: userData)
+                        ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
                     }
                 }
             }

@@ -9,16 +9,15 @@ import SwiftUI
 
 struct ClickCell: View {
     
-    @State var data: String = ""
-    let backgroundColor: Color
+    @State var data: DataModel?
     
     var body: some View {
         RoundedRectangle(cornerRadius: 5)
-            .foregroundColor(backgroundColor)
+            .foregroundColor(Color.fromString(data?.color ?? ""))
             .overlay {
                 VStack {
                     HStack {
-                        Image("SmileEmoji")
+                        Image(data?.emoji ?? "")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height: 50)
@@ -28,7 +27,7 @@ struct ClickCell: View {
                     .padding(.top, 20)
                     .padding(.leading, 20)
                     
-                    Text("\(data)")
+                    Text(data?.content ?? "")
                         .font(.custom("Pretendard-Medium", size: 16))
                         .foregroundColor(Colors.Black1.color)
                         .frame(width: 250)
