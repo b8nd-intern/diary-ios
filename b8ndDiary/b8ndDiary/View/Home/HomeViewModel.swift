@@ -43,6 +43,8 @@ final class HomeViewModel : ObservableObject {
                 print("home viewmodel - ", e)
             } catch APIError.transportError {
                 callback()
+            } catch (let e) {
+                print(e.localizedDescription)
             }
         }
     }

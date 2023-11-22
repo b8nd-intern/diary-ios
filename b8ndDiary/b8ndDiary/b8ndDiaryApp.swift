@@ -19,13 +19,21 @@ import Alamofire
 struct b8ndDiaryApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    let viewModel = AppViewModel()
+    
     var body: some Scene {
         WindowGroup {
             GoogleSignIn()
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
-                .environmentObject(AppViewModel())
+                .environmentObject(viewModel)
+                .onAppear {
+                    guard Token.get(.accessToken) != nil else {
+                        viewModel.save(false)
+                        return
+                    }
+                }
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451609C22B0E0F0000101AC6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451609C12B0E0F0000101AC6 /* Config.swift */; };
 		45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */; };
 		45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */; };
 		45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A42AD6B49300A7DAA4 /* DayView.swift */; };
@@ -48,7 +49,6 @@
 		4DF4F4012ABC5A1D00D66126 /* b8ndDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */; };
 		4DF4F4032ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */; };
 		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
-		755E08782B0D795A002BF22E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E08772B0D795A002BF22E /* Config.swift */; };
 		7596ADD62AE68D1C008EBFD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */; };
 		7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */; };
 		7596ADDC2AE68D47008EBFD8 /* MonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDB2AE68D47008EBFD8 /* MonthPage.swift */; };
@@ -93,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		451609C12B0E0F0000101AC6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButtonView.swift; sourceTree = "<group>"; };
 		45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		45DC77A42AD6B49300A7DAA4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITests.swift; sourceTree = "<group>"; };
 		4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		755E08772B0D795A002BF22E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		7596ADDB2AE68D47008EBFD8 /* MonthPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPage.swift; sourceTree = "<group>"; };
@@ -252,9 +252,9 @@
 		4D06C2922B0CBB9400E64A97 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				755E08772B0D795A002BF22E /* Config.swift */,
 				4D4A17192B0B7A2900941F30 /* Token.swift */,
 				4D06C29C2B0CEB8E00E64A97 /* Auth.swift */,
+				451609C12B0E0F0000101AC6 /* Config.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 			files = (
 				4D4A171A2B0B7A2900941F30 /* Token.swift in Sources */,
 				45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */,
-				755E08782B0D795A002BF22E /* Config.swift in Sources */,
+				451609C22B0E0F0000101AC6 /* Config.swift in Sources */,
 				4D4A171E2B0B8BD900941F30 /* PostViewModel.swift in Sources */,
 				45DC77A82AD6B4AF00A7DAA4 /* ShowDiaryView.swift in Sources */,
 				7596ADE22AE68D5F008EBFD8 /* UserData.swift in Sources */,

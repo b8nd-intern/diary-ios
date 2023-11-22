@@ -12,7 +12,6 @@ import GoogleSignIn
 
 final class Interceptor: RequestInterceptor {
     
-    
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         print("adapt")
         print("url -", urlRequest.url ?? "")
