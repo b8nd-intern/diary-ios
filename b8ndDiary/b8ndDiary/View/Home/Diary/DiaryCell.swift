@@ -13,10 +13,12 @@ struct DiaryCell: View {
     
     @State var userName: String = "오스트랄로피테쿠스아파렌시스"
     
+    let backgroundColor: Color
+    
     var body: some View {
         HStack {
             RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(Colors.Blue2.color)
+                .foregroundColor(backgroundColor)
                 .overlay {
                     VStack(alignment: .leading) {
                         HStack {

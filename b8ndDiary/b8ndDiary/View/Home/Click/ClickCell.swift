@@ -10,10 +10,11 @@ import SwiftUI
 struct ClickCell: View {
     
     @State var data: String = ""
+    let backgroundColor: Color
     
     var body: some View {
         RoundedRectangle(cornerRadius: 5)
-            .foregroundColor(Colors.Blue2.color)
+            .foregroundColor(backgroundColor)
             .overlay {
                 VStack {
                     HStack {

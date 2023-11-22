@@ -10,7 +10,8 @@ import SwiftUI
 struct ClickDiaryView: View {
     
     @Binding var isClicked: Bool
-    @Binding var clickedContent: String
+    @Binding var clickedContent: DataModel?
+    let backgroundColor: Color
     @State var test: Bool = false
     @State var userName: String = "오스트랄로피테쿠스아파렌시스"
     
@@ -36,7 +37,7 @@ struct ClickDiaryView: View {
             
             VStack {
                 Spacer()
-                ClickCell(data: clickedContent)
+                ClickCell(data: clickedContent?.content ?? "", backgroundColor: backgroundColor)
                     .frame(width: 327, height: 319)
                     .overlay {
                         VStack {

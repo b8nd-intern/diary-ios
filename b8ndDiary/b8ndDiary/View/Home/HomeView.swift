@@ -31,7 +31,7 @@ struct HomeView: View {
     
     // 일기를 클릭해서 볼 때 사용되는 변수
     @State var isClicked: Bool = false
-    @State var clickedContent: String = ""
+    @State var clickedContent: DataModel?
     
     let userData: UserData
     
@@ -126,8 +126,8 @@ struct HomeView: View {
                     .padding(.top, 520)
                     
                     // 포스트잇을 클릭하면 일기를 보여주는 코드
-                    if isClicked {
-                        ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
+                    if isClicked && (clickedContent != nil) {
+                        ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, backgroundColor: Color.fromString(clickedContent!.color), userData: userData)
                     }
                 }
             }

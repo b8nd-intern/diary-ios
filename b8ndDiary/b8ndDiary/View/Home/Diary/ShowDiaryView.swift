@@ -10,7 +10,7 @@ import SwiftUI
 struct ShowDiaryView: View {
     
     @Binding var isClicked: Bool
-    @Binding var clickedContent: String
+    @Binding var clickedContent: DataModel?
     
     @Binding var day: Int
     
@@ -26,9 +26,9 @@ struct ShowDiaryView: View {
             ForEach(diaryContent, id: \.self) { content in
                 Button {
                     isClicked = true
-                    clickedContent = content.content
+                    clickedContent = content
                 } label: {
-                    DiaryCell(data: content.content)
+                    DiaryCell(data: content.content, backgroundColor: Color.fromString(content.color))
                         .frame(width: 150, height: 150)
                 }
             }

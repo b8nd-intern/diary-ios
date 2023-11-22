@@ -117,15 +117,13 @@ struct PostView: View {
                                                 }
                                             }
                                             .offset(x: 25, y: -30)
-                                        
                                     }
-                                    
                                 }
-#if !targetEnvironment(simulator)
+//#if !targetEnvironment(simulator)
                                 TextEditor(text: $viewModel.text)
                                     .focused($isFocused, equals: .test)
                                     .scrollContentBackground(.hidden)
-#endif
+//#endif
                                 
                                 Spacer()
                             }
