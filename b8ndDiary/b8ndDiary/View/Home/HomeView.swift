@@ -66,8 +66,10 @@ struct HomeView: View {
                                             .resizable()
                                             .frame(width: geo.size.width, height: 220)
                                             .padding(.top, 40)
+                                        if viewModel.topList.count > 0 {
+                                            PrettyHScrollView(_activePageIndex: viewModel.topList.count - 3, cards: viewModel.topList, geo: geo)
+                                        }
                                         
-                                        PrettyHScrollView(_activePageIndex: viewModel.topList.count - 2, cards: viewModel.topList, geo: geo)
                                     }
                                     .padding(.bottom, 30)
                                     
@@ -134,6 +136,9 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.initDiaryList {
+                appViewModel.save(false)
+            }
+            viewModel.initTopSevenList {
                 appViewModel.save(false)
             }
         }

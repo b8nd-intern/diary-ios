@@ -30,7 +30,7 @@ struct PrettyHScrollView: View {
                     last.uuid = UUID()
                     self.cards.insert(last, at: 0)
                     self.cards.remove(at: self.cards.count - 1)
-                } else if newValue >= self.cards.count - 2 { // 6
+                } else if newValue >= self.cards.count - 3 { // 6
                     
                     guard var first = self.cards.first else {
                         return
