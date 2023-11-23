@@ -19,10 +19,13 @@ class YearCalendarViewModel: ObservableObject {
     func RecordYear(callback: @escaping () -> Void) {
         Task{
             do {
-                let aresponse  = try await HttpClient.request(HttpRequest(url: "record/records/year", method:.get, model: RecordResponse<YearResponse>.self))
+                let response  = try await HttpClient.request(HttpRequest(url: "record/records/year", method:.get, model: RecordResponse<YearResponse>.self))
                
                 
-                Yeardate = aresponse.data.map { $0.isDone }
+                Yeardate = response.data.map { $0.isDone }
+                Yeardate[1] = true
+                Yeardate[10] = true
+                Yeardate[20] = true
                 print("Yeardate:", Yeardate)
              
                 

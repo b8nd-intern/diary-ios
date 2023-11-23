@@ -7,22 +7,25 @@
 
 import SwiftUI
 
-func createSquareGrid(rows: Int, columns: Int, totalSquares: Int, YearviewModel: YearCalendarViewModel) -> some View {
+func createSquareGrid(rows: Int, columns: Int, totalSquares: Int, YearviewModeldate: [Bool]) -> some View {
     return VStack(spacing: 10) {
         var a = 0
         ForEach(0..<rows, id: \.self) { row in
             HStack(spacing: 10) {
                 ForEach(0..<columns, id: \.self) { column in
-                    if a < YearviewModel.Yeardate.count{
+                    let b = row * rows + (column) % columns
+                    if b < YearviewModeldate.count{ // 0 ~ 200
+                        // 나누기 7 -> 열
+                        // 나머지 7 -> 행
+                        // +) 날짜 -> 
                         Rectangle()
-                            .foregroundColor(YearviewModel.Yeardate[a] ? Colors.Blue1.color : Colors.Gray1.color)
+                            .foregroundColor(YearviewModeldate[b] ? Colors.Blue1.color : Colors.Gray1.color)
                             .frame(width: 15, height: 15)
                             .cornerRadius(3)
                             .onAppear{
                                 a+=1
-                                print("a < viewModel.Yeardate.count :")
-                                print("yeardata 이동 확인 :",YearviewModel.Yeardate)
-                                
+                                print(a)
+                                print("yeardata 이동 확인1 :",YearviewModeldate)
                                 
                             }
                     } else {
@@ -31,8 +34,9 @@ func createSquareGrid(rows: Int, columns: Int, totalSquares: Int, YearviewModel:
                             .frame(width: 15, height: 15)
                             .cornerRadius(3)
                             .onAppear{
-                                print("else :")
-                                print("yeardata 이동 확인 :",YearviewModel.Yeardate)
+//                                print("else :")
+                                print(a)
+                                print("yeardata 이동 확인 :",YearviewModeldate)
                                 
                             }
                     }
@@ -47,7 +51,7 @@ struct YearCalendar: View {
     let squaresPerRow = 5
     let totalSquares = 35
     
-    @ObservedObject var YearviewModel = YearCalendarViewModel()
+    @StateObject var YearviewModel = YearCalendarViewModel()
     
     let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
     
@@ -62,7 +66,7 @@ struct YearCalendar: View {
                             .font(.system(size: 10))
                             .foregroundColor(.black)
                         
-                        createSquareGrid(rows: totalRows, columns: squaresPerRow, totalSquares: totalSquares, YearviewModel: YearviewModel)
+                        createSquareGrid(rows: totalRows, columns: squaresPerRow, totalSquares: totalSquares, YearviewModeldate: YearviewModel.Yeardate)
                     }
                 }
             }
@@ -76,24 +80,6 @@ struct YearCalendar: View {
         
     }
 }
-//class YearviewModel {
-//  RecordYear(yeardate: Date, callback: () => void) {
-//    // YearviewModel 내부에서 yeardate 사용하는 코드
-//    // ...
-//
-//    // 비동기 작업이 끝난 후에 callback 호출
-//    callback();
-//  }
-//}
-//
-//// YearviewModel.RecordYear 호출 예제
-//const yearViewModelInstance = new YearviewModel();
-//const currentDate = new Date();
-//
-//yearViewModelInstance.RecordYear(currentDate, () => {
-//  // YearviewModel의 동작이 끝난 후에 실행되는 코드
-//  console.log('YearviewModel 동작 완료!');
-//});
 
 
 
