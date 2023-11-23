@@ -20,6 +20,7 @@ struct MyPageView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var date = Date()
     @ObservedObject var viewModel = MyPageViewModel()
+
     
     
     let yesrs = ["2023년"]
@@ -84,6 +85,11 @@ struct MyPageView: View {
                             .padding(.vertical,40)
                             .padding(.horizontal,30)
                     }
+//                    .onAppear{
+//                        YearviewModel.RecordYear {
+//                            print("테스트 : ", YearviewModel.Yeardate)
+//                        }
+//                    }
                     .overlay {
                         HStack{
                             VStack{
@@ -166,9 +172,6 @@ struct MyPageView: View {
         .onAppear {
             viewModel.postYearCnt(callback: {
                 
-            })
-            viewModel.RecordYear(callback: {
-            
             })
             
             

@@ -58,6 +58,8 @@ struct GoogleSignIn: View {
 //                await sendTokensToServer()
 //            }
             checkState()
+            
+
         })
         .alert(LocalizedStringKey("로그인 실패"), isPresented: $isAlert) {
             Text("확인")

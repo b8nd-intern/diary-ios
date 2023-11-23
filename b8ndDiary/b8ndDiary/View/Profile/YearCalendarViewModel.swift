@@ -1,50 +1,42 @@
-////
-////  MyPageViewModel.swift
-////  b8ndDiary
-////
-////  Created by dgsw8th71 on 11/21/23.
-////
 //
-//import Foundation
+//  YearCalendarViewModel.swift
+//  b8ndDiary
 //
+//  Created by dgsw8th61 on 11/22/23.
 //
-//struct RecordResponse <T: Codable> : Codable {
-//    let status: Int
-//    let message: String
-//    let data: [T?]
-//}
+
 //
-//struct WeekResponse : Codable {
-//    let date : String
-//    let isDone : Bool
-//    
-//}
+//  MyPageViewModel.swift
+//  b8ndDiary
 //
-//class YearCalendarViewModel: ObservableObject {
-//    
-//    
-//    func RecordWeek(callback: @escaping () -> Void) {
+//  Created by dgsw8th71 on 11/21/23.
 //
-//        Task{
-//            do {
-//                let response  = try await HttpClient.request(HttpRequest(url: "/record/records/week", method:.get, model: RecordResponse<WeekResponse>.self))
-//                print(response)
-//
-//            } catch APIError.responseError(let statusCode) {
-//                print("yearcalendarViewModel - statusCode: ", statusCode)
-//
-//            } catch {
-//
-//                print("Record Week 오류: \(error)")
-//
-//            }
-//            catch APIError.transportError {
-//                callback()
-//
-//            }
-//        }
-//    }
-//}
+
+import Foundation
+
+class YearCalendarViewModel: ObservableObject {
+    @Published var Yeardate : [Bool] = []
+    func RecordYear(callback: @escaping () -> Void) {
+        Task{
+            do {
+                let aresponse  = try await HttpClient.request(HttpRequest(url: "record/records/year", method:.get, model: RecordResponse<YearResponse>.self))
+               
+                
+                Yeardate = aresponse.data.map { $0.isDone }
+                print("Yeardate:", Yeardate)
+             
+                
+            } catch APIError.responseError(let statusCode) {
+                print("myPageViewModel - statusCode: ", statusCode)
+                
+            }
+            catch APIError.transportError {
+                callback()
+                
+            }
+        }
+    }
+}
 
 
 
