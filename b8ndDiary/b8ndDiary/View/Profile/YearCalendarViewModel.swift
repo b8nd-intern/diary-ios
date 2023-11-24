@@ -15,31 +15,24 @@
 import Foundation
 
 class YearCalendarViewModel: ObservableObject {
-    @Published var Yeardate : [Bool] = []
+    @Published var Yeardate: [Bool] = []
+    
     func RecordYear(callback: @escaping () -> Void) {
-        Task{
+        Task {
             do {
-                let response  = try await HttpClient.request(HttpRequest(url: "record/records/year", method:.get, model: RecordResponse<YearResponse>.self))
-               
+                let response = try await HttpClient.request(HttpRequest(url: "record/records/year", method:.get, model: RecordResponse<YearResponse>.self))
                 
                 Yeardate = response.data.map { $0.isDone }
-                Yeardate[1] = true
-                Yeardate[10] = true
-                Yeardate[20] = true
-                print("Yeardate:", Yeardate)
-             
+                Yeardate[27] = true
+                print("갯수", Yeardate.count)
                 
             } catch APIError.responseError(let statusCode) {
                 print("myPageViewModel - statusCode: ", statusCode)
                 
-            }
-            catch APIError.transportError {
+            } catch APIError.transportError {
                 callback()
                 
             }
         }
     }
 }
-
-
-

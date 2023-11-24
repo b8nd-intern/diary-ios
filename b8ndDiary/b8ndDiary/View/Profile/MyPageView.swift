@@ -14,7 +14,7 @@ struct MyPageView: View {
     var userData: UserData
     
     @State private var selectedYear = "2023년"
-    @State private var selectedMonth = ""
+    @State private var selectedMonth = 0
     // 화면 종료
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
