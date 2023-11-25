@@ -14,7 +14,7 @@ struct MyPageView: View {
     var userData: UserData
     
     @State private var selectedYear = "2023년"
-    @State private var selectedMonth = 0
+    @State private var selectedMonth : Int = 0
     // 화면 종료
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
@@ -25,7 +25,7 @@ struct MyPageView: View {
     
     let yesrs = ["2023년"]
     let days = ["일", "월", "화", "수", "목", "금","토"]
-    let months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월" ,"9월", "10월", "11월", "12월"]
+    let months = [1,2,3,4,5,6,7,8,9,10,11,12]
     
     func createDayViews(for days: [String]) -> some View {
         ForEach(days, id: \.self) { day in
@@ -85,11 +85,6 @@ struct MyPageView: View {
                             .padding(.vertical,40)
                             .padding(.horizontal,30)
                     }
-//                    .onAppear{
-//                        YearviewModel.RecordYear {
-//                            print("테스트 : ", YearviewModel.Yeardate)
-//                        }
-//                    }
                     .overlay {
                         HStack{
                             VStack{
@@ -139,7 +134,7 @@ struct MyPageView: View {
                                     destination: MonthPage(selectedMonth: month),
                                     label: {
                                         HStack {
-                                            Text(month)
+                                            Text("\(month)월")
                                                 .padding(.leading, 30)
                                                 .bold()
                                                 .foregroundColor(.black)
