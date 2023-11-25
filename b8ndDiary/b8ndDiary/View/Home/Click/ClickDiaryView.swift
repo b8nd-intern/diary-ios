@@ -12,7 +12,6 @@ struct ClickDiaryView: View {
     @Binding var isClicked: Bool
     @Binding var clickedContent: DataModel?
     @State var test: Bool = false
-    @State var userName: String = "오스트랄로피테쿠스아파렌시스"
     
     let userData: UserData
     
@@ -40,7 +39,7 @@ struct ClickDiaryView: View {
                             NavigationLink {
                                 MyPageView(userData: userData)
                             } label: {
-                                Text("\(userName)")
+                                Text("\(userData.name)")
                                     .font(.system(size: 12))
                                     .frame(width: 100, height: 26)
                                     .foregroundColor(Colors.Blue5.color)

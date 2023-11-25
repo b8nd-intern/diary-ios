@@ -11,8 +11,6 @@ struct DiaryCell: View {
     
     let data: DataModel
     
-    @State var userName: String = "오스트랄로피테쿠스아파렌시스"
-    
     var body: some View {
         HStack {
             RoundedRectangle(cornerRadius: 5)
@@ -30,7 +28,7 @@ struct DiaryCell: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Text("\(userName)")
+                            Text("\(data.name)")
                                 .font(.system(size: 8))
                                 .frame(width: 42, height: 10)
                                 .foregroundColor(Colors.Blue5.color)
