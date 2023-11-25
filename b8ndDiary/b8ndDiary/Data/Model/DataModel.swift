@@ -11,6 +11,6 @@ struct DataModel: Codable, Hashable {
     
     let postId: Int
     let content, color, emoji, name: String
-    let userId: String
+    let userId: String?
     let isSecret: Bool
 }
