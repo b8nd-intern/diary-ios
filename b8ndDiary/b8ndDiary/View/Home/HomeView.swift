@@ -66,7 +66,7 @@ struct HomeView: View {
                                             .resizable()
                                             .frame(width: geo.size.width, height: 220)
                                             .padding(.top, 40)
-                                        if viewModel.topList.count > 0 {
+                                        if viewModel.topList.count == 7 {
                                             PrettyHScrollView(_activePageIndex: viewModel.topList.count - 3, cards: viewModel.topList, geo: geo)
                                         }
                                         
