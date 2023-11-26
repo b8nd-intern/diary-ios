@@ -84,7 +84,6 @@ struct HomeView: View {
                                     .padding(.bottom, 5)
                                     
                                     HStack {
-//                                        DayView(dayViewModel: dayViewModel)
                                         if !dayViewModel.dayList.isEmpty {
                                             ForEach(0..<7, id: \.self) { i in
                                                 DayView(dayViewModel: dayViewModel, dayState: dayViewModel.dayList[i].isDone, i: i)

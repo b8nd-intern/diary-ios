@@ -15,6 +15,12 @@ struct ToolbarView: View {
     
     let userData: UserData
     
+    static let dateformat: DateFormatter = {
+          let formatter = DateFormatter()
+           formatter.dateFormat = "YYYY년 M월 d일"
+           return formatter
+       }()
+    
     var body: some View {
         VStack {
             HStack {
@@ -31,7 +37,7 @@ struct ToolbarView: View {
                                 toolbarProfileSetting(userData: userData)
                             }
                             
-                            Text("2023년 10월 31일")
+                            Text("\(ToolbarView.dateformat.string(from: Date()))")
                                 .font(.system(size: 12))
                                 .foregroundStyle(Colors.Gray2.color)
                                 .offset(y: isTextAnimation ? 0 : -100)
