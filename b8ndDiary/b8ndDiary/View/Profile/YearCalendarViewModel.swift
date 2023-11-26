@@ -23,6 +23,9 @@ class YearCalendarViewModel: ObservableObject {
                 let response = try await HttpClient.request(HttpRequest(url: "record/records/year", method:.get, model: RecordResponse<YearResponse>.self))
                 
                 Yeardate = response.data.map { $0.isDone }
+                Yeardate = Array(Yeardate[35..<365])
+
+                print(response)
                 Yeardate[3] = true
                 print("갯수", Yeardate.count)
             } catch APIError.responseError(let statusCode) {
