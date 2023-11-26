@@ -39,7 +39,7 @@ struct ClickDiaryView: View {
                             NavigationLink {
                                 MyPageView(userData: userData)
                             } label: {
-                                Text("\(userData.name)")
+                                Text("\(clickedContent!.name)")
                                     .font(.system(size: 12))
                                     .frame(width: 100, height: 26)
                                     .foregroundColor(Colors.Blue5.color)

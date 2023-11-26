@@ -19,6 +19,7 @@ struct PostView: View {
     
     @State var isTapEmojiButton: Bool = false
     @State private var isAlert = false
+    @State private var showingAlert = false
     
     @FocusState var isFocused: test?
     
@@ -119,11 +120,11 @@ struct PostView: View {
                                             .offset(x: 25, y: -30)
                                     }
                                 }
-//#if !targetEnvironment(simulator)
+                                //#if !targetEnvironment(simulator)
                                 TextEditor(text: $viewModel.text)
                                     .focused($isFocused, equals: .test)
                                     .scrollContentBackground(.hidden)
-//#endif
+                                //#endif
                                 
                                 Spacer()
                             }
@@ -153,14 +154,18 @@ struct PostView: View {
                                     Spacer()
                                     
                                     Button {
-                                        viewModel.post(complete: {
-                                            dismiss()
-                                        }, error: {
-                                            isAlert = true
-                                        }, error2: {
-                                            dismiss()
-                                            appViewModel.save(false)
-                                        })
+                                        if viewModel.selectedEmoji == "DefaultEmoji" {
+                                            self.showingAlert.toggle()
+                                        } else {
+                                            viewModel.post(complete: {
+                                                dismiss()
+                                            }, error: {
+                                                isAlert = true
+                                            }, error2: {
+                                                dismiss()
+                                                appViewModel.save(false)
+                                            })
+                                        }
                                         
                                     } label: {
                                         Text("올리기")
@@ -168,6 +173,10 @@ struct PostView: View {
                                             .frame(width: 65, height: 33)
                                             .background(Colors.Blue1.color)
                                             .cornerRadius(20)
+                                    }
+                                    .alert(isPresented: $showingAlert) {
+                                        Alert(title: Text("이모지를 선택해 주세요"), message: nil,
+                                              dismissButton: .default(Text("확인")))
                                     }
                                 }
                                 .padding(.horizontal, 15)
