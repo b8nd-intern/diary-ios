@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
+    @StateObject private var dayViewModel: DayViewModel = DayViewModel()
     @EnvironmentObject var appViewModel: AppViewModel
     
     @State var isTextAnimation = false
@@ -73,16 +74,22 @@ struct HomeView: View {
                                     .padding(.bottom, 30)
                                     
                                     HStack {
-                                        Text("\(name)")
+                                        Text("\(userData.name)")
                                             .font(.system(size: 16))
                                             .bold()
                                         Text("님의 출석 진행상황")
                                             .font(.system(size: 14))
                                     }
                                     .padding(.trailing, 110)
+                                    .padding(.bottom, 5)
                                     
                                     HStack {
-                                        DayView(day: $day)
+//                                        DayView(dayViewModel: dayViewModel)
+                                        if !dayViewModel.dayList.isEmpty {
+                                            ForEach(0..<7, id: \.self) { i in
+                                                DayView(dayViewModel: dayViewModel, dayState: dayViewModel.dayList[i].isDone, i: i)
+                                            }
+                                        }
                                     }
                                     
                                     Divider()
@@ -140,6 +147,7 @@ struct HomeView: View {
             viewModel.initTopSevenList {
                 appViewModel.save(false)
             }
+            dayViewModel.initDiaryList()
         }
         .navigationBarBackButtonHidden(true)
         

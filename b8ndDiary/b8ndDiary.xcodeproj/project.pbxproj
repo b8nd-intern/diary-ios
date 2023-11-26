@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		451609C22B0E0F0000101AC6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451609C12B0E0F0000101AC6 /* Config.swift */; };
+		451609C82B12E39D00101AC6 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451609C72B12E39D00101AC6 /* DayViewModel.swift */; };
 		45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */; };
 		45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */; };
 		45DC77A52AD6B49300A7DAA4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC77A42AD6B49300A7DAA4 /* DayView.swift */; };
@@ -96,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		451609C12B0E0F0000101AC6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		451609C72B12E39D00101AC6 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		45DC779A2AD6B40A00A7DAA4 /* PostButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButtonView.swift; sourceTree = "<group>"; };
 		45DC779D2AD6B43800A7DAA4 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		45DC77A42AD6B49300A7DAA4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				45DC77A42AD6B49300A7DAA4 /* DayView.swift */,
+				451609C72B12E39D00101AC6 /* DayViewModel.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				4D06C29B2B0CEA5B00E64A97 /* MyPageViewModel.swift in Sources */,
 				7596ADE02AE68D5A008EBFD8 /* GoogleSignIn.swift in Sources */,
 				D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */,
+				451609C82B12E39D00101AC6 /* DayViewModel.swift in Sources */,
 				45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */,
 				4D06C2992B0CBC6C00E64A97 /* UserPage.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
