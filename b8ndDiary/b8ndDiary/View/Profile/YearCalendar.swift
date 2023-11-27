@@ -69,7 +69,7 @@ struct YearCalendar: View {
             YearviewModel.RecordYear (callback: {
                 
             })
-            print("실행 : ",YearviewModel.Yeardate)
+//            print("실행 : ",YearviewModel.Yeardate)
         }
         
     }

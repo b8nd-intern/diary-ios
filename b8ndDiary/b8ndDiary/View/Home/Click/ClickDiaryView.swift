@@ -36,16 +36,18 @@ struct ClickDiaryView: View {
                     .frame(width: 327, height: 319)
                     .overlay {
                         VStack {
-                            NavigationLink {
-                                MyPageView(userData: userData)
-                            } label: {
-                                Text("\(clickedContent!.name)")
-                                    .font(.system(size: 12))
-                                    .frame(width: 100, height: 26)
-                                    .foregroundColor(Colors.Blue5.color)
-                                    .padding(.leading, 220)
-                                    .padding(.top, 20)
-                            }
+                            NavigationLink(
+                                destination: UserPageView(userData: userData, userId: clickedContent?.userId ?? ""),
+                                label: {
+                                    Text("\(clickedContent!.name)")
+                                        .font(.system(size: 12))
+                                        .frame(width: 100, height: 26)
+                                        .foregroundColor(Colors.Blue5.color)
+                                        .padding(.leading, 220)
+                                        .padding(.top, 20)
+                                }
+                            )
+
                             
                             Spacer()
                         }

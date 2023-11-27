@@ -25,7 +25,7 @@ class YearCalendarViewModel: ObservableObject {
                 Yeardate = response.data.map { $0.isDone }
                 Yeardate = Array(Yeardate[35..<365])
 
-                print(response)
+//                print(response)
                 Yeardate[3] = true
                 print("갯수", Yeardate.count)
             } catch APIError.responseError(let statusCode) {

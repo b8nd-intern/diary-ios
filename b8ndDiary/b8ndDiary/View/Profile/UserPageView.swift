@@ -8,7 +8,7 @@
 import SwiftUI
 import GoogleSignIn
 
-struct MyPageView: View {
+struct UserPageView: View {
     var test : Bool = true
     
     var userData: UserData
@@ -20,7 +20,7 @@ struct MyPageView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var date = Date()
     @ObservedObject var viewModel = MyPageViewModel()
-
+    let userId: String
     
     
     let yesrs = ["2023년"]
@@ -45,7 +45,7 @@ struct MyPageView: View {
             ScrollView(showsIndicators: false){
                 VStack{
                     HStack(alignment: .top){
-                        AsyncImage(url: userData.url)
+                        AsyncImage(url: viewModel.userimages)
                             .aspectRatio(contentMode: .fit)
                             .imageScale(.small)
                             .frame(width: 100, height: 100, alignment: .center)
@@ -73,7 +73,7 @@ struct MyPageView: View {
                                 }
                                     .offset(x: 45, y: 65) // 위치 조정
                             )
-                        Text(userData.name)
+                        Text(viewModel.username)
                             .font(.system(size: 23 ))
                             .bold()
                             .padding(EdgeInsets(top: 95, leading: 30, bottom: 0, trailing: 0))
@@ -168,7 +168,12 @@ struct MyPageView: View {
             viewModel.postYearCnt(callback: {
                 
             })
-
+            viewModel.userId = userId
+            viewModel.Uesrinfo(callback: {
+                
+            })
+            
+            print("유저 아이디 확인하기 : \(userId)")
         }
         .navigationBarBackButtonHidden()
         .navigationBarTitle(
