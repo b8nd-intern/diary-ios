@@ -8,7 +8,7 @@ func createSquareGrid(YearviewModeldate: [Bool]) -> some View {
             VStack(spacing: 10) {
                 ForEach(0..<7, id: \.self) { column in
                     
-                    var b = row * 7 + column
+                    let b = row * 7 + column
                     if b < YearviewModeldate.count && b <= 365 {
                         Rectangle()
                             .foregroundColor(YearviewModeldate[b] ? Colors.Blue1.color : Colors.Gray1.color)

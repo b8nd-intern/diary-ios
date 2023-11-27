@@ -9,6 +9,7 @@ struct MonthPage: View {
     @State var diaryContent: String = "오늘은 개발을 했다."
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = MyPageViewModel()
     
     @StateObject private var myMonthPost = MonthPost()
     
@@ -36,6 +37,20 @@ struct MonthPage: View {
                 .padding(.top, 20)
                 .padding(.trailing, 240)
             
+            Button(action: {
+//                viewModel.Postdelete(callback: {
+//                    
+//                })
+            }, label: {
+                Text("전체삭제")
+                    .foregroundColor(.black)
+                    .opacity(0.5)
+                    .font(.system(size: 15))
+                    .padding(.top, 15)
+                    .padding(.leading, 240)
+                   
+            })
+           
             
             ZStack{
                 //이미지 불러오는 부분
