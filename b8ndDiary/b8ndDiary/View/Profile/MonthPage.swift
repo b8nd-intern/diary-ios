@@ -2,14 +2,14 @@ import SwiftUI
 import Network
 
 struct MonthPage: View {
-    
+//    @Binding var userId : String
     var selectedMonth: Int
     @State var isClicked: Bool = false
     @State var clickedContent: DataModel?
     @State var diaryContent: String = "오늘은 개발을 했다."
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = MyPageViewModel()
+    @ObservedObject var viewModel = UserPageViewModel()
     
     @StateObject private var myMonthPost = MonthPost()
     
@@ -52,9 +52,8 @@ struct MonthPage: View {
                     .padding(.leading, 240)
             }
             .onAppear{
-                                viewModel.Postdelete(callback: {
-                
-                                })
+            viewModel.Postdelete(callback: {
+                })
             }
            
             

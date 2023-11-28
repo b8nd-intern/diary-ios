@@ -19,8 +19,8 @@ struct UserPageView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
     @State var date = Date()
-    @ObservedObject var viewModel = MyPageViewModel()
-    let userId: String
+    @ObservedObject var viewModel = UserPageViewModel()
+    @State var userId: String = ""
     
     
     let yesrs = ["2023년"]
@@ -81,7 +81,7 @@ struct UserPageView: View {
                     .padding(.trailing, 100)
                     .padding(.bottom,10)
                     HStack{
-                        YearCalendar()
+                        YearCalendar(userId: $userId)
                             .padding(.vertical,40)
                             .padding(.horizontal,30)
                     }
@@ -131,7 +131,7 @@ struct UserPageView: View {
                             ForEach(Array(zip(months,viewModel.postCounts)), id: \.0) { month,count in
                                 NavigationLink(
                                     
-                                    destination: MonthPage(selectedMonth: month),
+                                    destination: UserMonthPage(userId: $userId, selectedMonth: month),
                                     label: {
                                         HStack {
                                             Text("\(month)월")
@@ -165,11 +165,11 @@ struct UserPageView: View {
             }
         }
         .onAppear {
-            viewModel.postYearCnt(callback: {
-                
-            })
             viewModel.userId = userId
             viewModel.Uesrinfo(callback: {
+                
+            })
+            viewModel.postYearCnt(callback: {
                 
             })
             

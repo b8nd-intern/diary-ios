@@ -2,7 +2,7 @@ import SwiftUI
 import Network
 
 struct UserMonthPage: View {
-    
+    @Binding var userId : String // 추가 
     var selectedMonth: Int
     @State var isClicked: Bool = false
     @State var clickedContent: DataModel?
@@ -83,13 +83,25 @@ struct UserMonthPage: View {
         .onAppear {
             Task {
                 do {
-                    let response = try await MonthPost.userpostMonth(month: selectedMonth) // selectedMonth 값을 전달
+//                    let monthPostInstance = MonthPost()
+                    let userId = userId
+                    let postResponse = try await MonthPost.userpostMonth(month: selectedMonth, userId: userId)
                     DispatchQueue.main.async {
-                        myMonthPost.dataModels = response.data ?? []
+                        myMonthPost.dataModels = postResponse.data ?? []
                     }
                 } catch {
-                    print(error)
+                    print("Error: \(error)")
                 }
+
+//                do {
+//                    myMonthPost.userId = userId
+//                    let response = try await MonthPost.userpostMonth(month: selectedMonth) // selectedMonth 값을 전달
+//                    DispatchQueue.main.async {
+//                        myMonthPost.dataModels = response.data ?? []
+//                    }
+//                } catch {
+//                    print(error)
+//                }
             }
         }
         .background(scrollObservableView)

@@ -20,7 +20,7 @@ struct MyPageView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var date = Date()
     @ObservedObject var viewModel = MyPageViewModel()
-
+    @State var userId : String = ""
     
     
     let yesrs = ["2023년"]
@@ -81,7 +81,7 @@ struct MyPageView: View {
                     .padding(.trailing, 100)
                     .padding(.bottom,10)
                     HStack{
-                        YearCalendar()
+                        YearCalendar(userId: $userId)
                             .padding(.vertical,40)
                             .padding(.horizontal,30)
                     }
@@ -165,12 +165,14 @@ struct MyPageView: View {
             }
         }
         .onAppear {
+            viewModel.MyUserinfo(callback :{
+                
+            })
+            
             viewModel.postYearCnt(callback: {
                 
             })
-            viewModel.MyUesrinfo(callback :{
-                
-            })
+
 
         }
         .navigationBarBackButtonHidden()

@@ -8,7 +8,8 @@
 import Foundation
 
 class MonthPost: ObservableObject {
-//    var postId : Int = 0
+    @Published var userId : String = ""
+//    @Published var postId : Int = 0
 //    static let shared = MonthPost()
     
     var myuserId = MyPageViewModel.shared.myuserId
@@ -38,28 +39,28 @@ class MonthPost: ObservableObject {
         let postmonthresponse = try await HttpClient.request(HttpRequest(url: "post/month/\(year)/\(month)", method: .get, model: Response<[DataModel]>.self))
         
         print(postmonthresponse)
-//        postId = postmonthresponse.data?.first?.postId ?? 0
-//        if let firstData = postmonthresponse.data?.first {
-//            postId = firstData.postId
-//        } else {
-//            // 적절한 오류 처리 또는 기본 값 설정
-//        }
 
-//        if let postId = postmonthresponse.data?.first?.postId {
-////           MonthPost.shared.postId = postId
-//            MonthPost.shared.postId = postId
-//            
-//        }
         return postmonthresponse
     }
     
-    static func userpostMonth(month: Int) async throws -> Response<[DataModel]> {
+//    static func userpostMonth(month: Int) async throws -> Response<[DataModel]> {
+//        let year = 2023
+//        let userId = MonthPost.userId
+//        let response = try await HttpClient.request(HttpRequest(url: "post/month/\(year)/\(month)/\(userId)", method: .get, model: Response<[DataModel]>.self))
+//        
+//        print(response)
+//        
+//        return response
+//    }
+    
+    static func userpostMonth(month: Int, userId: String) async throws -> Response<[DataModel]> {
         let year = 2023
-        let userId = MyPageViewModel.shared.userId
-        let response = try await HttpClient.request(HttpRequest(url: "post/month/\(year)/\(month)/\(userId)", method: .get, model: Response<[DataModel]>.self))
-        
+        let response = try await HttpClient.request(HttpRequest(url: "post/monthForEvery/\(year)/\(month)/\(userId)", method: .get, model: Response<[DataModel]>.self))
+
         print(response)
-        
+
         return response
     }
+
+
 }
