@@ -1,7 +1,7 @@
 import SwiftUI
 import Network
 
-struct MonthPage: View {
+struct UserMonthPage: View {
     
     var selectedMonth: Int
     @State var isClicked: Bool = false
@@ -36,26 +36,20 @@ struct MonthPage: View {
                 .bold()
                 .padding(.top, 20)
                 .padding(.trailing, 240)
-            Button{
-                print("전 선택")
+            
+            Button(action: {
 //                viewModel.Postdelete(callback: {
 //
 //                })
-                
-                print("선택")
-            }label: {
+            }, label: {
                 Text("전체삭제")
                     .foregroundColor(.black)
                     .opacity(0.5)
                     .font(.system(size: 15))
                     .padding(.top, 15)
                     .padding(.leading, 240)
-            }
-            .onAppear{
-                                viewModel.Postdelete(callback: {
-                
-                                })
-            }
+                   
+            })
            
             
             ZStack{
@@ -89,7 +83,7 @@ struct MonthPage: View {
         .onAppear {
             Task {
                 do {
-                    let response = try await MonthPost.postMonth(month: selectedMonth) // selectedMonth 값을 전달
+                    let response = try await MonthPost.userpostMonth(month: selectedMonth) // selectedMonth 값을 전달
                     DispatchQueue.main.async {
                         myMonthPost.dataModels = response.data ?? []
                     }

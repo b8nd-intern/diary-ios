@@ -16,6 +16,7 @@ struct UserInfoResponse<T: Codable>: Codable {
 struct UserInfo: Codable {
     let name : String
     let images : String
+    let userId: String
     let dates: [Int]
 
 }

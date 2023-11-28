@@ -168,6 +168,9 @@ struct MyPageView: View {
             viewModel.postYearCnt(callback: {
                 
             })
+            viewModel.MyUesrinfo(callback :{
+                
+            })
 
         }
         .navigationBarBackButtonHidden()
