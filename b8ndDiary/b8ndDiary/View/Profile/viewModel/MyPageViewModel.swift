@@ -91,22 +91,6 @@ class MyPageViewModel: ObservableObject {
 //        }
 //    }
     
-    func Postdelete(callback: @escaping () -> Void) {
-        let body = ["postId": 0]
-        Task{
-            do {
-//                print(" 달 포스트 아이디 확인 : \(postId)")
-                let deleteresponse  = try await HttpClient.request(HttpRequest(url: "post/delete", method:.delete ,params: body, model:Response<PostdeleteResponse>.self))
-                print("삭제 확인하기 :\(String(describing: deleteresponse.data))")
-                
-                
-            } catch APIError.responseError(let statusCode) {
-                print("postdelete - statusCode: ", statusCode)
-            } catch APIError.transportError {
-                callback()
-            }
-        }
-    }
     
 
     

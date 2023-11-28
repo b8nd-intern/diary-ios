@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import Alamofire
 
 class MonthPost: ObservableObject {
+    @Published var postIds : [Int] = []
     @Published var userId : String = ""
 //    @Published var postId : Int = 0
 //    static let shared = MonthPost()
@@ -43,15 +45,6 @@ class MonthPost: ObservableObject {
         return postmonthresponse
     }
     
-//    static func userpostMonth(month: Int) async throws -> Response<[DataModel]> {
-//        let year = 2023
-//        let userId = MonthPost.userId
-//        let response = try await HttpClient.request(HttpRequest(url: "post/month/\(year)/\(month)/\(userId)", method: .get, model: Response<[DataModel]>.self))
-//        
-//        print(response)
-//        
-//        return response
-//    }
     
     static func userpostMonth(month: Int, userId: String) async throws -> Response<[DataModel]> {
         let year = 2023
@@ -62,5 +55,33 @@ class MonthPost: ObservableObject {
         return response
     }
 
+    func Postdelete(callback: @escaping () -> Void) {
+        let body : Parameters = [
+            "postId" : [postIds]
+        
+        ]
+        Task{
+            do {
+//                print(" 달 포스트 아이디 확인 : \(postId)")
+                let deleteresponse  = try await HttpClient.request(HttpRequest(url: "post/delete", method:.delete ,params: body, model:Response<PostdeleteResponse>.self))
+                print("삭제 확인하기 :\(String(describing: deleteresponse.data))")
+                
+                
+            } catch APIError.responseError(let statusCode) {
+                print("postdelete - statusCode: ", statusCode)
+            } catch APIError.transportError {
+                callback()
+            }
+        }
+    }
+    static func extractPostIds(from response: Response<[DataModel]>) -> [Int]? {
+        guard response.status == 200 else {
+            // Handle error case, e.g., return nil or throw an error
+            print("Error: \(response.message ?? "Unknown error")")
+            return nil
+        }
 
+        let postIds = response.data?.compactMap { $0.postId }
+        return postIds
+    }
 }

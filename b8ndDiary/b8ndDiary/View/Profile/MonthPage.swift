@@ -2,7 +2,7 @@ import SwiftUI
 import Network
 
 struct MonthPage: View {
-//    @Binding var userId : String
+    //    @Binding var userId : String
     var selectedMonth: Int
     @State var isClicked: Bool = false
     @State var clickedContent: DataModel?
@@ -11,6 +11,7 @@ struct MonthPage: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = UserPageViewModel()
     
+    @ObservedObject var MonthpostviewModel = MonthPost()
     @StateObject private var myMonthPost = MonthPost()
     
     
@@ -36,13 +37,28 @@ struct MonthPage: View {
                 .bold()
                 .padding(.top, 20)
                 .padding(.trailing, 240)
+            
+            
             Button{
-                print("전 선택")
-//                viewModel.Postdelete(callback: {
+//                Task {
+//                    do {
+//                        let response = try await MonthPost.postMonth(month: selectedMonth)
+//                        if let postIds = MonthPost.extractPostIds(from: response) {
+//                            print("Post IDs: \(postIds)")
+//                            myMonthPost.postIds = postIds
 //
-//                })
-                
-                print("선택")
+//                            // Use postIds here if needed
+//
+//                            DispatchQueue.main.async {
+//                                myMonthPost.dataModels = response.data ?? []
+//                            }
+//                        } else {
+//                            // Handle the case where postIds is nil (e.g., an error occurred)
+//                        }
+//                    } catch {
+//                        print(error)
+//                    }
+//                }
             }label: {
                 Text("전체삭제")
                     .foregroundColor(.black)
@@ -51,11 +67,8 @@ struct MonthPage: View {
                     .padding(.top, 15)
                     .padding(.leading, 240)
             }
-            .onAppear{
-            viewModel.Postdelete(callback: {
-                })
-            }
-           
+
+            
             
             ZStack{
                 //이미지 불러오는 부분
@@ -80,7 +93,7 @@ struct MonthPage: View {
                             .foregroundColor(.black)
                             .cornerRadius(10)
                     })
-      
+                    
                     
                     
                 }
@@ -88,17 +101,18 @@ struct MonthPage: View {
         .onAppear {
             Task {
                 do {
-                    let response = try await MonthPost.postMonth(month: selectedMonth) // selectedMonth 값을 전달
-                    DispatchQueue.main.async {
-                        myMonthPost.dataModels = response.data ?? []
-                    }
+                    let response = try await MonthPost.postMonth(month: selectedMonth)
+                    
                 } catch {
                     print(error)
                 }
             }
         }
-        .background(scrollObservableView)
-    }
+
+        }
+
+
+
     struct ScrollOffsetKey: PreferenceKey {
         static var defaultValue: CGFloat = 0
         
