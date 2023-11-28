@@ -74,14 +74,40 @@ class MonthPost: ObservableObject {
             }
         }
     }
+    
+    func Postupdate(callback: @escaping () -> Void) {
+        let body : Parameters = [
+            "postId" : 65,
+            "content": "수정 성공",
+            "color": "yellow",
+            "emoji": "smile",
+            "isSecret": true
+        
+        ]
+        Task{
+            do {
+//                print(" 달 포스트 아이디 확인 : \(postId)")
+                let updateresponse  = try await HttpClient.request(HttpRequest(url: "post/update", method:.patch ,params: body, model:PostupdateResponse.self))
+                print(updateresponse)
+                
+            } catch APIError.responseError(let statusCode) {
+                print("postdelete - statusCode: ", statusCode)
+            } catch APIError.transportError {
+                callback()
+            }
+        }
+    }
+    
     static func extractPostIds(from response: Response<[DataModel]>) -> [Int]? {
         guard response.status == 200 else {
             // Handle error case, e.g., return nil or throw an error
-            print("Error: \(response.message ?? "Unknown error")")
+            print("Error: \(response.message)")
             return nil
         }
 
         let postIds = response.data?.compactMap { $0.postId }
         return postIds
     }
+    
+    
 }

@@ -13,7 +13,7 @@ struct MonthPage: View {
     
     @ObservedObject var MonthpostviewModel = MonthPost()
     @StateObject private var myMonthPost = MonthPost()
-    let userData: UserData
+//    let userData: UserData
     
     private var scrollObservableView: some View {
         GeometryReader { proxy in
@@ -39,7 +39,7 @@ struct MonthPage: View {
                 .padding(.trailing, 240)
             
             
-            Button{
+//            Button{
 //                Task {
 //                    do {
 //                        let response = try await MonthPost.postMonth(month: selectedMonth)
@@ -47,28 +47,46 @@ struct MonthPage: View {
 //                            print("Post IDs: \(postIds)")
 //                            myMonthPost.postIds = postIds
 //
-//                            // Use postIds here if needed
-//
-//                            DispatchQueue.main.async {
-//                                myMonthPost.dataModels = response.data ?? []
-//                            }
-//                        } else {
-//                            // Handle the case where postIds is nil (e.g., an error occurred)
 //                        }
 //                    } catch {
 //                        print(error)
 //                    }
 //                }
-            }label: {
+//            }label: {
+//                Text("전체삭제")
+//                    .foregroundColor(.black)
+//                    .opacity(0.5)
+//                    .font(.system(size: 15))
+//                    .padding(.top, 15)
+//                    .padding(.leading, 240)
+//            }
+
+            Button {
+                print("버튼 눌러짐")
+//                Task {
+//                    do {
+//                        let response = try await MonthPost.postMonth(month: selectedMonth)
+//                        if let postIds = MonthPost.extractPostIds(from: response) {
+//                            print("Post IDs: \(postIds)")
+//                            myMonthPost.postIds = postIds
+//                        }
+//                    } catch {
+//                        print("Error: \(error)")
+//                    }
+//                }
+            } label: {
                 Text("전체삭제")
                     .foregroundColor(.black)
+                    .frame(width: 70,height: 70)
                     .opacity(0.5)
                     .font(.system(size: 15))
                     .padding(.top, 15)
                     .padding(.leading, 240)
             }
+            .contentShape(Rectangle())
+           
 
-            
+
             
             ZStack{
                 //이미지 불러오는 부분
@@ -80,10 +98,10 @@ struct MonthPage: View {
                 myMonthPost.setOffset($0)
             }
             
-            if isClicked && (clickedContent != nil) {
-                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
-            }
-            
+//            if isClicked && (clickedContent != nil) {
+//                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
+//            }
+//            
             Spacer()
         }
         .navigationBarBackButtonHidden()
@@ -103,10 +121,15 @@ struct MonthPage: View {
                 }
         )
         .onAppear {
+//            myMonthPost.Postupdate(callback: {
+//                
+//            })
             Task {
                 do {
                     let response = try await MonthPost.postMonth(month: selectedMonth)
-                    
+                    DispatchQueue.main.async {
+                                           myMonthPost.dataModels = response.data ?? []
+                                       }
                 } catch {
                     print(error)
                 }
