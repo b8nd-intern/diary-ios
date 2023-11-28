@@ -30,6 +30,7 @@
 		45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997502AF3B61F00F3CDFF /* HttpClient.swift */; };
 		45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997522AF3B63E00F3CDFF /* HttpRequest.swift */; };
 		45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */; };
+		45F922F02B1613970083BD9E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F922EF2B1613970083BD9E /* Config.swift */; };
 		45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */; };
 		45FB1BA22B04D73800913F03 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA12B04D73800913F03 /* DataModel.swift */; };
 		45FB1BA42B04E0CC00913F03 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */; };
@@ -56,7 +57,6 @@
 		75033E332B14E6A100A7F379 /* MyUesrinfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E322B14E6A100A7F379 /* MyUesrinfoResponse.swift */; };
 		75033E352B14EE7000A7F379 /* UserMonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E342B14EE7000A7F379 /* UserMonthPage.swift */; };
 		75033E372B14F0C200A7F379 /* PostdeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E362B14F0C200A7F379 /* PostdeleteResponse.swift */; };
-		75033E392B15ACB200A7F379 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E382B15ACB200A7F379 /* Config.swift */; };
 		75033E3B2B15D1D700A7F379 /* UserPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E3A2B15D1D700A7F379 /* UserPageViewModel.swift */; };
 		7596ADD62AE68D1C008EBFD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */; };
 		7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */; };
@@ -124,6 +124,7 @@
 		45E997502AF3B61F00F3CDFF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		45E997522AF3B63E00F3CDFF /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
+		45F922EF2B1613970083BD9E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSerivce.swift; sourceTree = "<group>"; };
 		45FB1BA12B04D73800913F03 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 		75033E322B14E6A100A7F379 /* MyUesrinfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUesrinfoResponse.swift; sourceTree = "<group>"; };
 		75033E342B14EE7000A7F379 /* UserMonthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMonthPage.swift; sourceTree = "<group>"; };
 		75033E362B14F0C200A7F379 /* PostdeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostdeleteResponse.swift; sourceTree = "<group>"; };
-		75033E382B15ACB200A7F379 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		75033E3A2B15D1D700A7F379 /* UserPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewModel.swift; sourceTree = "<group>"; };
 		7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 			children = (
 				4D4A17192B0B7A2900941F30 /* Token.swift */,
 				4D06C29C2B0CEB8E00E64A97 /* Auth.swift */,
-				75033E382B15ACB200A7F379 /* Config.swift */,
+				45F922EF2B1613970083BD9E /* Config.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -679,6 +679,7 @@
 				7596ADE02AE68D5A008EBFD8 /* GoogleSignIn.swift in Sources */,
 				D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */,
 				451609C82B12E39D00101AC6 /* DayViewModel.swift in Sources */,
+				45F922F02B1613970083BD9E /* Config.swift in Sources */,
 				45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */,
 				4D06C2992B0CBC6C00E64A97 /* UserPage.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
@@ -689,7 +690,6 @@
 				75005D682B11C61E00B0D276 /* Monthpost.swift in Sources */,
 				75FC728E2B03646D00020FCF /* PostCntResponse.swift in Sources */,
 				45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */,
-				75033E392B15ACB200A7F379 /* Config.swift in Sources */,
 				4D06C29F2B0CEDBC00E64A97 /* AppViewModel.swift in Sources */,
 				D736C7FC2AD80D9C00C0A6BD /* View+Ext.swift in Sources */,
 				45E996A82AE689E000F3CDFF /* UINavigationController+Ext.swift in Sources */,

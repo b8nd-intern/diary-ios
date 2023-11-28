@@ -18,8 +18,10 @@ struct PostView: View {
     @ObservedObject var viewModel: PostViewModel = PostViewModel()
     
     @State var isTapEmojiButton: Bool = false
-    @State private var isAlert = false
-    @State private var showingAlert = false
+    
+    @State private var isAlert = false // 하루에 일기를 두 번 작성했을 때 알림
+    @State private var isDefaultEmoji = false // 이모지를 선택하지 않았을 때 알림
+    @State private var isTextNil = false // 일기 내용이 없을 때 알림
     
     @FocusState var isFocused: test?
     
@@ -155,7 +157,9 @@ struct PostView: View {
                                     
                                     Button {
                                         if viewModel.selectedEmoji == "DefaultEmoji" {
-                                            self.showingAlert.toggle()
+                                            self.isDefaultEmoji.toggle()
+                                        } else if viewModel.text == "" {
+                                            self.isTextNil.toggle()
                                         } else {
                                             viewModel.post(complete: {
                                                 dismiss()
@@ -174,9 +178,20 @@ struct PostView: View {
                                             .background(Colors.Blue1.color)
                                             .cornerRadius(20)
                                     }
-                                    .alert(isPresented: $showingAlert) {
+                                    .alert(isPresented: $isDefaultEmoji) {
                                         Alert(title: Text("이모지를 선택해 주세요"), message: nil,
                                               dismissButton: .default(Text("확인")))
+                                    }
+                                    .alert(isPresented: $isTextNil) {
+                                        Alert(title: Text("일기를 작성해 주세요"), message: nil,
+                                              dismissButton: .default(Text("확인")))
+                                    }
+                                    .alert(LocalizedStringKey("하루에 두 번만 작성이 가능해요!"), isPresented: $isAlert) {
+                                        Button("확인") {
+                                            dismiss()
+                                        }
+                                    } message: {
+                                        Text("작성 실패")
                                     }
                                 }
                                 .padding(.horizontal, 15)
@@ -193,13 +208,6 @@ struct PostView: View {
                     }
                 }
             }
-        }
-        .alert(LocalizedStringKey("하루에 두 번만 작성이 가능해요!"), isPresented: $isAlert) {
-            Button("확인") {
-                dismiss()
-            }
-        } message: {
-            Text("작성 실패")
         }
         .background(Colors.Gray1.color)
         .toolbar {
