@@ -13,7 +13,7 @@ struct MonthPage: View {
     
     @ObservedObject var MonthpostviewModel = MonthPost()
     @StateObject private var myMonthPost = MonthPost()
-    
+    let userData: UserData
     
     private var scrollObservableView: some View {
         GeometryReader { proxy in
@@ -78,6 +78,10 @@ struct MonthPage: View {
             .padding(.top, 20)
             .onPreferenceChange(ScrollOffsetKey.self) {
                 myMonthPost.setOffset($0)
+            }
+            
+            if isClicked && (clickedContent != nil) {
+                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
             }
             
             Spacer()
