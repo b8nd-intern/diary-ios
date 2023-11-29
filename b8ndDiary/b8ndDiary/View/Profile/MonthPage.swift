@@ -62,17 +62,20 @@ struct MonthPage: View {
 
             Button {
                 print("버튼 눌러짐")
-//                Task {
-//                    do {
-//                        let response = try await MonthPost.postMonth(month: selectedMonth)
-//                        if let postIds = MonthPost.extractPostIds(from: response) {
-//                            print("Post IDs: \(postIds)")
-//                            myMonthPost.postIds = postIds
-//                        }
-//                    } catch {
-//                        print("Error: \(error)")
-//                    }
-//                }
+                Task {
+                    do {
+                        let response = try await MonthPost.postMonth(month: selectedMonth)
+                        if let postIds = MonthPost.extractPostIds(from: response) {
+                            print("Post IDs: \(postIds)")
+                            myMonthPost.postIds = postIds
+                        }
+                        myMonthPost.Postdelete(callback: {
+                            
+                        })
+                    } catch {
+                        print("Error: \(error)")
+                    }
+                }
             } label: {
                 Text("전체삭제")
                     .foregroundColor(.black)
@@ -100,7 +103,7 @@ struct MonthPage: View {
 //            if isClicked && (clickedContent != nil) {
 //                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
 //            }
-//            
+         
             Spacer()
         }
         .navigationBarBackButtonHidden()
@@ -120,9 +123,7 @@ struct MonthPage: View {
                 }
         )
         .onAppear {
-//            myMonthPost.Postupdate(callback: {
-//                
-//            })
+
             Task {
                 do {
                     let response = try await MonthPost.postMonth(month: selectedMonth)

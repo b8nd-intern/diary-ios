@@ -57,7 +57,7 @@ class MonthPost: ObservableObject {
 
     func Postdelete(callback: @escaping () -> Void) {
         let body : Parameters = [
-            "postId" : [postIds]
+            "postId" : postIds
         
         ]
         Task{
