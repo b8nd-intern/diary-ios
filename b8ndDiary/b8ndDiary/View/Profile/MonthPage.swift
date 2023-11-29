@@ -3,6 +3,7 @@ import Network
 
 struct MonthPage: View {
     //    @Binding var userId : String
+    @State private var refreshView = false
     var selectedMonth: Int
     @State var isClicked: Bool = false
     @State var clickedContent: DataModel?
@@ -10,8 +11,15 @@ struct MonthPage: View {
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
     @StateObject var myMonthPost = MonthPost()
-//    let userData: UserData
-    
+    //    let userData: UserData
+    struct ScrollOffsetKey: PreferenceKey {
+        static var defaultValue: CGFloat = 0
+        
+        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+            value += nextValue()
+        }
+    }
+
     private var scrollObservableView: some View {
         GeometryReader { proxy in
             let offsetY = proxy.frame(in: .global).origin.y
@@ -36,30 +44,6 @@ struct MonthPage: View {
                 .bold()
                 .padding(.top, 20)
                 .padding(.trailing, 240)
-            
-            
-//            Button{
-//                Task {
-//                    do {
-//                        let response = try await MonthPost.postMonth(month: selectedMonth)
-//                        if let postIds = MonthPost.extractPostIds(from: response) {
-//                            print("Post IDs: \(postIds)")
-//                            myMonthPost.postIds = postIds
-//
-//                        }
-//                    } catch {
-//                        print(error)
-//                    }
-//                }
-//            }label: {
-//                Text("전체삭제")
-//                    .foregroundColor(.black)
-//                    .opacity(0.5)
-//                    .font(.system(size: 15))
-//                    .padding(.top, 15)
-//                    .padding(.leading, 240)
-//            }
-
             Button {
                 print("버튼 눌러짐")
                 Task {
@@ -70,7 +54,7 @@ struct MonthPage: View {
                             myMonthPost.postIds = postIds
                         }
                         myMonthPost.Postdelete(callback: {
-                            
+                            refreshView.toggle()
                         })
                     } catch {
                         print("Error: \(error)")
@@ -85,10 +69,6 @@ struct MonthPage: View {
                     .padding(.top, 15)
                     .padding(.leading, 240)
             }
-            .contentShape(Rectangle())
-           
-
-
             
             ZStack{
                 //이미지 불러오는 부분
@@ -100,12 +80,13 @@ struct MonthPage: View {
                 myMonthPost.setOffset($0)
             }
             
-//            if isClicked && (clickedContent != nil) {
-//                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
-//            }
-         
+            //            if isClicked && (clickedContent != nil) {
+            //                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
+            //            }
+            
             Spacer()
         }
+        .id(refreshView)
         .navigationBarBackButtonHidden()
         .navigationBarItems(
             leading:
@@ -123,28 +104,18 @@ struct MonthPage: View {
                 }
         )
         .onAppear {
-
+            
             Task {
                 do {
                     let response = try await MonthPost.postMonth(month: selectedMonth)
                     DispatchQueue.main.async {
-                                           myMonthPost.dataModels = response.data ?? []
-                                       }
+                        myMonthPost.dataModels = response.data ?? []
+                    }
                 } catch {
                     print(error)
                 }
             }
         }
-
-        }
-
-
-
-    struct ScrollOffsetKey: PreferenceKey {
-        static var defaultValue: CGFloat = 0
         
-        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-            value += nextValue()
-        }
     }
 }

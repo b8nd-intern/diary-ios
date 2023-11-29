@@ -37,28 +37,7 @@ struct UserMonthPage: View {
                 .padding(.top, 20)
                 .padding(.trailing, 240)
            
-            Button(action: {
-//                viewModel.Postdelete(callback: {
-//
-////                })
-//                                do {
-//                                    myMonthPost.userId = userId
-//                                    let response = try await MonthPost.userpostMonth(month: selectedMonth) // selectedMonth 값을 전달
-//                                    DispatchQueue.main.async {
-//                                        myMonthPost.dataModels = response.data ?? []
-//                                    }
-//                                } catch {
-////                                    print(error)
-//                                }
-            }, label: {
-                Text("전체삭제")
-                    .foregroundColor(.black)
-                    .opacity(0.5)
-                    .font(.system(size: 15))
-                    .padding(.top, 15)
-                    .padding(.leading, 240)
-                   
-            })
+
             
             ZStack{
                 //이미지 불러오는 부분
