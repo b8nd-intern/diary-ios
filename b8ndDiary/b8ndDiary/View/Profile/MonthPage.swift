@@ -11,7 +11,7 @@ struct MonthPage: View {
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
     @StateObject var myMonthPost = MonthPost()
-    //    let userData: UserData
+//        let userData: UserData
     struct ScrollOffsetKey: PreferenceKey {
         static var defaultValue: CGFloat = 0
         
@@ -80,9 +80,9 @@ struct MonthPage: View {
                 myMonthPost.setOffset($0)
             }
             
-            //            if isClicked && (clickedContent != nil) {
-            //                ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
-            //            }
+//                        if isClicked && (clickedContent != nil) {
+//                            ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
+//                        }
             
             Spacer()
         }
@@ -104,7 +104,10 @@ struct MonthPage: View {
                 }
         )
         .onAppear {
-            
+            myMonthPost.PostRead(callback: {
+                refreshView.toggle()
+            })
+
             Task {
                 do {
                     let response = try await MonthPost.postMonth(month: selectedMonth)

@@ -97,6 +97,21 @@ class MonthPost: ObservableObject {
             }
         }
     }
+    func PostRead(callback: @escaping () -> Void) {
+        let param = 80
+        Task{
+            do {
+//                print(" 달 포스트 아이디 확인 : \(postId)")
+                let readresponse  = try await HttpClient.request(HttpRequest(url: "post/read/\(param)", method:.get, model:Response<DataModel>.self))
+                print(readresponse)
+                
+            } catch APIError.responseError(let statusCode) {
+                print("postdelete - statusCode: ", statusCode)
+            } catch APIError.transportError {
+                callback()
+            }
+        }
+    }
     
     static func extractPostIds(from response: Response<[DataModel]>) -> [Int]? {
         guard response.status == 200 else {

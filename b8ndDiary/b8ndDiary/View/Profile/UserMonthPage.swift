@@ -9,7 +9,7 @@ struct UserMonthPage: View {
     @State var diaryContent: String = "오늘은 개발을 했다."
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = MyPageViewModel()
+  
     
     @StateObject private var myMonthPost = MonthPost()
     
