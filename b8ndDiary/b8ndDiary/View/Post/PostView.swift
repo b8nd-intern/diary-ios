@@ -20,7 +20,7 @@ struct PostView: View {
     @State var isTapEmojiButton: Bool = false
     
     @State private var isAlert = false // 하루에 일기를 두 번 작성했을 때 알림
-    @State private var isDefaultEmoji = false // 이모지를 선택하지 않았을 때 알림
+    @State private var isDefaultEmoji = true // 이모지를 선택하지 않았을 때 알림
     @State private var isTextNil = false // 일기 내용이 없을 때 알림
     
     @FocusState var isFocused: test?
@@ -45,33 +45,35 @@ struct PostView: View {
                         // 공개
                         Button {
                             // 공개로 설정되는 코드
-                            viewModel.publicState = true
+                            viewModel.isSecret = false
+                            print(viewModel.isSecret)
                         } label: {
-                            if viewModel.publicState {
+                            if viewModel.isSecret {
+                                Text("공개")
+                                    .foregroundColor(Colors.Gray2.color)
+                                    .font(.system(size: 16))
+                            } else {
                                 Text("공개")
                                     .foregroundColor(Colors.Blue5.color)
                                     .font(.system(size: 16))
                                     .bold()
-                            } else {
-                                Text("공개")
-                                    .foregroundColor(Colors.Gray2.color)
-                                    .font(.system(size: 16))
                             }
                         }
                         // 비공개
                         Button {
                             // 비공개로 설정되는 코드
-                            viewModel.publicState = false
+                            viewModel.isSecret = true
+                            print(viewModel.isSecret)
                         } label: {
-                            if viewModel.publicState {
-                                Text("비공개")
-                                    .foregroundColor(Colors.Gray2.color)
-                                    .font(.system(size: 16))
-                            } else {
+                            if viewModel.isSecret {
                                 Text("비공개")
                                     .foregroundColor(Colors.Blue5.color)
                                     .font(.system(size: 16))
                                     .bold()
+                            } else {
+                                Text("비공개")
+                                    .foregroundColor(Colors.Gray2.color)
+                                    .font(.system(size: 16))
                             }
                         }
                         Spacer()
@@ -157,19 +159,21 @@ struct PostView: View {
                                     
                                     Button {
                                         if viewModel.selectedEmoji == "DefaultEmoji" {
-                                            self.isDefaultEmoji.toggle()
-                                        } else if viewModel.text == "" {
-                                            self.isTextNil.toggle()
-                                        } else {
-                                            viewModel.post(complete: {
-                                                dismiss()
-                                            }, error: {
-                                                isAlert = true
-                                            }, error2: {
-                                                dismiss()
-                                                appViewModel.save(false)
-                                            })
+                                            self.isDefaultEmoji = true
+                                            print("\(isDefaultEmoji)")
                                         }
+                                        if viewModel.text == "" {
+                                            self.isTextNil = true
+                                            print("\(isTextNil)")
+                                        }
+                                        viewModel.post(complete: {
+                                            dismiss()
+                                        }, error: {
+                                            isAlert = true
+                                        }, error2: {
+                                            dismiss()
+                                            appViewModel.save(false)
+                                        })
                                         
                                     } label: {
                                         Text("올리기")
@@ -186,13 +190,6 @@ struct PostView: View {
                                         Alert(title: Text("일기를 작성해 주세요"), message: nil,
                                               dismissButton: .default(Text("확인")))
                                     }
-                                    .alert(LocalizedStringKey("하루에 두 번만 작성이 가능해요!"), isPresented: $isAlert) {
-                                        Button("확인") {
-                                            dismiss()
-                                        }
-                                    } message: {
-                                        Text("작성 실패")
-                                    }
                                 }
                                 .padding(.horizontal, 15)
                                 .padding(.bottom, 30)
@@ -205,6 +202,13 @@ struct PostView: View {
                             .padding(.bottom, -30)
                             
                         }
+                    }
+                    .alert(LocalizedStringKey("하루에 두 번만 작성이 가능해요!"), isPresented: $isAlert) {
+                        Button("확인") {
+                            dismiss()
+                        }
+                    } message: {
+                        Text("작성 실패")
                     }
                 }
             }

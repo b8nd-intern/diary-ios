@@ -12,7 +12,7 @@ import SwiftUI
 class PostViewModel : ObservableObject {
     
     @Published var text: String = ""
-    @Published var publicState: Bool = true
+    @Published var isSecret: Bool = true
     @Published var backgroundColor: Color = Colors.Blue1.color
     @Published var selectedEmoji: String = "DefaultEmoji"
     
@@ -23,14 +23,14 @@ class PostViewModel : ObservableObject {
     ) {
         Task {
             do {
-                print(text, backgroundColor.description, selectedEmoji, publicState)
+                print(text, changeColor(color: backgroundColor), selectedEmoji, isSecret)
                 let response = try await HttpClient.request(
                     HttpRequest(url: "post/create",
                                 method: .post,
                                 params: ["content": text,
-                                         "color": Color.toString(backgroundColor),
+                                         "color": changeColor(color: backgroundColor), //Color.toString(backgroundColor)
                                          "emoji":selectedEmoji,
-                                         "isSecret":publicState],
+                                         "isSecret":isSecret],
                                 model: Response<String>.self))
                 print("post -", response.data ?? "")
                 complete()
@@ -41,5 +41,24 @@ class PostViewModel : ObservableObject {
                 error2()
             }
         }
+    }
+
+    func changeColor(color: Color) -> String {
+        
+        var memoColor: String = ""
+        
+        switch backgroundColor {
+        case Colors.Blue1.color:
+            memoColor = "skyBlue"
+        case Colors.Blue2.color:
+            memoColor =  "blue"
+        case Colors.Blue3.color:
+            memoColor = "darkBlue"
+        case Colors.Yellow1.color:
+            memoColor = "yellow"
+        default:
+            print("색 오류")
+        }
+        return memoColor
     }
 }
