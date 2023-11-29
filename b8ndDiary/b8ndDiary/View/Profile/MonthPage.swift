@@ -9,10 +9,7 @@ struct MonthPage: View {
     @State var diaryContent: String = "오늘은 개발을 했다."
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = UserPageViewModel()
-    
-    @ObservedObject var MonthpostviewModel = MonthPost()
-    @StateObject private var myMonthPost = MonthPost()
+    @StateObject var myMonthPost = MonthPost()
 //    let userData: UserData
     
     private var scrollObservableView: some View {
@@ -29,6 +26,8 @@ struct MonthPage: View {
         }
         .frame(height: 0)
     }
+    
+    
     var body: some View {
         VStack {
             Text("\(selectedMonth)월")
