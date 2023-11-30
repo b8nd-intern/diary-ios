@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PostView: View {
     
+    @Binding var isDoing: Bool
+       let PostNum: Int?
+    
     enum test: Hashable {
         case test
     }
@@ -166,15 +169,26 @@ struct PostView: View {
                                             self.isTextNil = true
                                             print("\(isTextNil)")
                                         }
-                                        viewModel.post(complete: {
-                                            dismiss()
-                                        }, error: {
-                                            isAlert = true
-                                        }, error2: {
-                                            dismiss()
-                                            appViewModel.save(false)
-                                        })
-                                        
+                                        if isDoing {
+                                            viewModel.Postupdate(postNum: PostNum ?? 0 , complete: {
+                                                dismiss()
+                                            }, error: {
+                                                isAlert = true
+                                            }, error2: {
+                                                dismiss()
+                                                appViewModel.save(false)
+                                            })
+                                            }
+                                        else{
+                                            viewModel.post(complete: {
+                                                dismiss()
+                                            }, error: {
+                                                isAlert = true
+                                            }, error2: {
+                                                dismiss()
+                                                appViewModel.save(false)
+                                            })
+                                        }
                                     } label: {
                                         Text("올리기")
                                             .foregroundColor(Colors.Blue4.color)
@@ -231,6 +245,11 @@ struct PostView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             isFocused = .test
+            if isDoing {
+                viewModel.PostRead(postNum: PostNum ?? 0, callback: {
+                       
+                    })
+                }
         }
     }
 }

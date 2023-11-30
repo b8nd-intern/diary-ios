@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Alamofire
 
 
 class PostViewModel : ObservableObject {
@@ -61,4 +62,52 @@ class PostViewModel : ObservableObject {
         }
         return memoColor
     }
+    func PostRead(postNum: Int, callback: @escaping () -> Void) {
+        let param = postNum
+        Task {
+            do {
+                let readresponse = try await HttpClient.request(HttpRequest(url: "post/read/\(param)", method:.get, model:Response<DataModel>.self))
+                print(readresponse)
+
+              
+            
+                   text = readresponse.data?.content ?? ""
+                    isSecret = readresponse.data?.isSecret ?? true
+                    selectedEmoji = readresponse.data?.emoji ?? "DefaultEmoji"
+                
+            } catch APIError.responseError(let statusCode) {
+                print("postdelete - statusCode: ", statusCode)
+            } catch APIError.transportError {
+                callback()
+            }
+        }
+    }
+    
+    @MainActor
+    func Postupdate(postNum: Int, complete: @escaping () -> Void,
+                    error: @escaping () -> Void,
+                    error2: @escaping () -> Void) {
+        let body : Parameters = [
+            "postId" : postNum, 
+            "content": text,
+            "color": changeColor(color: backgroundColor),
+            "emoji": selectedEmoji,
+            "isSecret": isSecret
+        ]
+
+        Task {
+            do {
+                let updateresponse  = try await HttpClient.request(HttpRequest(url: "post/update", method: .patch, params: body, model: PostupdateResponse.self))
+                print(updateresponse)
+                complete()
+            } catch APIError.responseError(let e) {
+                print(e)
+                error()
+            } catch APIError.transportError {
+                error2()
+            }
+        }
+    }
+
+
 }
