@@ -26,68 +26,70 @@ struct UserMonthPage: View {
         .frame(height: 0)
     }
     var body: some View {
-        GeometryReader { geo in
-            VStack {
-                scrollObservableView
-                
-                Text("\(selectedMonth)월")
-                    .foregroundColor(.black)
-                    .font(.system(size: 30))
-                    .bold()
-                    .padding(.top, 20)
-                    .padding(.trailing, 240)
-                
-                
-                
-                ZStack{
-                    //이미지 불러오는 부분
-                    ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day, diaryContent: myMonthPost.dataModels)
-                        .padding(.horizontal, 30)
-                }
-                .padding(.top, 20)
-                .onPreferenceChange(ScrollOffsetKey.self) {
-                    myMonthPost.setOffset($0)
-                }
-                
-//                if isClicked && (clickedContent != nil) {
-//                    ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
-//                    
-//                    
-//                }
-                
-                Spacer()
-            }
-            .navigationBarBackButtonHidden()
-            .navigationBarItems(
-                leading:
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }, label: {
-                            Image(systemName: "arrow.left")
-                                .foregroundColor(.black)
-                                .cornerRadius(10)
-                        })
-                        
-                        
-                        
+       
+            GeometryReader { geo in
+                VStack {
+                    scrollObservableView
+                    
+                    Text("\(selectedMonth)월")
+                        .foregroundColor(.black)
+                        .font(.system(size: 30))
+                        .bold()
+                        .padding(.top, 20)
+                        .padding(.trailing, 240)
+                    
+                    
+                    ScrollView{
+                    ZStack{
+                        //이미지 불러오는 부분
+                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day, diaryContent: myMonthPost.dataModels)
+                            .padding(.horizontal, 30)
                     }
-            )
-            .onAppear {
-                Task {
-                    do {
-                        let userId = userId
-                        let postResponse = try await MonthPost.userpostMonth(month: selectedMonth, userId: userId)
-                        DispatchQueue.main.async {
-                            myMonthPost.dataModels = postResponse.data ?? []
-                        }
-                    } catch {
-                        print("Error: \(error)")
+                    .padding(.top, 20)
+                    .onPreferenceChange(ScrollOffsetKey.self) {
+                        myMonthPost.setOffset($0)
                     }
                     
+                    //                if isClicked && (clickedContent != nil) {
+                    //                    ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
+                    //
+                    //
+                    //                }
+                    
+                    Spacer()
                 }
+                .navigationBarBackButtonHidden()
+                .navigationBarItems(
+                    leading:
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }, label: {
+                                Image(systemName: "arrow.left")
+                                    .foregroundColor(.black)
+                                    .cornerRadius(10)
+                            })
+                            
+                            
+                            
+                        }
+                )
+                .onAppear {
+                    Task {
+                        do {
+                            let userId = userId
+                            let postResponse = try await MonthPost.userpostMonth(month: selectedMonth, userId: userId)
+                            DispatchQueue.main.async {
+                                myMonthPost.dataModels = postResponse.data ?? []
+                            }
+                        } catch {
+                            print("Error: \(error)")
+                        }
+                        
+                    }
+                }
+                .background(scrollObservableView)
             }
-            .background(scrollObservableView)
         }
     }
     struct ScrollOffsetKey: PreferenceKey {

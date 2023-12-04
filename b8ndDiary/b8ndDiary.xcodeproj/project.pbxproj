@@ -30,7 +30,6 @@
 		45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997502AF3B61F00F3CDFF /* HttpClient.swift */; };
 		45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997522AF3B63E00F3CDFF /* HttpRequest.swift */; };
 		45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */; };
-		45F922F02B1613970083BD9E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F922EF2B1613970083BD9E /* Config.swift */; };
 		45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */; };
 		45FB1BA22B04D73800913F03 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA12B04D73800913F03 /* DataModel.swift */; };
 		45FB1BA42B04E0CC00913F03 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */; };
@@ -71,6 +70,7 @@
 		7596ADEC2AE68F23008EBFD8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADEB2AE68F23008EBFD8 /* GoogleSignIn */; };
 		7596ADEE2AE68F23008EBFD8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADED2AE68F23008EBFD8 /* GoogleSignInSwift */; };
 		7596ADF12AE68FCD008EBFD8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADF02AE68FCD008EBFD8 /* FirebaseMessaging */; };
+		759B9A5B2B1DE38A001E21BC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B9A5A2B1DE38A001E21BC /* Config.swift */; };
 		75E0D65A2B0DDFE700F69A3A /* RecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0D6592B0DDFE700F69A3A /* RecordResponse.swift */; };
 		75E0D65C2B0E341E00F69A3A /* YearCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0D65B2B0E341E00F69A3A /* YearCalendarViewModel.swift */; };
 		75FC728E2B03646D00020FCF /* PostCntResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC728D2B03646D00020FCF /* PostCntResponse.swift */; };
@@ -125,7 +125,6 @@
 		45E997502AF3B61F00F3CDFF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		45E997522AF3B63E00F3CDFF /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
-		45F922EF2B1613970083BD9E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSerivce.swift; sourceTree = "<group>"; };
 		45FB1BA12B04D73800913F03 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +164,7 @@
 		7596ADE12AE68D5F008EBFD8 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7596ADE32AE68D64008EBFD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7596ADE52AE68D78008EBFD8 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		759B9A5A2B1DE38A001E21BC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		75E0D6592B0DDFE700F69A3A /* RecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordResponse.swift; sourceTree = "<group>"; };
 		75E0D65B2B0E341E00F69A3A /* YearCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCalendarViewModel.swift; sourceTree = "<group>"; };
 		75E563092B08B7D3008DFAFC /* b8ndDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = b8ndDiary.entitlements; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 			children = (
 				4D4A17192B0B7A2900941F30 /* Token.swift */,
 				4D06C29C2B0CEB8E00E64A97 /* Auth.swift */,
-				45F922EF2B1613970083BD9E /* Config.swift */,
+				759B9A5A2B1DE38A001E21BC /* Config.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -682,7 +682,6 @@
 				7596ADE02AE68D5A008EBFD8 /* GoogleSignIn.swift in Sources */,
 				D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */,
 				451609C82B12E39D00101AC6 /* DayViewModel.swift in Sources */,
-				45F922F02B1613970083BD9E /* Config.swift in Sources */,
 				45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */,
 				4D06C2992B0CBC6C00E64A97 /* UserPage.swift in Sources */,
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
@@ -691,6 +690,7 @@
 				7596ADDE2AE68D4E008EBFD8 /* YearCalendar.swift in Sources */,
 				D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */,
 				75005D682B11C61E00B0D276 /* Monthpost.swift in Sources */,
+				759B9A5B2B1DE38A001E21BC /* Config.swift in Sources */,
 				75033E3E2B16304D00A7F379 /* PostUpdateResponse.swift in Sources */,
 				75FC728E2B03646D00020FCF /* PostCntResponse.swift in Sources */,
 				45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */,

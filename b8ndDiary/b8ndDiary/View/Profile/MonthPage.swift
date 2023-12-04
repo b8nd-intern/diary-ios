@@ -35,81 +35,90 @@ struct MonthPage: View {
         .frame(height: 0)
     }
     var body: some View {
-        ZStack{
-            VStack {
-                Text("\(selectedMonth)월")
-                    .foregroundColor(.black)
-                    .font(.system(size: 30))
-                    .bold()
+        ZStack {
+            ScrollView(showsIndicators : false){ // 추가
+                //            ScrollView(showsIndicators : false){ // 추가
+                VStack {
+                    //                ScrollView{ // 추가
+                    //                    VStack{//추가
+                    
+                    Text("\(selectedMonth)월")
+                        .foregroundColor(.black)
+                        .font(.system(size: 30))
+                        .bold()
+                        .padding(.top, 20)
+                        .padding(.trailing, 240)
+                    Button {
+                        Task {
+                            do {
+                                let response = try await MonthPost.postMonth(month: selectedMonth)
+                                if let postIds = MonthPost.extractPostIds(from: response) {
+                                    print("Post IDs: \(postIds)")
+                                    myMonthPost.postIds = postIds
+                                }
+                                myMonthPost.Postdelete(callback: {
+                                    refreshView.toggle()
+                                })
+                            } catch {
+                                print("Error: \(error)")
+                            }
+                        }
+                    } label: {
+                        Text("전체삭제")
+                            .foregroundColor(.black)
+                            .frame(width: 70,height: 70)
+                            .opacity(0.5)
+                            .font(.system(size: 15))
+                            .padding(.top, 15)
+                            .padding(.leading, 240)
+                    }
+                    ZStack{
+                        //이미지 불러오는 부분
+                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day, diaryContent: myMonthPost.dataModels)
+                            .padding(.horizontal, 30)
+                    }
                     .padding(.top, 20)
-                    .padding(.trailing, 240)
-                Button {
+                    .onPreferenceChange(ScrollOffsetKey.self) {
+                        myMonthPost.setOffset($0)
+                    }
+                    Spacer()
+                    
+                }
+                .id(refreshView)
+                .navigationBarBackButtonHidden()
+                .navigationBarItems(
+                    leading:
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }, label: {
+                                Image(systemName: "arrow.left")
+                                    .foregroundColor(.black)
+                                    .cornerRadius(10)
+                            })
+                        }
+                )
+                .onAppear {
                     Task {
                         do {
                             let response = try await MonthPost.postMonth(month: selectedMonth)
-                            if let postIds = MonthPost.extractPostIds(from: response) {
-                                print("Post IDs: \(postIds)")
-                                myMonthPost.postIds = postIds
+                            DispatchQueue.main.async {
+                                myMonthPost.dataModels = response.data ?? []
                             }
-                            myMonthPost.Postdelete(callback: {
-                                refreshView.toggle()
-                            })
                         } catch {
-                            print("Error: \(error)")
+                            print(error)
                         }
                     }
-                } label: {
-                    Text("전체삭제")
-                        .foregroundColor(.black)
-                        .frame(width: 70,height: 70)
-                        .opacity(0.5)
-                        .font(.system(size: 15))
-                        .padding(.top, 15)
-                        .padding(.leading, 240)
                 }
-                ZStack{
-                    //이미지 불러오는 부분
-                    ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day, diaryContent: myMonthPost.dataModels)
-                        .padding(.horizontal, 30)
-                }
-                .padding(.top, 20)
-                .onPreferenceChange(ScrollOffsetKey.self) {
-                    myMonthPost.setOffset($0)
-                }
-                Spacer()
+                .navigationBarBackButtonHidden(true)
+                
+                
             }
-            .id(refreshView)
-            .navigationBarBackButtonHidden()
-            .navigationBarItems(
-                leading:
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }, label: {
-                            Image(systemName: "arrow.left")
-                                .foregroundColor(.black)
-                                .cornerRadius(10)
-                        })
-                    }
-            )
-            .onAppear {
-                Task {
-                    do {
-                        let response = try await MonthPost.postMonth(month: selectedMonth)
-                        DispatchQueue.main.async {
-                            myMonthPost.dataModels = response.data ?? []
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
-            .navigationBarBackButtonHidden(true)
             
             if isClicked {
-                // 클릭된 상태에서 보여질 뷰
+                
                 ZStack{
-                    // 배경 불투명도 조절
+                    //                                ScrollView{
                     Button {
                         isClicked = false
                     } label: {
@@ -122,6 +131,8 @@ struct MonthPage: View {
                             }
                         }
                     }
+                    //                                }
+                    
                     
                     // 실제 팝업 내용
                     VStack {
@@ -171,11 +182,11 @@ struct MonthPage: View {
                         Spacer()
                     }
                 }
-                .navigationBarHidden(true)
+//                .navigationBarHidden(true)
                 .edgesIgnoringSafeArea(.all)
             }
-            
         }
-        
     }
 }
+//    }// 추가
+
