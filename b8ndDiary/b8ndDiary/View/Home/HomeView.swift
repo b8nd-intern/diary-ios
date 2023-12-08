@@ -58,7 +58,6 @@ struct HomeView: View {
                                         if viewModel.topList.count == 7 {
                                             PrettyHScrollView(_activePageIndex: viewModel.topList.count - 3, cards: viewModel.topList, geo: geo)
                                         }
-                                        
                                     }
                                     .padding(.bottom, 30)
                                     
@@ -85,11 +84,9 @@ struct HomeView: View {
                                     
                                     Spacer()
                                         .frame(height: 40)
-                                    
-                                    ZStack {
-                                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, diaryContent: viewModel.list)
-                                            .padding(.horizontal, 40)
-                                    }
+                                
+                                    ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, diaryContent: viewModel.list)
+                                        .padding(.horizontal, 40)
                                     
                                 }
                             }
@@ -101,13 +98,11 @@ struct HomeView: View {
                     }
                     
                     VStack {
-                        HStack { // 툴바
-                            ToolbarView(scrolling: $viewModel.offset, userData: userData)
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.top, 60)
-                        .background(.white)
-                        .ignoresSafeArea(.all)
+                        ToolbarView(scrolling: $viewModel.offset, userData: userData)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 60)
+                            .background(.white)
+                            .ignoresSafeArea(.all)
                         
                         Spacer()
                     }
@@ -154,4 +149,3 @@ struct HomeView: View {
         }
     }
 }
-
