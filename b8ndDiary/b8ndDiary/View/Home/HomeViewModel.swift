@@ -10,8 +10,8 @@ import SwiftUI
 
 
 final class HomeViewModel : ObservableObject {
-    @Published var list: [DataModel] = []
-    @Published var topList: [DiaryModel] = []
+    @Published var diaryList: [DataModel] = []
+    @Published var topSevenList: [DiaryModel] = []
     
     @Published var offset: CGFloat = 0
     private var originOffset: CGFloat = 0
@@ -32,16 +32,11 @@ final class HomeViewModel : ObservableObject {
     
     func initDiaryList(callback: @escaping () -> Void) async {
         do {
-            print("home viewmodel - request...")
             let data = try await PostSerivce.getList()
-            list = data.data!
-            print("home viewmodel - ", list)
-        } catch APIError.responseError(let e) {
-            print("home viewmodel - ", e)
-        } catch APIError.transportError {
-            callback()
+            diaryList = data.data ?? []
         } catch (let e) {
             print(e.localizedDescription)
+            callback()
         }
     }
     
@@ -49,15 +44,13 @@ final class HomeViewModel : ObservableObject {
     func initTopSevenList(callback: @escaping () -> Void) async {
         do {
             let data = try await PostSerivce.getTopSevenList()
-            topList = data.data!.map {
+            topSevenList = data.data!.map {
                 DiaryModel(id: $0.postId,
                            text: $0.content,
                            color: Color.fromString($0.color),
                            image: $0.emoji,
                            uuid: UUID())
             }
-        } catch APIError.responseError(let e) {
-            print(e)
         } catch (let e) {
             print(e.localizedDescription)
             callback()

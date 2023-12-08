@@ -55,8 +55,8 @@ struct HomeView: View {
                                             .resizable()
                                             .frame(width: geo.size.width, height: 220)
                                             .padding(.top, 40)
-                                        if viewModel.topList.count == 7 {
-                                            PrettyHScrollView(_activePageIndex: viewModel.topList.count - 3, cards: viewModel.topList, geo: geo)
+                                        if viewModel.topSevenList.count == 7 {
+                                            PrettyHScrollView(_activePageIndex: viewModel.topSevenList.count - 3, cards: viewModel.topSevenList, geo: geo)
                                         }
                                     }
                                     .padding(.bottom, 30)
@@ -85,7 +85,7 @@ struct HomeView: View {
                                     Spacer()
                                         .frame(height: 40)
                                 
-                                    ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, diaryContent: viewModel.list)
+                                    ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, diaryContent: viewModel.diaryList)
                                         .padding(.horizontal, 40)
                                     
                                 }
@@ -113,7 +113,7 @@ struct HomeView: View {
                         VStack {
                             Spacer()
                             NavigationLink {
-                                PostView(isDoing:  .constant(false), PostNum: 0)
+                                PostView(isDoing: .constant(false), PostNum: 0)
                             } label: {
                                 PostButtonView()
                             }
