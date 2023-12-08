@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostdeleteResponse: Codable {
+struct PostDeleteResponse: Codable {
     let postId : [Int]
     let userId: String
 }

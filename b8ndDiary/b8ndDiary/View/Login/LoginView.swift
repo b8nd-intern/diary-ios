@@ -14,7 +14,7 @@ import Alamofire
 import FirebaseCore
 
 
-struct GoogleSignIn: View {
+struct LoginView: View {
     
     @EnvironmentObject var appViewModel: AppViewModel
     
@@ -35,32 +35,24 @@ struct GoogleSignIn: View {
 
     var body: some View {
         NavigationStack {
-            Login()
+            LaunchView()
             Spacer()
-            ZStack {
-                GoogleSignInButton(
-                    scheme: .light,
-                    style: .wide,
-                    action: {
-                        googleLogin()
-                    })
-                .frame(width: 300, height: 60, alignment: .center)
-                .padding(20)
-            }
+            GoogleSignInButton(
+                scheme: .light,
+                style: .wide,
+                action: {
+                    googleLogin()
+                })
+            .frame(width: 300, height: 60, alignment: .center)
+            .padding(20)
             .navigationDestination(isPresented: $appViewModel.isLogin, destination: {
                 HomeView(userData: userData ?? UserData(url: nil, name: "", email: ""))
 //                    .environmentObject(info)
             })
         }
-        .onAppear(perform: {
-            // 로그인 상태 체크
-//            Task{
-//                await sendTokensToServer()
-//            }
+        .onAppear {
             checkState()
-            
-
-        })
+        }
         .alert(LocalizedStringKey("로그인 실패"), isPresented: $isAlert) {
             Text("확인")
         } message: {

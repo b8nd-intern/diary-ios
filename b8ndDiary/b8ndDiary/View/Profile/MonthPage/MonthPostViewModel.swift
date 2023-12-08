@@ -8,18 +8,15 @@
 import Foundation
 import Alamofire
 
-class MonthPost: ObservableObject {
+class MonthPostViewModel: ObservableObject {
     @Published var postIds : [Int] = []
     @Published var userId : String = ""
-//    @Published var postId : Int = 0
-//    static let shared = MonthPost()
     
     var myuserId = MyPageViewModel.shared.myuserId
     
     @Published var dataModels: [DataModel] = []
     
     @Published var offset: CGFloat = 0
-    //    @Published var direct: Direct = .none
     private var originOffset: CGFloat = 0
     private var isCheckedOriginOffset: Bool = false
     
@@ -36,7 +33,7 @@ class MonthPost: ObservableObject {
     }
     
 
-    static func postMonth(month: Int) async throws -> Response<[DataModel]> { // month 매개변수 추가
+    func postMonth(month: Int) async throws -> Response<[DataModel]> { // month 매개변수 추가
         let year = 2023
         let postmonthresponse = try await HttpClient.request(HttpRequest(url: "post/month/\(year)/\(month)", method: .get, model: Response<[DataModel]>.self))
         
@@ -46,7 +43,7 @@ class MonthPost: ObservableObject {
     }
     
     
-    static func userpostMonth(month: Int, userId: String) async throws -> Response<[DataModel]> {
+    func userpostMonth(month: Int, userId: String) async throws -> Response<[DataModel]> {
         let year = 2023
         let response = try await HttpClient.request(HttpRequest(url: "post/monthForEvery/\(year)/\(month)/\(userId)", method: .get, model: Response<[DataModel]>.self))
 
@@ -55,15 +52,13 @@ class MonthPost: ObservableObject {
         return response
     }
 
-    func Postdelete(callback: @escaping () -> Void) {
+    func postdelete(callback: @escaping () -> Void) {
         let body : Parameters = [
             "postId" : postIds
-        
         ]
         Task{
             do {
-//                print(" 달 포스트 아이디 확인 : \(postId)")
-                let deleteresponse  = try await HttpClient.request(HttpRequest(url: "post/delete", method:.delete ,params: body, model:Response<PostdeleteResponse>.self))
+                let deleteresponse  = try await HttpClient.request(HttpRequest(url: "post/delete", method:.delete ,params: body, model:Response<PostDeleteResponse>.self))
                 print("삭제 확인하기 :\(String(describing: deleteresponse.data))")
                 
                 
@@ -76,7 +71,7 @@ class MonthPost: ObservableObject {
     }
     
 
-    static func extractPostIds(from response: Response<[DataModel]>) -> [Int]? {
+    func extractPostIds(from response: Response<[DataModel]>) -> [Int]? {
         guard response.status == 200 else {
             // Handle error case, e.g., return nil or throw an error
             print("Error: \(response.message)")

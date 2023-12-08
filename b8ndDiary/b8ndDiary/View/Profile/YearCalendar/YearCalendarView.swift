@@ -1,6 +1,3 @@
-
-
-
 import SwiftUI
 func createSquareGrid(YearviewModeldate: [Bool]) -> some View {
     return HStack(spacing: 10) {
@@ -14,9 +11,6 @@ func createSquareGrid(YearviewModeldate: [Bool]) -> some View {
                             .foregroundColor(YearviewModeldate[b] ? Colors.Blue1.color : Colors.Gray1.color)
                             .frame(width: 15, height: 15)
                             .cornerRadius(3)
-//                            .onAppear {
-//                                print(b)
-//                            }
                     }
                     else if b <= 365 {
                         Rectangle()

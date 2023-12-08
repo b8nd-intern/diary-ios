@@ -1,10 +1,5 @@
-
-
 import Foundation
 import Alamofire
-
-
-
 
 
 struct PostCntResponse : Codable {

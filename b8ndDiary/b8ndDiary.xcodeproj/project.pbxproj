@@ -29,7 +29,6 @@
 		45E997432AF26E6F00F3CDFF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 45E997422AF26E6F00F3CDFF /* Alamofire */; };
 		45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997502AF3B61F00F3CDFF /* HttpClient.swift */; };
 		45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997522AF3B63E00F3CDFF /* HttpRequest.swift */; };
-		45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */; };
 		45FB1BA02B04D4D800913F03 /* PostSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */; };
 		45FB1BA22B04D73800913F03 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA12B04D73800913F03 /* DataModel.swift */; };
 		45FB1BA42B04E0CC00913F03 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */; };
@@ -49,22 +48,22 @@
 		4DF4F4012ABC5A1D00D66126 /* b8ndDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */; };
 		4DF4F4032ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */; };
 		4DFEB17B2ACD954100343927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB17A2ACD954100343927 /* PostView.swift */; };
-		75005D682B11C61E00B0D276 /* Monthpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75005D672B11C61E00B0D276 /* Monthpost.swift */; };
+		75005D682B11C61E00B0D276 /* MonthPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75005D672B11C61E00B0D276 /* MonthPostViewModel.swift */; };
 		75033E292B14AEBE00A7F379 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 75033E282B14AEBE00A7F379 /* FirebaseAnalytics */; };
 		75033E2D2B14C5BA00A7F379 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E2C2B14C5BA00A7F379 /* UserInfoResponse.swift */; };
 		75033E2F2B14D35A00A7F379 /* UserPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E2E2B14D35A00A7F379 /* UserPageView.swift */; };
 		75033E332B14E6A100A7F379 /* MyUesrinfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E322B14E6A100A7F379 /* MyUesrinfoResponse.swift */; };
-		75033E352B14EE7000A7F379 /* UserMonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E342B14EE7000A7F379 /* UserMonthPage.swift */; };
-		75033E372B14F0C200A7F379 /* PostdeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E362B14F0C200A7F379 /* PostdeleteResponse.swift */; };
+		75033E352B14EE7000A7F379 /* UserMonthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E342B14EE7000A7F379 /* UserMonthPageView.swift */; };
+		75033E372B14F0C200A7F379 /* PostDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E362B14F0C200A7F379 /* PostDeleteResponse.swift */; };
 		75033E3B2B15D1D700A7F379 /* UserPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E3A2B15D1D700A7F379 /* UserPageViewModel.swift */; };
 		75033E3E2B16304D00A7F379 /* PostUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75033E3D2B16304D00A7F379 /* PostUpdateResponse.swift */; };
 		7596ADD62AE68D1C008EBFD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */; };
 		7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */; };
-		7596ADDC2AE68D47008EBFD8 /* MonthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDB2AE68D47008EBFD8 /* MonthPage.swift */; };
-		7596ADDE2AE68D4E008EBFD8 /* YearCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDD2AE68D4E008EBFD8 /* YearCalendar.swift */; };
-		7596ADE02AE68D5A008EBFD8 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDF2AE68D5A008EBFD8 /* GoogleSignIn.swift */; };
+		7596ADDC2AE68D47008EBFD8 /* MonthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDB2AE68D47008EBFD8 /* MonthPageView.swift */; };
+		7596ADDE2AE68D4E008EBFD8 /* YearCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDD2AE68D4E008EBFD8 /* YearCalendarView.swift */; };
+		7596ADE02AE68D5A008EBFD8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADDF2AE68D5A008EBFD8 /* LoginView.swift */; };
 		7596ADE22AE68D5F008EBFD8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADE12AE68D5F008EBFD8 /* UserData.swift */; };
-		7596ADE42AE68D64008EBFD8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADE32AE68D64008EBFD8 /* Login.swift */; };
+		7596ADE42AE68D64008EBFD8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADE32AE68D64008EBFD8 /* LaunchView.swift */; };
 		7596ADE62AE68D78008EBFD8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596ADE52AE68D78008EBFD8 /* Setting.swift */; };
 		7596ADE92AE68EEF008EBFD8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADE82AE68EEF008EBFD8 /* FirebaseAuth */; };
 		7596ADEC2AE68F23008EBFD8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7596ADEB2AE68F23008EBFD8 /* GoogleSignIn */; };
@@ -124,7 +123,6 @@
 		45E996A92AE73A8600F3CDFF /* CornerRadius+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Ext.swift"; sourceTree = "<group>"; };
 		45E997502AF3B61F00F3CDFF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		45E997522AF3B63E00F3CDFF /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
-		45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		45FB1B9F2B04D4D800913F03 /* PostSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSerivce.swift; sourceTree = "<group>"; };
 		45FB1BA12B04D73800913F03 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		45FB1BA32B04E0CC00913F03 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -148,21 +146,21 @@
 		4DF4F4002ABC5A1D00D66126 /* b8ndDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITests.swift; sourceTree = "<group>"; };
 		4DF4F4022ABC5A1D00D66126 /* b8ndDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b8ndDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DFEB17A2ACD954100343927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		75005D672B11C61E00B0D276 /* Monthpost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monthpost.swift; sourceTree = "<group>"; };
+		75005D672B11C61E00B0D276 /* MonthPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPostViewModel.swift; sourceTree = "<group>"; };
 		75033E2C2B14C5BA00A7F379 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
 		75033E2E2B14D35A00A7F379 /* UserPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageView.swift; sourceTree = "<group>"; };
 		75033E322B14E6A100A7F379 /* MyUesrinfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUesrinfoResponse.swift; sourceTree = "<group>"; };
-		75033E342B14EE7000A7F379 /* UserMonthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMonthPage.swift; sourceTree = "<group>"; };
-		75033E362B14F0C200A7F379 /* PostdeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostdeleteResponse.swift; sourceTree = "<group>"; };
+		75033E342B14EE7000A7F379 /* UserMonthPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMonthPageView.swift; sourceTree = "<group>"; };
+		75033E362B14F0C200A7F379 /* PostDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeleteResponse.swift; sourceTree = "<group>"; };
 		75033E3A2B15D1D700A7F379 /* UserPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewModel.swift; sourceTree = "<group>"; };
 		75033E3D2B16304D00A7F379 /* PostUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpdateResponse.swift; sourceTree = "<group>"; };
 		7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
-		7596ADDB2AE68D47008EBFD8 /* MonthPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPage.swift; sourceTree = "<group>"; };
-		7596ADDD2AE68D4E008EBFD8 /* YearCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearCalendar.swift; sourceTree = "<group>"; };
-		7596ADDF2AE68D5A008EBFD8 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
+		7596ADDB2AE68D47008EBFD8 /* MonthPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPageView.swift; sourceTree = "<group>"; };
+		7596ADDD2AE68D4E008EBFD8 /* YearCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearCalendarView.swift; sourceTree = "<group>"; };
+		7596ADDF2AE68D5A008EBFD8 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7596ADE12AE68D5F008EBFD8 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		7596ADE32AE68D64008EBFD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		7596ADE32AE68D64008EBFD8 /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		7596ADE52AE68D78008EBFD8 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		759B9A5A2B1DE38A001E21BC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		75E0D6592B0DDFE700F69A3A /* RecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordResponse.swift; sourceTree = "<group>"; };
@@ -289,17 +287,60 @@
 				75E0D6592B0DDFE700F69A3A /* RecordResponse.swift */,
 				75033E2C2B14C5BA00A7F379 /* UserInfoResponse.swift */,
 				75033E322B14E6A100A7F379 /* MyUesrinfoResponse.swift */,
-				75033E362B14F0C200A7F379 /* PostdeleteResponse.swift */,
+				75033E362B14F0C200A7F379 /* PostDeleteResponse.swift */,
 				75033E3D2B16304D00A7F379 /* PostUpdateResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
 		};
+		4D1114662B22D37A00051638 /* YearCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				7596ADDD2AE68D4E008EBFD8 /* YearCalendarView.swift */,
+				75E0D65B2B0E341E00F69A3A /* YearCalendarViewModel.swift */,
+			);
+			path = YearCalendar;
+			sourceTree = "<group>";
+		};
+		4D1114672B22D38F00051638 /* MonthPage */ = {
+			isa = PBXGroup;
+			children = (
+				7596ADDB2AE68D47008EBFD8 /* MonthPageView.swift */,
+				75005D672B11C61E00B0D276 /* MonthPostViewModel.swift */,
+			);
+			path = MonthPage;
+			sourceTree = "<group>";
+		};
+		4D1114682B22D42700051638 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				7596ADE32AE68D64008EBFD8 /* LaunchView.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		4D1114692B22D50400051638 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				4D06C29A2B0CEA5B00E64A97 /* MyPageViewModel.swift */,
+				7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		4D11146A2B22D51600051638 /* UserPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserPage;
+			sourceTree = "<group>";
+		};
 		4D3409FE2ABD502700B465FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4DFEB1732ACD93AF00343927 /* Profile */,
+				4D1114682B22D42700051638 /* Launch */,
 				4DFEB1712ACD92BF00343927 /* Login */,
+				4DFEB1732ACD93AF00343927 /* Profile */,
 				4DDF8ACF2ACD8721003516A2 /* Post */,
 				4DDF8ACE2ACD8719003516A2 /* Setting */,
 				4DDF8ACD2ACD8711003516A2 /* Home */,
@@ -383,9 +424,9 @@
 				7596ADD52AE68D1C008EBFD8 /* GoogleService-Info.plist */,
 				4DF4F3E52ABC5A1B00D66126 /* b8ndDiaryApp.swift */,
 				4D06C29E2B0CEDBC00E64A97 /* AppViewModel.swift */,
+				4D06C2922B0CBB9400E64A97 /* Application */,
 				4D3409FE2ABD502700B465FF /* View */,
 				4D3409FF2ABD502D00B465FF /* Data */,
-				4D06C2922B0CBB9400E64A97 /* Application */,
 				D736C7FA2AD80D4700C0A6BD /* Common */,
 				D736C7F72AD80D3100C0A6BD /* Extensions */,
 				4DF4F3EB2ABC5A1C00D66126 /* Preview Content */,
@@ -421,9 +462,8 @@
 		4DFEB1712ACD92BF00343927 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				7596ADDF2AE68D5A008EBFD8 /* GoogleSignIn.swift */,
+				7596ADDF2AE68D5A008EBFD8 /* LoginView.swift */,
 				7596ADE12AE68D5F008EBFD8 /* UserData.swift */,
-				7596ADE32AE68D64008EBFD8 /* Login.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -431,26 +471,16 @@
 		4DFEB1732ACD93AF00343927 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				7596ADD72AE68D3C008EBFD8 /* MyPageView.swift */,
+				4D11146A2B22D51600051638 /* UserPage */,
+				4D1114692B22D50400051638 /* MyPage */,
+				4D1114672B22D38F00051638 /* MonthPage */,
+				4D1114662B22D37A00051638 /* YearCalendar */,
 				75033E2E2B14D35A00A7F379 /* UserPageView.swift */,
-				7596ADDD2AE68D4E008EBFD8 /* YearCalendar.swift */,
-				7596ADDB2AE68D47008EBFD8 /* MonthPage.swift */,
-				75033E342B14EE7000A7F379 /* UserMonthPage.swift */,
+				75033E342B14EE7000A7F379 /* UserMonthPageView.swift */,
 				4D06C2982B0CBC6C00E64A97 /* UserPage.swift */,
-				75033E3C2B15D31000A7F379 /* viewModel */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		75033E3C2B15D31000A7F379 /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-				75005D672B11C61E00B0D276 /* Monthpost.swift */,
-				75E0D65B2B0E341E00F69A3A /* YearCalendarViewModel.swift */,
-				4D06C29A2B0CEA5B00E64A97 /* MyPageViewModel.swift */,
 				75033E3A2B15D1D700A7F379 /* UserPageViewModel.swift */,
 			);
-			path = viewModel;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7596ADEF2AE68FCD008EBFD8 /* Frameworks */ = {
@@ -487,7 +517,6 @@
 				D736C7FB2AD80D9C00C0A6BD /* View+Ext.swift */,
 				45E996A72AE689E000F3CDFF /* UINavigationController+Ext.swift */,
 				45E996A92AE73A8600F3CDFF /* CornerRadius+Ext.swift */,
-				45E997592AF3C2DC00F3CDFF /* Bundle+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -653,7 +682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75033E372B14F0C200A7F379 /* PostdeleteResponse.swift in Sources */,
+				75033E372B14F0C200A7F379 /* PostDeleteResponse.swift in Sources */,
 				4D4A171A2B0B7A2900941F30 /* Token.swift in Sources */,
 				45DC779E2AD6B43800A7DAA4 /* ToolbarView.swift in Sources */,
 				4D4A171E2B0B8BD900941F30 /* PostViewModel.swift in Sources */,
@@ -662,11 +691,11 @@
 				7596ADE22AE68D5F008EBFD8 /* UserData.swift in Sources */,
 				D736C7EB2AD80B7400C0A6BD /* DiaryModel.swift in Sources */,
 				75033E2D2B14C5BA00A7F379 /* UserInfoResponse.swift in Sources */,
-				7596ADDC2AE68D47008EBFD8 /* MonthPage.swift in Sources */,
+				7596ADDC2AE68D47008EBFD8 /* MonthPageView.swift in Sources */,
 				D736C7EE2AD80B9200C0A6BD /* PageControl.swift in Sources */,
 				45E997512AF3B61F00F3CDFF /* HttpClient.swift in Sources */,
-				7596ADE42AE68D64008EBFD8 /* Login.swift in Sources */,
-				75033E352B14EE7000A7F379 /* UserMonthPage.swift in Sources */,
+				7596ADE42AE68D64008EBFD8 /* LaunchView.swift in Sources */,
+				75033E352B14EE7000A7F379 /* UserMonthPageView.swift in Sources */,
 				75033E2F2B14D35A00A7F379 /* UserPageView.swift in Sources */,
 				D736C7F92AD80D3F00C0A6BD /* FrameModifier.swift in Sources */,
 				75E0D65A2B0DDFE700F69A3A /* RecordResponse.swift in Sources */,
@@ -679,7 +708,7 @@
 				75033E332B14E6A100A7F379 /* MyUesrinfoResponse.swift in Sources */,
 				75033E3B2B15D1D700A7F379 /* UserPageViewModel.swift in Sources */,
 				4D06C29B2B0CEA5B00E64A97 /* MyPageViewModel.swift in Sources */,
-				7596ADE02AE68D5A008EBFD8 /* GoogleSignIn.swift in Sources */,
+				7596ADE02AE68D5A008EBFD8 /* LoginView.swift in Sources */,
 				D771E9F82AE142DB007E3EB6 /* Color+Ext.swift in Sources */,
 				451609C82B12E39D00101AC6 /* DayViewModel.swift in Sources */,
 				45E997532AF3B63E00F3CDFF /* HttpRequest.swift in Sources */,
@@ -687,9 +716,9 @@
 				45DC77B12AD6B51900A7DAA4 /* ClickDiaryView.swift in Sources */,
 				45FB1BA22B04D73800913F03 /* DataModel.swift in Sources */,
 				4D4A17162B0B759600941F30 /* Response.swift in Sources */,
-				7596ADDE2AE68D4E008EBFD8 /* YearCalendar.swift in Sources */,
+				7596ADDE2AE68D4E008EBFD8 /* YearCalendarView.swift in Sources */,
 				D771E9FA2AE1444A007E3EB6 /* HomeView.swift in Sources */,
-				75005D682B11C61E00B0D276 /* Monthpost.swift in Sources */,
+				75005D682B11C61E00B0D276 /* MonthPostViewModel.swift in Sources */,
 				759B9A5B2B1DE38A001E21BC /* Config.swift in Sources */,
 				75033E3E2B16304D00A7F379 /* PostUpdateResponse.swift in Sources */,
 				75FC728E2B03646D00020FCF /* PostCntResponse.swift in Sources */,
@@ -703,7 +732,6 @@
 				45DC77AF2AD6B50700A7DAA4 /* ClickCell.swift in Sources */,
 				4DFEB17B2ACD954100343927 /* PostView.swift in Sources */,
 				7596ADD82AE68D3C008EBFD8 /* MyPageView.swift in Sources */,
-				45E9975A2AF3C2DC00F3CDFF /* Bundle+Ext.swift in Sources */,
 				45DC779B2AD6B40A00A7DAA4 /* PostButtonView.swift in Sources */,
 				4DF4F3E62ABC5A1B00D66126 /* b8ndDiaryApp.swift in Sources */,
 				7596ADE62AE68D78008EBFD8 /* Setting.swift in Sources */,

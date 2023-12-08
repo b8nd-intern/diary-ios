@@ -11,7 +11,7 @@ struct MonthPage: View {
     @State var diaryContent: String = "오늘은 개발을 했다."
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var myMonthPost = MonthPost()
+    @StateObject var myMonthPost = MonthPostViewModel()
     //    let userData: UserData
     struct ScrollOffsetKey: PreferenceKey {
         static var defaultValue: CGFloat = 0
@@ -51,8 +51,8 @@ struct MonthPage: View {
                     Button {
                         Task {
                             do {
-                                let response = try await MonthPost.postMonth(month: selectedMonth)
-                                if let postIds = MonthPost.extractPostIds(from: response) {
+                                let response = try await myMonthPost.postMonth(month: selectedMonth)
+                                if let postIds = myMonthPost.extractPostIds(from: response) {
                                     print("Post IDs: \(postIds)")
                                     myMonthPost.postIds = postIds
                                 }
@@ -101,7 +101,7 @@ struct MonthPage: View {
                 .onAppear {
                     Task {
                         do {
-                            let response = try await MonthPost.postMonth(month: selectedMonth)
+                            let response = try await myMonthPost.postMonth(month: selectedMonth)
                             DispatchQueue.main.async {
                                 myMonthPost.dataModels = response.data ?? []
                             }

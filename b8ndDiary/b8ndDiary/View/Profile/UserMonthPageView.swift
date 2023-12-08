@@ -9,7 +9,7 @@ struct UserMonthPage: View {
     @State var diaryContent: String = "오늘은 개발을 했다."
     @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
-    @StateObject private var myMonthPost = MonthPost()
+    @StateObject private var myMonthPost = MonthPostViewModel()
 //    let userData: UserData
     private var scrollObservableView: some View {
         GeometryReader { proxy in
@@ -78,7 +78,7 @@ struct UserMonthPage: View {
                     Task {
                         do {
                             let userId = userId
-                            let postResponse = try await MonthPost.userpostMonth(month: selectedMonth, userId: userId)
+                            let postResponse = try await myMonthPost.userpostMonth(month: selectedMonth, userId: userId)
                             DispatchQueue.main.async {
                                 myMonthPost.dataModels = postResponse.data ?? []
                             }

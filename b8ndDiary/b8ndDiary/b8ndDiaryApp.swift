@@ -23,7 +23,7 @@ struct b8ndDiaryApp: App {
     
     var body: some Scene {
         WindowGroup {
-            GoogleSignIn()
+            LoginView()
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }

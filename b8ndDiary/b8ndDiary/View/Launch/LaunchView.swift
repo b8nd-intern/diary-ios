@@ -8,7 +8,7 @@
 import SwiftUI
 import AuthenticationServices
 
-struct Login: View {
+struct LaunchView: View {
     
     var body: some View {
         

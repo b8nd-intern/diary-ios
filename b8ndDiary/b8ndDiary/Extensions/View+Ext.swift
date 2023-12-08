@@ -10,12 +10,9 @@ import SwiftUI
 extension View {
     func frameModifier(_ contentLength: CGFloat,
                        _ currentScrollOffset: CGFloat) -> some View {
-        modifier(
-            FrameModifier(
+        modifier(FrameModifier(
                 contentLength: contentLength,
                 visibleContentLength: contentLength,
-                currentScrollOffset: currentScrollOffset
-            )
-        )
+                currentScrollOffset: currentScrollOffset))
     }
 }
