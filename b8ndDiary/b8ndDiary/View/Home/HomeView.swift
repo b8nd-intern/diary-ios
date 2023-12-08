@@ -9,11 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject var appViewModel: AppViewModel
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
     @StateObject private var dayViewModel: DayViewModel = DayViewModel()
-    @EnvironmentObject var appViewModel: AppViewModel
     
-    @State var isTextAnimation = false
+    // 일기를 클릭해서 볼 때 사용
+    @State var isClicked: Bool = false
+    @State var clickedContent: DataModel?
+    
+    let userData: UserData
     
     private var scrollObservableView: some View {
         GeometryReader { proxy in
@@ -29,22 +33,7 @@ struct HomeView: View {
         }
         .frame(height: 0)
     }
-    
-    // 일기를 클릭해서 볼 때 사용되는 변수
-    @State var isClicked: Bool = false
-    @State var clickedContent: DataModel?
-    
-    let userData: UserData
-    
-    // 일기 내용 가져올 때 사용되는 변수
-    @State var day: Int = 0
-    
-    @State var name: String = "이예진" // 사용자 이름
-    
     var body: some View {
-        
-        @State var offset: CGFloat = viewModel.offset
-        
         GeometryReader { geo in
             NavigationView {
                 ZStack {
@@ -98,7 +87,7 @@ struct HomeView: View {
                                         .frame(height: 40)
                                     
                                     ZStack {
-                                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day, diaryContent: viewModel.list)
+                                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, diaryContent: viewModel.list)
                                             .padding(.horizontal, 40)
                                     }
                                     
@@ -124,29 +113,35 @@ struct HomeView: View {
                     }
                     
                     // 일기 작성 뷰로 넘어가는 코드
-                    NavigationLink {
-                        PostView(isDoing:  .constant(false), PostNum: 0)
-                    } label: {
-                        PostButtonView()
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Spacer()
+                            NavigationLink {
+                                PostView(isDoing:  .constant(false), PostNum: 0)
+                            } label: {
+                                PostButtonView()
+                            }
+                            .padding(.trailing, 35)
+                            .padding(.bottom, 90)
+                        }
                     }
-                    .padding(.leading, 220)
-                    .padding(.top, 520)
                     
-                    // 포스트잇을 클릭하면 일기를 보여주는 코드
-                    if isClicked && (clickedContent != nil) {
+                    // 포스트잇을 클릭 시 보여줄 일기
+                    if isClicked && clickedContent != nil {
                         ClickDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, userData: userData)
                     }
                 }
             }
         }
-        .onAppear {
-            viewModel.initDiaryList {
+        .task {
+            await viewModel.initDiaryList {
                 appViewModel.save(false)
             }
-            viewModel.initTopSevenList {
+            await viewModel.initTopSevenList {
                 appViewModel.save(false)
             }
-            dayViewModel.initDiaryList()
+            await dayViewModel.initDiaryList()
         }
         .navigationBarBackButtonHidden(true)
         

@@ -9,7 +9,6 @@ struct MonthPage: View {
     @State var isClicked: Bool = false
     @State var clickedContent: DataModel?
     @State var diaryContent: String = "오늘은 개발을 했다."
-    @State var day: Int = 0
     @Environment(\.presentationMode) var presentationMode
     @StateObject var myMonthPost = MonthPostViewModel()
     //    let userData: UserData
@@ -74,7 +73,7 @@ struct MonthPage: View {
                     }
                     ZStack{
                         //이미지 불러오는 부분
-                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, day: $day, diaryContent: myMonthPost.dataModels)
+                        ShowDiaryView(isClicked: $isClicked, clickedContent: $clickedContent, diaryContent: myMonthPost.dataModels)
                             .padding(.horizontal, 30)
                     }
                     .padding(.top, 20)

@@ -12,8 +12,6 @@ struct ShowDiaryView: View {
     @Binding var isClicked: Bool
     @Binding var clickedContent: DataModel?
     
-    @Binding var day: Int
-    
     let diaryContent: [DataModel]
     
     var columns: [GridItem] = [
