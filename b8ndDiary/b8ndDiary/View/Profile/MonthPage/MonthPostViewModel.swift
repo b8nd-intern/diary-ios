@@ -52,7 +52,7 @@ class MonthPostViewModel: ObservableObject {
         return response
     }
 
-    func postdelete(callback: @escaping () -> Void) {
+    func postDelete(callback: @escaping () -> Void) {
         let body : Parameters = [
             "postId" : postIds
         ]

@@ -56,7 +56,7 @@ struct MonthPage: View {
                                     print("Post IDs: \(postIds)")
                                     myMonthPost.postIds = postIds
                                 }
-                                myMonthPost.Postdelete(callback: {
+                                myMonthPost.postDelete(callback: {
                                     refreshView.toggle()
                                 })
                             } catch {
@@ -159,7 +159,7 @@ struct MonthPage: View {
                                             Task {
                                                 do {
                                                     myMonthPost.postIds = [clickedContent!.postId]
-                                                    myMonthPost.Postdelete(callback: {
+                                                    myMonthPost.postDelete(callback: {
                                                         refreshView.toggle()
                                                     })
                                                 } catch {

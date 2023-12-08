@@ -15,7 +15,7 @@ final class Interceptor: RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         print("adapt")
         print("url -", urlRequest.url ?? "")
-        print(Token.get(.accessToken))
+        print(Token.get(.accessToken) ?? "")
         guard let accessToken = Token.get(.accessToken) else {
             completion(.success(urlRequest))
             print("interceptor.adapt - invalid access Token")
@@ -37,7 +37,7 @@ final class Interceptor: RequestInterceptor {
         }
         
         print("interceptor.retry -", response.statusCode)
-        print(Token.get(.refreshToken))
+        print(Token.get(.refreshToken) ?? "")
         let refreshCode = 403
         guard response.statusCode == refreshCode else {
             print("interceptor.retry -", error)
