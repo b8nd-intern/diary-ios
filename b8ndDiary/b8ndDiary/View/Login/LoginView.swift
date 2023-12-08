@@ -13,26 +13,20 @@ import FirebaseAuth
 import Alamofire
 import FirebaseCore
 
-
 struct LoginView: View {
     
     @EnvironmentObject var appViewModel: AppViewModel
+    @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
     
     // 유저 데이터
     @State private var userData: UserData?
-
+    
     @State private var isAlert = false
     
-    @State private var idToken = String()
+    @State private var idToken = ""
+    @State private var fcmToken = ""
     
-    @State private var fcmToken = String()
     
-    struct GoogleResponse : Codable {
-        let accessToken : String
-        let refreshToken : String
-        let isFirst : Bool
-    }
-
     var body: some View {
         NavigationStack {
             LaunchView()
@@ -47,7 +41,7 @@ struct LoginView: View {
             .padding(20)
             .navigationDestination(isPresented: $appViewModel.isLogin, destination: {
                 HomeView(userData: userData ?? UserData(url: nil, name: "", email: ""))
-//                    .environmentObject(info)
+                //                    .environmentObject(info)
             })
         }
         .onAppear {
@@ -93,7 +87,7 @@ struct LoginView: View {
                 return
             }
             
-     
+            
             Messaging.messaging().token { token, error in
                 if let error = error {
                     print("Error fetching FCM token: \(error)")
@@ -102,47 +96,19 @@ struct LoginView: View {
                     print("FCM Token: \(token)")
                 }
             }
-
+            
             // FCM 토큰이 아직 필요하지 않다면 아래의 라인을 주석 처리하세요
             self.fcmToken = ""
             self.idToken = idToken
             
             // FCM 토큰과 ID 토큰을 서버로 보내는 함수 호출
-            sendTokensToServer {
+            viewModel.sendTokensToServer(idToken: idToken) {
                 
                 guard let profile = result.user.profile else { return }
                 let data = UserData(url: profile.imageURL(withDimension: 180), name: profile.name, email: profile.email)
                 
-                userData = data            
+                userData = data
                 appViewModel.save(true)
-            }
-        }
-    }
-
-    // FCM 토큰과 ID 토큰을 서버로 보내는 함수
-    func sendTokensToServer(callback: @escaping () -> Void) {
-        Task {
-            let headers: HTTPHeaders = [
-                "id_token": idToken,
-                "fcm_token": "ㅎㅇ",
-                "Accept": "application/json"
-            ]
-            
-            do {
-                let response = try await HttpClient.request(
-                    HttpRequest(url: "auth/login/google",
-                                             method: .post,
-                                             headers: headers,
-                                             model: Response<GoogleResponse>.self))
-                print(response.data!.accessToken)
-                print(response.data!.refreshToken)
-                Token.save(.accessToken, response.data!.accessToken)
-                Token.save(.refreshToken, response.data!.refreshToken)
-                callback()
-            } catch APIError.responseError(let statusCode) {
-                print("서버 응답 오류: HTTP 상태 코드; \(statusCode)")
-            } catch {
-                print("서버 응답 오류: \(error)")
             }
         }
     }
@@ -172,11 +138,4 @@ struct LoginView: View {
             return true
         }
     }
-
-   
-
-        }
-
-
-
-
+}
