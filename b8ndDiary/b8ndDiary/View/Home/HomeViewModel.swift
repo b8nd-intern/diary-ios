@@ -14,7 +14,6 @@ final class HomeViewModel : ObservableObject {
     @Published var topList: [DiaryModel] = []
     
     @Published var offset: CGFloat = 0
-    //    @Published var direct: Direct = .none
     private var originOffset: CGFloat = 0
     private var isCheckedOriginOffset: Bool = false
     
@@ -31,41 +30,37 @@ final class HomeViewModel : ObservableObject {
     }
     
     
-    @MainActor
-    func initDiaryList(callback: @escaping () -> Void) {
-        Task {
-            do {
-                print("home viewmodel - request...")
-                let data = try await PostSerivce.getList()
-                list = data.data!
-                print("home viewmodel - ", list)
-            } catch APIError.responseError(let e) {
-                print("home viewmodel - ", e)
-            } catch APIError.transportError {
-                callback()
-            } catch (let e) {
-                print(e.localizedDescription)
-            }
+    func initDiaryList(callback: @escaping () -> Void) async {
+        do {
+            print("home viewmodel - request...")
+            let data = try await PostSerivce.getList()
+            list = data.data!
+            print("home viewmodel - ", list)
+        } catch APIError.responseError(let e) {
+            print("home viewmodel - ", e)
+        } catch APIError.transportError {
+            callback()
+        } catch (let e) {
+            print(e.localizedDescription)
         }
     }
     
-    @MainActor
-    func initTopSevenList(callback: @escaping () -> Void) {
-        Task {
-            do {
-                let data = try await PostSerivce.getTopSevenList()
-                topList = data.data!.map {
-                    DiaryModel(id: $0.postId,
-                               text: $0.content,
-                               color: Color.fromString($0.color),
-                               image: $0.emoji,
-                               uuid: UUID())
-                }
-            } catch APIError.responseError(let e) {
-                print(e)
-            } catch APIError.transportError {
-                callback()
+    
+    func initTopSevenList(callback: @escaping () -> Void) async {
+        do {
+            let data = try await PostSerivce.getTopSevenList()
+            topList = data.data!.map {
+                DiaryModel(id: $0.postId,
+                           text: $0.content,
+                           color: Color.fromString($0.color),
+                           image: $0.emoji,
+                           uuid: UUID())
             }
+        } catch APIError.responseError(let e) {
+            print(e)
+        } catch (let e) {
+            print(e.localizedDescription)
+            callback()
         }
     }
 }

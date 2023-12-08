@@ -17,18 +17,12 @@ class DayViewModel: ObservableObject {
         return response
     }
     
-    @MainActor
-    func initDiaryList() {
-        Task {
-            do {
-                print("home viewmodel - request...")
-//                let data = try await Record.getRecordWeek()
-                let data = try await DayViewModel.getRecordWeek()
-                dayList = data.data!
-                print("DayViewModel - \(dayList)")
-            } catch (let e) {
-                print(e.localizedDescription)
-            }
+    func initDiaryList() async {
+        do {
+            let data = try await DayViewModel.getRecordWeek()
+            dayList = data.data ?? []
+        } catch (let e) {
+            print(e.localizedDescription)
         }
     }
 }
